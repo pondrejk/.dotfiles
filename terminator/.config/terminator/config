@@ -1,0 +1,75 @@
+[global_config]
+  always_on_top = True
+  inactive_color_offset = 1.0
+  sticky = True
+  suppress_multiple_term_dialog = True
+  title_font = Inconsolata Medium 10
+[keybindings]
+  close_term = <Alt>c
+  go_down = <Alt>j
+  go_left = <Alt>h
+  go_right = <Alt>l
+  go_up = <Alt>k
+  hide_window = F12
+  layout_launcher = <Alt>o
+  split_horiz = <Primary>h
+  split_vert = <Primary>s
+[layouts]
+  [[default]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 70469436-4da5-4c89-8153-10cb02dd94e7
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 1366:27
+      size = 1920, 1029
+      title = pondrejk@provo:~/Documents/robottelo
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 957
+      ratio = 0.499479166667
+      type = HPaned
+    [[[child3]]]
+      order = 1
+      parent = child1
+      position = 512
+      ratio = 0.499514091351
+      type = VPaned
+    [[[terminal2]]]
+      command = git sh
+      directory = /home/pondrejk/Documents/robottelo
+      order = 0
+      parent = child1
+      profile = default
+      type = Terminal
+      uuid = 70469436-4da5-4c89-8153-10cb02dd94e7
+    [[[terminal4]]]
+      command = ""
+      directory = /home/pondrejk/Documents/robottelo
+      group = Pill
+      order = 0
+      parent = child3
+      profile = default
+      type = Terminal
+      uuid = 5627b0a3-98b1-4b96-9fbf-af27e0750208
+    [[[terminal5]]]
+      command = ""
+      directory = /home/pondrejk/Documents/robottelo
+      order = 1
+      parent = child3
+      profile = default
+      type = Terminal
+      uuid = d8a3cca6-a58b-4939-a76c-bcca70517441
+[plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.89
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    exit_action = hold
+    font = Inconsolata Medium 11
+    use_system_font = False

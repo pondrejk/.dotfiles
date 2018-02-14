@@ -1,0 +1,10 @@
+# answer files
+/etc/foreman-installer/scenarios.d/
+
+# katello scripts
+/usr/share/katello/
+
+# capsule dns check
+/usr/share/katello-installer-base/checks/dns.rb
+
+# pulp tools

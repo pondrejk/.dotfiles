@@ -1,0 +1,260 @@
+can't find file to patch at input line 5
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: runtime/doc/eval.txt
+|===================================================================
+|--- runtime/doc/eval.txt	(revision 296)
+|+++ runtime/doc/eval.txt	(working copy)
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+1 out of 1 hunk ignored
+can't find file to patch at input line 20
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: runtime/doc/options.txt
+|===================================================================
+|--- runtime/doc/options.txt	(revision 296)
+|+++ runtime/doc/options.txt	(working copy)
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+2 out of 2 hunks ignored
+can't find file to patch at input line 82
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: runtime/optwin.vim
+|===================================================================
+|--- runtime/optwin.vim	(revision 296)
+|+++ runtime/optwin.vim	(working copy)
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+1 out of 1 hunk ignored
+can't find file to patch at input line 102
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: src/ex_cmds.c
+|===================================================================
+|--- src/ex_cmds.c	(revision 296)
+|+++ src/ex_cmds.c	(working copy)
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+1 out of 1 hunk ignored
+can't find file to patch at input line 115
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: src/option.c
+|===================================================================
+|--- src/option.c	(revision 296)
+|+++ src/option.c	(working copy)
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+5 out of 5 hunks ignored
+can't find file to patch at input line 195
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: src/option.h
+|===================================================================
+|--- src/option.h	(revision 296)
+|+++ src/option.h	(working copy)
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+1 out of 1 hunk ignored
+can't find file to patch at input line 211
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: src/proto/charset.pro
+|===================================================================
+|--- src/proto/charset.pro	(revision 296)
+|+++ src/proto/charset.pro	(working copy)
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+2 out of 2 hunks ignored
+can't find file to patch at input line 239
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: src/proto/misc1.pro
+|===================================================================
+|--- src/proto/misc1.pro	(revision 296)
+|+++ src/proto/misc1.pro	(working copy)
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+1 out of 1 hunk ignored
+can't find file to patch at input line 251
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: src/regexp.c
+|===================================================================
+|--- src/regexp.c	(revision 296)
+|+++ src/regexp.c	(working copy)
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+2 out of 2 hunks ignored
+can't find file to patch at input line 273
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: src/structs.h
+|===================================================================
+|--- src/structs.h	(revision 296)
+|+++ src/structs.h	(working copy)
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+1 out of 1 hunk ignored
+can't find file to patch at input line 292
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: src/getchar.c
+|===================================================================
+|--- src/getchar.c	(revision 296)
+|+++ src/getchar.c	(working copy)
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+1 out of 1 hunk ignored
+can't find file to patch at input line 305
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: src/ui.c
+|===================================================================
+|--- src/ui.c	(revision 296)
+|+++ src/ui.c	(working copy)
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+1 out of 1 hunk ignored
+can't find file to patch at input line 318
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: src/misc1.c
+|===================================================================
+|--- src/misc1.c	(revision 296)
+|+++ src/misc1.c	(working copy)
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+7 out of 7 hunks ignored
+can't find file to patch at input line 429
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: src/edit.c
+|===================================================================
+|--- src/edit.c	(revision 296)
+|+++ src/edit.c	(working copy)
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+7 out of 7 hunks ignored
+can't find file to patch at input line 506
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: src/normal.c
+|===================================================================
+|--- src/normal.c	(revision 296)
+|+++ src/normal.c	(working copy)
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+2 out of 2 hunks ignored
+can't find file to patch at input line 528
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: src/gui_beval.c
+|===================================================================
+|--- src/gui_beval.c	(revision 296)
+|+++ src/gui_beval.c	(working copy)
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+1 out of 1 hunk ignored
+can't find file to patch at input line 541
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: src/charset.c
+|===================================================================
+|--- src/charset.c	(revision 296)
+|+++ src/charset.c	(working copy)
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+11 out of 11 hunks ignored
+can't find file to patch at input line 710
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: src/misc2.c
+|===================================================================
+|--- src/misc2.c	(revision 296)
+|+++ src/misc2.c	(working copy)
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+3 out of 3 hunks ignored
+can't find file to patch at input line 745
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: src/screen.c
+|===================================================================
+|--- src/screen.c	(revision 296)
+|+++ src/screen.c	(working copy)
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+4 out of 4 hunks ignored
+can't find file to patch at input line 816
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: src/ops.c
+|===================================================================
+|--- src/ops.c	(revision 296)
+|+++ src/ops.c	(working copy)
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+8 out of 8 hunks ignored

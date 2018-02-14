@@ -1,0 +1,5 @@
+# Printout disk free space in a human readable format
+df -h
+
+# Show also filesystem types
+df -hT

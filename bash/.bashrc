@@ -1,0 +1,101 @@
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+# custom prompt
+STARTCOLOR='\[\033[0;34m\]'
+YELLOW='\[\033[0;33m\]'
+CYAN='\[\033[0;36m\]'
+RED='\[\033[0;31m\]'
+ENDCOLOR='\[\033[0;37m\]'
+export PS1="$CYAN \u$YELLOW✪$STARTCOLOR\h $CYAN\W $YELLOW⚡ $ENDCOLOR"
+
+
+# User specific aliases and functions
+
+# mkdir, cd into it
+mkcd () {
+    mkdir -p "$*"
+    ldh
+    cd "$*"
+}
+
+# General Aliases, Moving Around
+alias hist='cat ~/.bash_history'
+alias ..='cd ..'
+alias cd..='cd ..'
+alias fox='firefox --new-tab'
+alias rbrc='. ~/.bashrc'
+alias catbrc='cat ~/.bashrc'
+alias catgit='cat ~/.gitconfig'
+alias g='grep'
+alias l='less'
+alias doc='cd $HOME/Documents'
+alias dw='cd $HOME/Downloads'
+alias drp='cd $HOME/Dropbox'
+alias drpd='~/.dropbox-dist/dropboxd &'
+
+# planck
+alias planck='cd $HOME/Documents/qmk_firmware/'
+alias planck_build='sudo make planck/rev4:pondrejk:dfu'
+
+# robotello
+alias rob='cd $HOME/Documents/robottelo'
+alias rci='cd $HOME/Documents/robottelo-ci'
+alias nail='cd $HOME/Documents/nailgun'
+alias at='cd $HOME/Documents/automation-tools'
+alias gitk='gitk -a &'
+
+# docker
+alias dockerkill='docker kill $(docker ps -q)'
+alias dockerrm='docker rm -v $(docker ps -a -q -f status=exited)'
+alias dockerrmi='docker rmi $(docker images -f "dangling=true" -q)'
+alias dockerclean='dockerrm && dockerrmi'
+
+# xclip settings
+alias xclip='xclip -selection c'
+alias pxclip='eval "$(fc -ln -1) | xclip"'
+
+# report of commits from the last week
+alias wreport='git lg --author=pondrejk --since=1.week'
+alias glolx='git log "$1" | xclip -selection c'
+
+# Batch convert pdf files to txt
+alias pdftotextall='for file in *.pdf; do pdftotext "$file" "$file.txt"; done'
+
+# grep history
+alias hgrep='history|grep'
+
+# remove line from known hosts -- TODO
+hrm () {
+  sed -i -s \'"$1" d;\' ~/.ssh/known_hosts
+}
+
+# required by libvirt-vagrant
+export VAGRANT_DEFAULT_PROVIDER=libvirt
+
+# acrobot login
+alias acrobot='ssh tester@ccs-apps.gsslab.brq.redhat.com'
+
+#django bash completion
+source $HOME/.django_bash_completion.sh
+
+# changing the path to virtualenvwrapper.sh depending on where it was installed by pip
+source /usr/bin/virtualenvwrapper.sh
+WORKON_HOME=~/Envs
+
+# local server in currnt directory
+alias server-here='http-server -a localhost -p 8000'
+
+# make zip from directory
+fzip () {
+    zip -r $1.zip $1
+}
+
+# fuzzy finder setup
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# cheat alias and vars
+alias ch='cheat'
+export CHEAT_EDITOR='/usr/bin/vim'
+export CHEATCOLORS=true

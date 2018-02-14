@@ -1,0 +1,11 @@
+.*~
+*~
+*.swp
+.*.swp
+*.sw*
+.*.sw*
+*.marks
+tmp/
+.cache/
+robottelo.log
+tags

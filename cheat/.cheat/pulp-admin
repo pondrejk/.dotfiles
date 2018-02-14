@@ -1,0 +1,15 @@
+# To install pulp-admin with RPM extensions, use the following command:
+pulpversion=$(rpm -qa pulp-server --queryformat "%{VERSION}")
+yum install pulp-admin-client-${pulpversion} pulp-rpm-admin-extensions.noarch pulp-rpm-handlers.noarch
+
+# Using pulp-admin without password 
+sed -i.bak "20,30s/^# host:.*/host: $(hostname -f)/g" /etc/pulp/admin/admin.conf
+mkdir ~/.pulp/
+chmod 0700 ~/.pulp/
+sudo cat /etc/pki/katello/certs/pulp-client.crt /etc/pki/katello/private/pulp-client.key > ~/.pulp/user-cert.pem
+pulp-admin repo list
+
+# Using pulp-admin without password on capsule, do ^ on server, then:
+mkdir ~/.pulp
+scp ~/.pulp/user-cert.pem root@capsule.example.com:~/.pulp/
+pulp-admin repo list

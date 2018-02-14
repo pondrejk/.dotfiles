@@ -1,0 +1,44 @@
+# Navigating
+visit('/projects')
+visit(post_comments_path(post))
+
+# Clicking
+click_link('id-of-link')
+click_link('Link Text')
+click_button('Save')
+click_on('Link Text') # clicks on either links or buttons
+
+# Forms
+fill_in('First Name', with: 'John')
+choose('A Radio Button')
+check('A Checkbox')
+uncheck('A Checkbox')
+attach_file('Image', '/path/to/image.jpg')
+select('Option', from: 'Select Box')
+
+# Queries
+page.has_selector?('table tr')
+page.has_selector?(:xpath, './/table/tr')
+page.has_xpath?('.//table/tr')
+page.has_css?('table tr.foo')
+page.has_content?('foo')
+
+# Finding
+find_field('First Name').value
+find_field(id: 'my_field').value
+find_link('Hello', :visible => :all).visible?
+find_button('Send').click
+find_button(value: '1234').click
+
+find(:xpath, ".//table/tr").click
+find("#overlay").find("h1").click
+all('a').each { |a| a[:href] }
+
+# Scoping
+within("li#employee") do
+  fill_in 'Name', with: 'Jimmy'
+end
+
+within(:xpath, ".//li[@id='employee']") do
+  fill_in 'Name', with: 'Jimmy'
+end

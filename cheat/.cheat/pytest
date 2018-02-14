@@ -1,0 +1,12 @@
+# Execute a test in all endpoints
+pytest tests/foreman/{cli,api,ui}/test_host.py
+
+# subset by name fragment
+-k negative
+
+# multithread
+-n 4
+
+# run last failed, run last failed first
+-lf
+-ff

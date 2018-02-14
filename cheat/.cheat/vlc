@@ -1,0 +1,2 @@
+# Play music from a dir with shuffle
+vlc -L -Z 'dir_name'
