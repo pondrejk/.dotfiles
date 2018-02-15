@@ -8,7 +8,7 @@ YELLOW='\[\033[0;33m\]'
 CYAN='\[\033[0;36m\]'
 RED='\[\033[0;31m\]'
 ENDCOLOR='\[\033[0;37m\]'
-export PS1="$CYAN \u$YELLOW✪$STARTCOLOR\h $CYAN\W $YELLOW⚡ $ENDCOLOR"
+export PS1="$CYAN \u$YELLOW ◠◡ $STARTCOLOR\h $CYAN\W $YELLOW$ENDCOLOR"
 
 
 # User specific aliases and functions
@@ -35,6 +35,8 @@ alias dw='cd $HOME/Downloads'
 alias drp='cd $HOME/Dropbox'
 alias drpd='~/.dropbox-dist/dropboxd &'
 
+alias dot='cd ~/.dotfiles'
+
 # planck
 alias planck='cd $HOME/Documents/qmk_firmware/'
 alias planck_build='sudo make planck/rev4:pondrejk:dfu'
@@ -45,6 +47,10 @@ alias rci='cd $HOME/Documents/robottelo-ci'
 alias nail='cd $HOME/Documents/nailgun'
 alias at='cd $HOME/Documents/automation-tools'
 alias gitk='gitk -a &'
+
+# foreman
+alias fm='cd $HOME/Documents/foreman'
+alias fk='cd $HOME/Documents/forklift'
 
 # docker
 alias dockerkill='docker kill $(docker ps -q)'
