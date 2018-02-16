@@ -1,0 +1,6 @@
+# refresh beaker inventory
+cd /home/pondrejk/Documents/beaker_ansible_devtools/beaker_ansible
+./beaker_ansible_inventory.rb -r
+
+# run basic playbook
+ansible-playbook ../../beaker_playbooks/basic-setup.yml -i beaker_ansible_inventory.rb
