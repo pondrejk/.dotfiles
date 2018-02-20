@@ -1,0 +1,12 @@
+# register & subscribe
+subscription-manager register --force --user --password --release
+subscription-manager subscribe --pool
+
+# reg to sat
+subscription-manager register --org --activationkey
+
+# clean when trouble
+subscription-manager clean
+
+# repos
+subscription-manager repos --enable / --disable

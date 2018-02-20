@@ -42,8 +42,8 @@ alias planck='cd $HOME/Documents/qmk_firmware/'
 alias planck_build='sudo make planck/rev4:pondrejk:dfu'
 
 # beaker ansible
-alias bans='cd $HOME/Documents/beaker_ansible_devtools/beaker_ansible'
-alias bans-refresh='/beaker_ansible_inventory.rb -r'
+alias bans='cd $HOME/Documents/beaker_ansible_devtools/beaker_ansible/'
+alias bans-refresh='./beaker_ansible_inventory.rb -r'
 alias bans-run='ansible-playbook ../../beaker_playbooks/basic-setup.yml -i beaker_ansible_inventory.rb'
 
 # robotello
