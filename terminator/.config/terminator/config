@@ -72,4 +72,5 @@
     cursor_color = "#aaaaaa"
     exit_action = hold
     font = Inconsolata Medium 11
+    scrollback_infinite = True
     use_system_font = False
