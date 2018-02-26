@@ -135,7 +135,7 @@ au FileType pandoc set ts=4 sw=4 expandtab
 au FileType python set ts=4 sw=4 expandtab
 
 " Configure the Vundle plug-in manager:
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call  vundle#begin()
 
 " Configure bundles:
