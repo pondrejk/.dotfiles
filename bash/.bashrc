@@ -104,7 +104,7 @@ fzip () {
 }
 
 # fuzzy finder setup
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+source /usr/share/fzf/shell/key-bindings.bash
 
 # cheat alias and vars
 alias ch='cheat'
