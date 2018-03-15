@@ -4,10 +4,11 @@ virsh -c qemu+tcp://proxy-hostname/system
 
 # on proxy have libvirt and qemu-kvm installed
 # set in /etc/sysconfig/libvirtd
-LIBVIRTD_ARGS="--listen"
+LIBVIRTD_ARGS=--listen
 
 # set in /etc/libvirt/libvirtd.conf
 auth_tcp = "none"
 listen_tcp = 1
+listen_tls = 0
 
 # restart libvirtd

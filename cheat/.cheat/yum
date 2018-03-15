@@ -28,7 +28,13 @@ yum list <package_name_or_word_to_search>
 # List packages installed from a certain repo
 yum list installed | grep @<repo_name>
 
-# To download the source RPM for a package:
+# To download the source RPM for a package: (from yum-utils)
 yumdownloader --source <package name>
 
-# (You have to install yumdownloader first, which is installed by the yum-utils package)
+# what repo provides a package (from yum-utils)
+
+repoquery <package name>
+
+# disabling or enabling repos (from yum-utils)
+
+yum-config-manager --disable <namer>*
