@@ -6,6 +6,7 @@
 set spell                         " Enable spell checking.
 
 " User interface settings:
+set guioptions-=e                 " Disable all gui options
 set guioptions-=T                 " Disable the toolbar.
 set guioptions-=r                 " Disable the right-hand scrollbar.
 set guioptions-=l                 " Disable the left-hand scrollbar.
