@@ -35,7 +35,9 @@ alias dw='cd $HOME/Downloads'
 alias drp='cd $HOME/Dropbox'
 alias drpd='~/.dropbox-dist/dropboxd &'
 
-alias dot='cd ~/.dotfiles'
+# two names for dotfiles dir :/
+ls ~/.dotfiles >/dev/null 2>&1 && alias dot='cd ~/.dotfiles'
+ls ~/dotfiles >/dev/null 2>&1 && alias dot='cd ~/dotfiles'
 
 # planck
 alias planck='cd $HOME/Documents/qmk_firmware/'
