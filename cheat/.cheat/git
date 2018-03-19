@@ -1,1 +1,29 @@
-# custom git cheat
+# adding and syncing remotes
+git remote -v
+git remote <remote_name> <git_url>
+git pull --rebase <remote_name> <remote_branch>
+
+# rename branch
+git branch -m old_branch_name new_branch_name
+
+# revert a commit in a single file
+git checkout <commit_id> <file/to/restore>
+git checkout -p <commit_id> <file/to/restore> # interactive
+
+# search in the history of changes
+git log -S string     # shows commits that handled string
+git log -S string -p  # shows diffs
+git log -G regex      # commits matching regex
+
+# reset last commit (before pushing)
+git reset HEAD~
+git reset --soft HEAD~  # leaves changes staged
+
+# revert last commit (after pushing)
+git revert <commit>     # adds another commit
+
+# apply patch from github commit (in a correct location)
+curl https://github.com/<commit>.patch | git apply
+
+# revert patch
+git apply -R <patch>
