@@ -1,0 +1,5 @@
+# debug mode
+hammer -d 
+
+# refresh apidoc
+hammer -r
