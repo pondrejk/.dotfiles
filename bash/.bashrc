@@ -79,11 +79,6 @@ alias pdftotextall='for file in *.pdf; do pdftotext "$file" "$file.txt"; done'
 # grep history
 alias hgrep='history|grep'
 
-# remove line from known hosts -- TODO
-hrm () {
-  sed -i -s \'"$1" d;\' ~/.ssh/known_hosts
-}
-
 # required by libvirt-vagrant
 export VAGRANT_DEFAULT_PROVIDER=libvirt
 
