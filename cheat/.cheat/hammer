@@ -3,3 +3,6 @@ hammer -d
 
 # refresh apidoc
 hammer -r
+
+# many fake hosts
+for i in {1..4}; do hammer host subscription register --content-view-id="1" --organization-id="1" --name=$i-fakehost --lifecycle-environment-id="1"; done
