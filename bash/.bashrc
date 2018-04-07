@@ -16,7 +16,6 @@ export PS1="$CYAN \u$YELLOW ◠◡ $STARTCOLOR\h $CYAN\W $YELLOW$ENDCOLOR"
 # mkdir, cd into it
 mkcd () {
     mkdir -p "$*"
-    ldh
     cd "$*"
 }
 
