@@ -169,6 +169,7 @@ Plugin 'junegunn/fzf.vim'
 "Plugin 'grassdog/tagman.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-rails'
 
 "Plugin 'jhradilek/vim-docbk'
 "Plugin 'jhradilek/vim-mallard'
