@@ -1,0 +1,18 @@
+# vim-rails plugin <https://github.com/tpope/vim-rails/blob/master/doc/rails.txt>
+
+:Econtroller          :Eenvironment
+:Efixtures            :Efunctionaltest
+:Ehelper              :Einitializer
+:Eintegrationtest     :Ejavascript
+:Elayout              :Elib
+:Elocale              :Emailer
+:Emigration           :Emodel
+:Eschema              :Espec
+:Estylesheet          :Etask
+:Eunittest            :Eview
+
+E means edit in new buffer. Each of the above has variants like Smodel, :Vmodel, :Tmodel, and :Dmodel (split, vertical split, new tab, open in current buffer)
+
+:Extract TODO -- refactoring helper The :Extract command can be used to extract part of a view to a partial, part of a helper to another helper, or part of a model or controller to a concern
+
+:Preview opens the URL of a current file if the server is running
