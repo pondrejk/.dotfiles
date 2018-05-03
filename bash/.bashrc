@@ -106,3 +106,6 @@ source /usr/share/fzf/shell/key-bindings.bash
 alias ch='cheat'
 export CHEAT_EDITOR='/usr/bin/vim'
 export CHEATCOLORS=true
+
+# ansible without cowsay
+export ANSIBLE_NOCOWS=1
