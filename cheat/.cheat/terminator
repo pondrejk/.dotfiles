@@ -1,0 +1,6 @@
+A-c       close terminal
+C-s       split vertically
+C-h       split horizontally
+A-hjkl    movement around terminals
+S-C-t     new tab
+S-C-<>^   changing tab size

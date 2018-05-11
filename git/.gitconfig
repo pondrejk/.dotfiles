@@ -3,7 +3,7 @@
 	    email=pondrejk@redhat.com
 [core]
 	editor = vim
-	excludesfile = ~/.gitignore
+	excludesfile = /home/pondrejk/.gitignore_global
 [color "sh"]
 	    branch = yellow reverse
 	    workdir = blue bold
