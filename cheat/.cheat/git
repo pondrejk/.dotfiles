@@ -6,6 +6,10 @@ git pull --rebase <remote_name> <remote_branch>
 # rename branch
 git branch -m old_branch_name new_branch_name
 
+# create a branch tracking new remote branch
+git fetch upstream 6.3.z
+git branch --track 6.3.z upstream/6.3.z
+
 # revert a commit in a single file
 git checkout <commit_id> <file/to/restore>
 git checkout -p <commit_id> <file/to/restore> # interactive
