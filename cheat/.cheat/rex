@@ -1,0 +1,8 @@
+# Establishing a Secure Connection for Remote Commands
+on client run:
+
+curl https://myproxy.example.com:9090/ssh/pubkey >> ~/.ssh/authorized_keys
+
+or distribute from server:
+
+ssh-copy-id -i ~foreman-proxy/.ssh/id_rsa_foreman_proxy.pub root@target.example.com
