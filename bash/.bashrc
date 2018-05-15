@@ -57,6 +57,7 @@ alias gitk='gitk -a &'
 # foreman
 alias fm='cd $HOME/Documents/foreman'
 alias fk='cd $HOME/Documents/forklift'
+alias kat='cd $HOME/Documents/katello'
 
 # docker
 alias dockerkill='docker kill $(docker ps -q)'
