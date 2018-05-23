@@ -31,3 +31,7 @@ curl https://github.com/<commit>.patch | git apply
 
 # revert patch
 git apply -R <patch>
+
+# squashing commits
+git rebase -i HEAD~4
+-- in editor keep first commit, squash others
