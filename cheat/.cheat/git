@@ -1,6 +1,6 @@
 # adding and syncing remotes
 git remote -v
-git remote <remote_name> <git_url>
+git remote add <remote_name> <git_url>
 git pull --rebase <remote_name> <remote_branch>
 
 # rename branch
