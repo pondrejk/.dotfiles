@@ -1,0 +1,2 @@
+# color to alpha
+convert in.png -fuzz 20% -transparent black out.png
