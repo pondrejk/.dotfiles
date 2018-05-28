@@ -4,3 +4,6 @@ su - vagrant
 cd foreman
 RAILS_ENV=test rake db:drop && RAILS_ENV=test rake db:create && RAILS_ENV=test rake db:test:prepare && RAILS_ENV=test rake db:migrate
 rake test:katello TEST=../katello/test/models/...
+
+vim autocommand for copying to testmachine:
+:autocmd BufWritePost * !command-to-run filename
