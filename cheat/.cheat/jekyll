@@ -1,0 +1,5 @@
+# new project
+jekyll new <name-of-site>
+
+# run the server
+bundle exec jekyll serve
