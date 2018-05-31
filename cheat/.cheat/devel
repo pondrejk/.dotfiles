@@ -7,3 +7,14 @@ rake test:katello TEST=../katello/test/models/...
 
 vim autocommand for copying to testmachine:
 :autocmd BufWritePost * !command-to-run filename
+
+# apply commit in devel setup
+installation from forklift via reviewer role
+navigate to the respective repo
+rpr pr_id
+
+to restore
+rrpr pr_id
+
+to cherry pick
+crp pr_id
