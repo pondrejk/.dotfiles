@@ -27,7 +27,7 @@ git reset --soft HEAD~  # leaves changes staged
 git revert <commit>     # adds another commit
 
 # apply patch from github commit (in a correct location)
-curl https://github.com/<commit>.patch | git apply
+curl https://github.com/<commit>.patch | git apply # add --exclude <file> if needed 
 
 # revert patch
 git apply -R <patch>
