@@ -1,0 +1,10 @@
+# custom repo
+- create a dir
+- copy packages to the dir
+- run:
+
+createrepo --database <dir>
+
+- after changes (faster way, ^works too)
+
+createrepo --update --database <dir>
