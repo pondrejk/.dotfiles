@@ -1,0 +1,6 @@
+# edit configuration via
+postconf -e ""
+
+# or directly in /etc/postfix/main.cf
+
+# options to check

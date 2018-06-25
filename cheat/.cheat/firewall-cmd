@@ -1,0 +1,19 @@
+# add port example
+firewall-cmd --permanent --add-port=3260/tcp [--zone=zone | oterwise default]
+firewall-cmd --reload
+
+# add service example
+firewall-cmd --permanent --add-service=mysql [--zone=zone | oterwise default]
+firewall-cmd --reload
+
+# listing
+firewall-cmd --list-all-zones
+firewall-cmd --list-rich-rules
+
+# masquerading
+firewall-cmd --permanent --zone=<zone> --add-masquerade # any packets
+firewall-cmd --permanent --zone=<zone> --add-rich-rule='rule family=ipv4 source address=<ip>/<mask> masquerade'
+
+# port forwarding
+firewall-cmd --permanent --zone=<zone> --add-rich-rule='rule family=ipv4 source address=<ip>/<mask> forward-port port="<port>" protocol=tcp to-port"<port>"'
+
