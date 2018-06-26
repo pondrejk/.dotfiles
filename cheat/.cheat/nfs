@@ -1,0 +1,41 @@
+# nfs
+# on server
+
+- start nfs-server service
+- create share dir, set ownership
+- in /etc/exports add line:
+/exp_dir client-hostname(rw)
+- exportfs -r  # to load exports file
+- firewall-cmd --permanent --add-service=nfs
+- firewall-cmd --reload
+
+# on client
+
+- create mount point, e.g. /mnt/nfsshare
+- add to /etc/fstab
+server5:/nfsshare   /mnt/nfsshare      nfs     defaults        0 0
+- mount -a  # to verify
+
+
+# nfs secure with selinux export
+# on server
+
+- start nfs-secure-server service
+- have keytab prepared in /etc/krb5.keytab
+- in /etc/sysconfig/nfs set:
+RPCNFSDARGS="-V 4.2" # needed to export selinux labels
+- create share dir, set ownership
+- in /etc/exports add line:
+/exp_dir client-hostname(sec=krb5p,rw)
+- exportfs -r  # to load exports file
+- firewall-cmd --permanent --add-service=nfs
+- firewall-cmd --reload
+
+# on client
+- start nfs-secure service
+- have keytab prepared in /etc/krb5.keytab
+- create mount point, e.g. /mnt/secureshare
+- add to /etc/fstab
+server5:/securenfs   /mnt/secureshare      nfs     defaults,v4.2,sec=krb5p        0 0
+- mount -a  # to verify
+

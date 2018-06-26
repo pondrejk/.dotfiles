@@ -1,0 +1,20 @@
+# fstab entry examples:
+
+# iscsi
+UUID="d6eceef1-2b29-4f67-b45e-40fad57fa37a" /iscsidisk    xfs     _netdev         0 2
+
+# plain nfs
+server5:/nfsshare   /mnt/nfsshare                         nfs     defaults        0 0
+
+# secured nfs selinux labels
+server5:/securenfs   /mnt/secureshare                     nfs     defaults,v4.2,sec=krb5p        0 0
+
+# secured nfs
+server5:/securenfs   /mnt/secureshare                     nfs     defaults,sec=krb5p        0 0
+
+# cifs
+//server5.example.com/westeros  /mnt/westeros            cifs    creds=/root/tyrion.creds   0 0
+
+# samba multiuser
+//server5/smbshare /mnt/multiuser cifs credentials=/root/smb-multiuser.txt,multiuser,sec=ntlmssp 0 0
+
