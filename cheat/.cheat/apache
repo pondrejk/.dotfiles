@@ -1,0 +1,78 @@
+# apache httpd
+- install httpd, httpd-manual, start service, enable it in fiewall, install mod_ssl for TLS-enabled virtual host, mod_wsgi for python dynamic content
+
+# configuring document root other than /var/www/html
+
+- create document roots (e.g. in /srv), restore contexts:
+semanage fcontext -a -t httpd_sys_content_t "/srv"
+
+sudo restorecon -Rv /srv/
+- should be readable by apache user or group
+setfacl -R -m g:apache:r /srv/ # if not enough:
+chown -R apache:apache /srv
+- should be world-readable
+
+# default virtual host with custom document root (/etc/httpd/conf.d/00-default-vhost.conf):
+
+<VirtualHost *:80>
+  DocumentRoot /srv/default/www
+</VirtualHost>
+
+<Directory /srv/default/www >
+  Require all granted
+</Directory>
+
+# another virtual host, custom logs, responds to www5.example.com and www5
+
+<VirtualHost *:80>
+  ServerName www5.example.com
+  ServerAlias www5
+  DocumentRoot /srv/www5.example.com/www
+  CustomLog "/logs/www5.example.com.log" combined
+</VirtualHost>
+
+<Directory /srv/www5.example.com/www >
+  Require all granted
+</Directory>
+
+- restart httpd, see journalctl -xe -l for debug info
+
+# tls-enabled virtual host
+- have keys and ca.crt prepared in /etc/pki/tls/certs
+- allow http*s* in firewall
+- define virtual host in /etc/httpd/conf.d/ (you can copy virtual host ssl directives from /etc/httpd/conf.d/ssl.conf, add DocumentRoot, ServerName, and edit SSLCertificateFile. SSLCertificateKeyFile, SSLCertificateChainFile)
+
+<VirtualHost *:443>
+  SSLEngine On
+  SSLProtocol all -SSLv2 -SSLv3
+  SSLCipherSuite HIGH:MEDIUM:!aNull:!MD5
+  SSLHonorCipherOrder on
+  SSLCertificateFile /etc/pki/tls/certs/wwwX.crt
+  SSLCertificateKeyFile /etc/pki/tls/private/wwwX.key
+  SSLCertificateChainFile /etc/pki/tls/certs/example-ca.crt
+
+  ServerName wwwX.example.com
+  DocumentRoot /srv/wwwX/www
+</VirtualHost>
+
+<Directory /srv/wwwX/www>
+  Require all granted
+</Directory
+
+- automatic redirect from http to https
+<VirtualHost *:80>
+  ServerName www5.example.com
+  RewriteEngine on
+  RewriteRule ^(/.*)$ https://%{HTTP_HOST}$1 [redirect=301]
+</VirtualHost>
+
+# virtual host serving dynamic content
+# php
+- install php, mod_php plugin and default config is then enabled automatically
+
+# python wsgi
+- nstall the mod_wsgi package
+- add a WSGIScriptAlias line to a virtual host definition (same access rules as for DocumentRoot):
+WSGIScriptAlias /myapp/ /srv/myapp/www/myapp.py
+- notes: no need for DocumentRoot with ^, script should be executable, set <Directory> for script location
+

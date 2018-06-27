@@ -5,7 +5,7 @@
 - mysql_secure_installation
 - mysql -u root -p
 - crete user peter@localhost identified by 'redhat';
-- GRANT INSERT, UPDATE, DELETE, SELECT on inventory.* to john@localhost;
+GRANT INSERT, UPDATE, DELETE, SELECT on inventory.* to john@localhost;
 
 # restore from backup to db inventory
 - mysql -u root
