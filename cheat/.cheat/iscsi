@@ -1,0 +1,11 @@
+# iscsi
+# on server
+- install targetd, targetcli; start targetd service, allow 3260/tcp in firewall
+- in /etc/iscsi/initiatorname.iscsi set the initiator (recipient) name
+- in targetcli:
+-- /blockstore create -- name + partition
+-- /iscsi create -- diskname, e.g. iqn.2014-06.com.example:server5.zoidberg
+-- /iscsi/.../acls create -- initator name
+-- /iscsi/.../portals create -- ip addr
+-- /iscsi/.../luns create -- /blockstores device
+-- saveconfig

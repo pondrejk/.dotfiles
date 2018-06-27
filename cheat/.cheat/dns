@@ -1,0 +1,23 @@
+# dns
+- install unbound, enable service, allow dns in firewall
+
+# in **/etc/unbound/unbound.conf**:
+- to make it listen on all interfaces uncomment
+
+interface: 0.0.0.0
+interface: ::0
+
+- to allow connection from specific subnet:
+
+access-control: 172.25.5.0/24 allow
+
+- to bypass DNSSEC validation for a specific domain:
+    
+domain-insecure: example.com
+
+- to forward requests to a specific ip: 
+    
+forward-zone:
+  name: .
+  forward-addr: 172.25.254.254
+
