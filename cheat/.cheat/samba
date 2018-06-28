@@ -1,0 +1,39 @@
+# samba
+# on server
+
+- creating user, group, exports
+
+sudo groupadd bigbang
+sudo useradd -s /sbin/nologin -G bigbang penny
+sudo mkdir -m 2770 -p /exports/bigbang
+sudo chgrp bigbang /exports/bigbang
+sudo semanage fcontext -a -t samba_share_t '/exports/bigbang(/.*)?'
+sudo restorecon -RFv /exports/bigbang
+
+- install samba samba-client
+- in **/etc/samba/smb.conf** append:
+
+[bigbang]
+  path = /exports/bigbang
+  valid users = @bigbang
+  write list = @bigbang
+
+- add samba user:
+sudo smbpasswd -a penny
+
+- start smb.service, enable samba in firewall
+- **testparm** -- tests samba config parameters, see also <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-file_and_print_servers#sect-Samba>
+
+# on client:
+- install cifs-utils
+- create mountpoint
+- create file with user credentials, e.g. /root/smb-multiuser.txt:
+username=frank
+password=pwd
+- in /etc/fstab:
+//serverX/smbspace /mnt/salesshare cifs credentials=/root/smb-multiuser.txt,multiuser,sec=ntlmssp 0 0
+
+- or temporary mount:
+mount -o username=rob //serverX/smbshare /mnt/rob
+
+

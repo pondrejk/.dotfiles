@@ -9,3 +9,21 @@
 -- /iscsi/.../portals create -- ip addr
 -- /iscsi/.../luns create -- /blockstores device
 -- saveconfig
+
+# on client
+- install iscsi-initiator-utils
+- in **/etc/iscsi/initiatorname.iscsi** add client name
+- start iscsi service
+- discover target:
+iscsiadm -m discovery -t st -p 172.25.5.11 # portal set on server
+- log in to the target (should appear in lsblk afterwards)
+iscsiadm -m node -T iqn.2014-06.com.example:serverX -p 172.25.5.11 -l
+
+- optionally create a filesystem and mount the share
+sudo mkfs -t xfs /dev/sda
+sudo mkdir /iscsidisk
+- add to /etc/fstab
+blkid  /dev/sda # get uuid
+UUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX /iscsidisk xfs _netdev 0 2
+mount /iscsidisk
+

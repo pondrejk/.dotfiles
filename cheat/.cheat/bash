@@ -32,3 +32,10 @@ if [[ "$1" -eq '' ]]; then
 else 
   echo "$1"
 fi
+
+# Show help when no parameters are passed
+if [ $# -eq 0 ]; then
+  echo "$(basename $0) userlist"
+  echo "$(basename $0) userinfo <USERNAME>"
+fi
+
