@@ -6,7 +6,8 @@
 - create document roots (e.g. in /srv), restore contexts:
 semanage fcontext -a -t httpd_sys_content_t "/srv"
 
-sudo restorecon -Rv /srv/
+** sudo restorecon -RFv /srv/ **
+
 - should be readable by apache user or group
 setfacl -R -m g:apache:r /srv/ # if not enough:
 chown -R apache:apache /srv
