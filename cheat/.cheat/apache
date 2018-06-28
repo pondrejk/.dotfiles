@@ -60,6 +60,10 @@ chown -R apache:apache /srv
   Require all granted
 </Directory
 
+- if using non-dafault https port, e.g. 444
+sudo semanage port -a -t http_port_t -p tcp 444
+in /etc/httpd/conf/httpd.conf set `Listen 444 https`
+
 - automatic redirect from http to https
 <VirtualHost *:80>
   ServerName www5.example.com
