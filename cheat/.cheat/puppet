@@ -1,0 +1,42 @@
+# viewing resources
+puppet resource --type
+puppet resource package httpd
+
+# applying manifests locally
+puppet apply manifest.pp
+
+# checking syntax and dryrun
+puppet parser validate manifest.pp
+puppet apply --noop manifest.pp
+
+# checking system facts, referencing them in manifests, e.g.:
+facter | grep os
+facter osfamily
+$::osfamily
+
+# add custom facts to /etc/facter/facts.d/ (can be txt, yml, json, shell script)
+# check with facter --debug
+
+# create module skeleton
+puppet module generate <author-modulename>
+# build -- creates an archive from the module workdir
+puppet module build <author-modulename>
+# install -- installs the build module on the sys
+puppet module install <author-modulename>/pkg/...
+
+# start master server
+systemctl start puppetmaster.service
+firewall-cmd --permanent --add-port=8140/tcp
+# to resend the certificate sign request to agents (e.g. after cert update) run:
+puppet agent --test --noop # test
+puppet agent --waitforcert 10 # resends every 10 seconds
+
+# configure agents
+- add master hostname into [server] directive in **/etc/puppet/puppet.conf**
+- systemctl start puppet.service
+- puppet cert list
+- puppet cert sign <...>
+
+# external modules
+puppet module search motd | grep @puppetlabs
+puppet module install puppetlabs-motd
