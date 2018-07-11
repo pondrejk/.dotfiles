@@ -6,3 +6,6 @@ hammer -r
 
 # many fake hosts
 for i in {1..4}; do hammer host subscription register --content-view-id="1" --organization-id="1" --name=$i-fakehost --lifecycle-environment-id="1"; done
+
+# upload custom rpm to repo (only option for large rpms), e.g.:
+hammer repository upload-content --path /root/kangaroo-0.2-1.noarch.rpm  --product "testprod" --name "chefupload" --organization-id 1
