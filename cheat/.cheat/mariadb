@@ -1,11 +1,12 @@
 # mariadb
-# install
+# install mariadb, start service mariadb, firewall enable mysql
 
 - in /etc/my.cnf add skip-networking=1
 - mysql_secure_installation
 - mysql -u root -p
 - crete user peter@localhost identified by 'redhat';
-GRANT INSERT, UPDATE, DELETE, SELECT on inventory.* to john@localhost;
+- use inventory;
+- GRANT INSERT, UPDATE, DELETE, SELECT on inventory.* to john@localhost;
 
 # restore from backup to db inventory
 - mysql -u root

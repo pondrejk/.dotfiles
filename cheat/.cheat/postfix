@@ -15,11 +15,11 @@ mynetworks = 172.25.5.0/24, 127.0.0.0/8
 - no messages from outside
 inet_interfaces = loopback_only
 
-- perforn local delivery for selected hostnames
+- perform local delivery for selected hostnames
 mydestination = server5.example.com, localhost.localdomain, localhost
 
 - send everything not mydestination to relayhost
-relayhost = [desktopr5.example.com]
+relayhost = [desktop5.example.com]
 
 - set hostname for locally sent mail
 myorigin = $myhostname

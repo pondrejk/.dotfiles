@@ -39,4 +39,4 @@ puppet agent --waitforcert 10 # resends every 10 seconds
 
 # external modules
 puppet module search motd | grep @puppetlabs
-puppet module install puppetlabs-motd
+puppet module install puppetlabs-motd --modulepath=. #modulepath installs to the current dir

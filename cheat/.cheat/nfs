@@ -20,8 +20,8 @@ server5:/nfsshare   /mnt/nfsshare      nfs     defaults        0 0
 # nfs secure with selinux export
 # on server
 
-- start nfs-secure-server service
 - have keytab prepared in /etc/krb5.keytab
+- start nfs-secure-server service
 - in /etc/sysconfig/nfs set:
 RPCNFSDARGS="-V 4.2" # needed to export selinux labels
 - create share dir, set ownership
