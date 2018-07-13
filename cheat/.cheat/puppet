@@ -29,17 +29,21 @@ puppet module install <author-modulename>/pkg/...
 yum install puppet-server
 systemctl start puppetmaster.service
 firewall-cmd --permanent --add-port=8140/tcp
-# to resend the certificate sign request to agents (e.g. after cert update) run:
-puppet agent --test --noop # test
-puppet agent --waitforcert 10 # resends every 10 seconds
+# after configuring clients, sign certs on master
+- puppet cert list
+- puppet cert sign <...>
 
 # configure agents
 - yum install puppet
 - add master hostname into [server] directive in **/etc/puppet/puppet.conf**
 - systemctl start puppet.service
-- puppet cert list
-- puppet cert sign <...>
+# to resend the certificate sign request to agents (e.g. after cert update) run:
+puppet agent --test --noop # test
+puppet agent --waitforcert 10 # resends every 10 seconds
 
 # external modules
 puppet module search motd | grep @puppetlabs
 puppet module install puppetlabs-motd --modulepath=. #modulepath installs to the current dir
+
+# regexes in conditionals -- enclose in // and use =~
+if $::ipaddress =~ /172\.25\.250\.1[01]/ # for .10 of .11
