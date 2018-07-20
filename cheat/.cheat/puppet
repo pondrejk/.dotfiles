@@ -17,6 +17,8 @@ $::osfamily
 
 # add custom facts to /etc/facter/facts.d/ (can be txt, yml, json, shell script)
 # check with facter --debug
+# needs to have form of key=value, e.g. for script:
+echo 'root_disk_use=$(df --output=pcent / | sed 1d)' 
 
 # create module skeleton
 puppet module generate <author-modulename>
