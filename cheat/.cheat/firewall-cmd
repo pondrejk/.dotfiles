@@ -17,3 +17,9 @@ firewall-cmd --permanent --zone=<zone> --add-rich-rule='rule family=ipv4 source 
 # port forwarding
 firewall-cmd --permanent --zone=<zone> --add-rich-rule='rule family=ipv4 source address=<ip>/<mask> forward-port port="<port>" protocol=tcp to-port"<port>"'
 
+# add port labels so that SELinux allows services to listen on ports
+# -- list ports
+semanage port -l
+
+# -- add port for service
+semanage port -a -t <port_label> (e.g. gofer_port_t) -p tcp|udp <portnumber>
