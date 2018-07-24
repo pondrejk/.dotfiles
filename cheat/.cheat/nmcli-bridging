@@ -1,0 +1,24 @@
+# bridging acts as a link between two networks allowing them to act as one, using multiple NICs to allow different networks to talk to each other (devices on two separate networks would be able to “talk” to each other as if they were a part of the same network). Unlike teaming, it does not allow to combine bandwidth
+
+# create
+
+nmcli con add type bridge con-name br1 ifname br1
+
+# set static ip
+
+nmcli connection modify team0 ipv4.addresses 1.2.3.4/24
+nmcli connection modify team0 ipv4.method manual
+nmcli connection show team0 | grep ipv4
+
+# add interfaces
+
+nmcli con add type bridge-slave con-name br1-port0 ifname eno1 master br1
+...
+
+# list bridges
+
+brctl show
+
+# ping via bridge
+
+ping -I br1 192.168.0.264

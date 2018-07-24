@@ -1,0 +1,28 @@
+# aka link aggregation, NIC teaming, successor of bonding
+# more interfaces act as one in order to: 
+# -- either increase network bandwidth by using both NICs to accept incoming traffic,
+# -- or to create redundancy to not loose traffic if one of the NICs fails
+#
+# steps:
+
+# 1. create team interface
+
+nmcli con add type team con-name team0 ifname team0 config '{"runner": {"name": "activebackup"}}' 
+# runner is one of broadcast, activebackup, roundrobin (default), loadballance, lacp
+
+# 2. set ipv4 and/or ipv6 attributes of a team interface
+
+nmcli connection modify team0 ipv4.addresses 1.2.3.4/24 
+nmcli connection modify team0 ipv4.method manual
+nmcli connection show team0 | grep ipv4
+
+# 3. assign port interfaces
+
+nmcli con add type team-slave con-name team0-eth1 ifname eth1 master team0 
+...
+
+# 4. bring team and port interfaces up/down
+
+nmcli con up team0-eth1
+...
+teamdctl team0 state
