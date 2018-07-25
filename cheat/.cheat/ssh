@@ -47,3 +47,10 @@ emacs /ssh:name@server:/path/to/file
 PermitRootLogin no
 PasswordAuthentication no
 
+# Per user/group settings in /etc/ssh/sshd_config:
+Match User user1,user2,user3,user4
+    PasswordAuthentication no
+Match Group users
+    PasswordAuthentication no
+Match User !root
+    PasswordAuthentication no
