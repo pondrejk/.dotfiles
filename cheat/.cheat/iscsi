@@ -13,7 +13,7 @@
 # on client
 - install iscsi-initiator-utils
 - in **/etc/iscsi/initiatorname.iscsi** add client name
-- start iscsi service
+- start iscsi and iscsid service (both need to run and be enabled)
 - discover target:
 iscsiadm -m discovery -t st -p 172.25.5.11 # portal set on server
 

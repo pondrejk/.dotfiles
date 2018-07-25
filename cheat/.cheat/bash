@@ -39,3 +39,18 @@ if [ $# -eq 0 ]; then
   echo "$(basename $0) userinfo <USERNAME>"
 fi
 
+# parameters parsing
+$* all as one word
+$@ all separately
+$# number of args
+$? exit code of previous command
+
+# numeric comparisons
+-eq -ne -gr -ge -lt -le
+
+# string comparisons
+= == !=
+
+# file comparisons
+-ef -nt -ot # equal inode, newer/older than
+...
