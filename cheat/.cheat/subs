@@ -10,3 +10,6 @@ subscription-manager clean
 
 # repos
 subscription-manager repos --enable / --disable
+
+# get consumed pool
+subscription-manager list --pool-only --consumed

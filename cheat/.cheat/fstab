@@ -1,7 +1,7 @@
 # fstab entry examples:
 
 # iscsi
-UUID="d6eceef1-2b29-4f67-b45e-40fad57fa37a" /iscsidisk    xfs     _netdev         0 2
+UUID="d6eceef1-2b29-4f67-b45e-40fad57fa37a" /iscsidisk    xfs     _netdev         0 0
 
 # plain nfs
 server5:/nfsshare   /mnt/nfsshare                         nfs     defaults        0 0
