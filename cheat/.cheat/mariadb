@@ -11,4 +11,6 @@
 # restore from backup to db inventory
 - mysql -u root
 - create db inventory;
-- mysql -u root inventory < /home/student/inventory.dump
+- mysql -u root inventory < /home/student/inventory.dump # createdb step not required
+
+# example query
