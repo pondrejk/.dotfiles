@@ -20,7 +20,7 @@ chown -R apache:apache /srv
 </VirtualHost>
 
 <Directory /srv/default/www >
-  Require all granted
+  Require all granted  # can be limited, e.g. "require group admin"
 </Directory>
 
 # another virtual host, custom logs, responds to www5.example.com and www5
