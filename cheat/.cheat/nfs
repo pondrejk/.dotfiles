@@ -4,7 +4,7 @@
 - start nfs-server service
 - create share dir, set ownership
 - in /etc/exports add line:
-/exp_dir client-hostname(rw)
+/exp_dir client-hostname(rw) # here can also be a subnet instead of hostname, e.g. 192.168.100.22/24(rw)
 - exportfs -r  # to load exports file
 - firewall-cmd --permanent --add-service=nfs
 - firewall-cmd --reload
@@ -24,12 +24,15 @@ server5:/nfsshare   /mnt/nfsshare      nfs     defaults        0 0
 - start nfs-secure-server service
 - in /etc/sysconfig/nfs set:
 RPCNFSDARGS="-V 4.2" # needed to export selinux labels
-- create share dir, set ownership
+- create share dir
 - in /etc/exports add line:
 /exp_dir client-hostname(sec=krb5p,rw)
 - exportfs -r  # to load exports file
 - firewall-cmd --permanent --add-service=nfs
 - firewall-cmd --reload
+
+- when creating a file in a shared dir, set content
+chcon -t public_content_t /exp_dir/file.txt
 
 # on client
 - start nfs-secure service
@@ -39,3 +42,4 @@ RPCNFSDARGS="-V 4.2" # needed to export selinux labels
 server5:/securenfs   /mnt/secureshare      nfs     defaults,v4.2,sec=krb5p        0 0
 - mount -a  # to verify
 
+- note the user has to be authenticated via kerberos to see the content of shared dir
