@@ -53,4 +53,8 @@ $? exit code of previous command
 
 # file comparisons
 -ef -nt -ot # equal inode, newer/older than
-...
+
+# file exists?
+if [ ! -f /tmp/foo.txt ]; then
+    echo "File not found!"
+fi
