@@ -82,9 +82,6 @@ alias hgrep='history|grep'
 # required by libvirt-vagrant
 export VAGRANT_DEFAULT_PROVIDER=libvirt
 
-# acrobot login
-alias acrobot='ssh tester@ccs-apps.gsslab.brq.redhat.com'
-
 #django bash completion
 source $HOME/.django_bash_completion.sh
 
