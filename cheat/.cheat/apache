@@ -4,7 +4,7 @@
 # configuring document root other than /var/www/html
 
 - create document roots (e.g. in /srv), restore contexts:
-semanage fcontext -a -t httpd_sys_content_t "/srv"
+semanage fcontext -a -t httpd_sys_content_t "/srv(/.*)?"
 
 ** sudo restorecon -RFv /srv/ **
 
