@@ -89,8 +89,14 @@ source $HOME/.django_bash_completion.sh
 source /usr/bin/virtualenvwrapper.sh
 WORKON_HOME=~/Envs
 
-# local server in currnt directory
-alias server-here='http-server -a localhost -p 8000'
+# local server in current directory, accepts optional port argument
+server_here () {
+  if [ $# -eq 0 ]; then
+    http-server -a localhost -p 8000
+  else
+    http-server -a localhost -p $1
+  fi
+}
 
 # make zip from directory
 fzip () {
@@ -107,3 +113,10 @@ export CHEATCOLORS=true
 
 # ansible without cowsay
 export ANSIBLE_NOCOWS=1
+
+# del from line, expects input "path:line"
+rmln () {
+  IFS=':' read -ra ADDR <<< "$1"
+  sed -i -e "'${ADDR[0]}d'" "${ADDR[1]}"
+}
+
