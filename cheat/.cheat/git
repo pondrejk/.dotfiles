@@ -35,3 +35,9 @@ git apply -R <patch>
 # squashing commits
 git rebase -i HEAD~4
 -- in editor keep first commit, squash others
+
+# tagging
+git tag # list
+git tag -a 0.2 -m "version desc" # tags the latest commit
+git tag -a v1.2 9fceb02 # tags previous commit
+git show 0.2 / git checkout 0.2
