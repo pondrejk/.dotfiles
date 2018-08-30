@@ -1,0 +1,34 @@
+# types:
+
+- file
+d directory
+l symbolic link
+b block special file
+c character special file
+p named pipe special file
+s local socket special file
+
+# perms:
+rwx :)
+
+# suffixes:
++ (plus) suffix indicates an access control list that can control additional permissions.
+. (dot) suffix indicates an SELinux context is present. Details may be listed with the command ls -Z.
+@ suffix indicates extended file attributes are present.
+
+# codes
+r - 4
+w - 2
+x - 1 
+
+rwx - 7
+rw - 6
+rx - 5
+wx - 3 
+# e.g 0766 = rwxrw-rw-
+
+# codes for the first number
+setuid - 4, setgid - 2, sticky bit - 1
+
+# to get octal representation in the cmd line
+stat -c "%a %n" <dir> # * for pwd
