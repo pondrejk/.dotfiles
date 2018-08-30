@@ -1,0 +1,35 @@
+# depoyng  a puppet master 3.x
+# ------------------------
+
+yum install puppet-server # or puppetserver after 4.x
+
+systemct start puppetmaster # or puppetserver after 4.x
+systemct enable puppetmaster # see ^
+
+firewall-cmd --add-port=8140/tcp --permanent 
+firewall-cmd --reload
+
+# after configuring clients, sign certs on master
+- puppet cert list
+- puppet cert sign <...>
+
+# modules installed on master assigned to nodes through node classification in /etc/puppet/manifests/site.pp:
+node 'nodename' {   # regexes work via //, there is also default
+  include modulename
+}
+
+
+# deploying a client 3.x
+# --------------------
+yum install puppet
+systemct start puppet
+systemct enable puppet
+
+# add master hostname into **/etc/puppet/puppet.conf**:
+[agent]
+server = <hostname>
+
+systemctl start puppet.service
+# to resend the certificate sign request to agents (e.g. after cert update) run:
+puppet agent --test --noop # test
+puppet agent --waitforcert 10 # resends every 10 seconds
