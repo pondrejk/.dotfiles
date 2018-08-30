@@ -49,3 +49,7 @@ puppet module install puppetlabs-motd --modulepath=. #modulepath installs to the
 
 # regexes in conditionals -- enclose in // and use =~
 if $::ipaddress =~ /172\.25\.250\.1[01]/ # for .10 of .11
+
+# for puppet4, executables are moved to /opt/puppetlabs/bin/ that is not added to PATH bz default:
+PATH=$PATH:/opt/puppetlabs/bin/
+

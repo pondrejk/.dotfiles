@@ -1,0 +1,5 @@
+# add to path
+PATH=$PATH:/add/at/end
+PATH=/add/at/start:$PATH
+
+# use ~/.profile or ~/.bash_profile to set permanently
