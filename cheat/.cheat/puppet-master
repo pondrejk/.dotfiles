@@ -1,10 +1,10 @@
-# depoyng  a puppet master 3.x
+# deployng  a puppet master 3.x
 # ------------------------
 
 yum install puppet-server # or puppetserver after 4.x
 
-systemct start puppetmaster # or puppetserver after 4.x
-systemct enable puppetmaster # see ^
+systemctl start puppetmaster # or puppetserver after 4.x
+systemctl enable puppetmaster # see ^
 
 firewall-cmd --add-port=8140/tcp --permanent 
 firewall-cmd --reload

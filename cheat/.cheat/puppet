@@ -27,7 +27,7 @@ puppet module generate <author-modulename>
 # build -- creates an archive from the module workdir
 puppet module build <author-modulename>
 # install -- installs the build module on the sys
-puppet module install <author-modulename>/pkg/...
+puppet module install <author-modulename>/pkg/...tar.gz
 
 # external modules
 puppet module search motd | grep @puppetlabs
