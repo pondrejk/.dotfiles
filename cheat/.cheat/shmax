@@ -1,0 +1,11 @@
+# To determine the maximum size of a shared memory segment, run:
+cat /proc/sys/kernel/shmmax
+
+# to change
+echo 2147483648 > /proc/sys/kernel/shmmax
+
+# or 
+sysctl -w kernel.shmmax=2147483648
+
+# to persist reboot
+echo "kernel.shmmax=2147483648" >> /etc/sysctl.conf
