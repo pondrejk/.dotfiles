@@ -120,3 +120,5 @@ rmln () {
   sed -i -e "'${ADDR[0]}d'" "${ADDR[1]}"
 }
 
+# vimx allows copying to clipboard from cmdline
+alias vim='vimx'
