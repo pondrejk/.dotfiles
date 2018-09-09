@@ -32,6 +32,7 @@ puppet module install <author-modulename>/pkg/...tar.gz
 # external modules
 puppet module search motd | grep @puppetlabs
 puppet module install puppetlabs-motd --modulepath=. #modulepath installs to the current dir
+# -f option forces to uses local path if not clear from the name, also overwrites if module is already installed
 
 # regexes in conditionals -- enclose in // and use =~
 if $::ipaddress =~ /172\.25\.250\.1[01]/ # for .10 of .11
