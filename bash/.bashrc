@@ -118,7 +118,7 @@ export ANSIBLE_NOCOWS=1
 # del from line, expects input "path:line"
 rmln () {
   IFS=':' read -ra ADDR <<< "$1"
-  sed -i -e "'${ADDR[0]}d'" "${ADDR[1]}"
+  sed -i -e "${ADDR[1]}d" "${ADDR[0]}"
 }
 
 # vimx allows copying to clipboard from cmdline
