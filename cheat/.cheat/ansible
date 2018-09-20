@@ -1,0 +1,33 @@
+# important files: ansible.cfg, inventory, can be project local
+# what config is used?
+ansible --version
+
+# module info
+ansible-doc -l | grep <module>
+ansible-doc  <module>
+
+# run module commands against inventory hosts
+ansible "host_pattern" -m module -a 'md_options'
+
+# default module is command, e.g.:
+ansible "*" -a 'id'
+
+# view ansible facts
+ansible "*" -m setup
+
+# play playbook
+ansible-playbook plbook.yml # -C for checkmode
+
+# good ansible-playbook options:
+--step
+--list-tasks --list-tags
+--start-at-tasks
+
+# encryption
+ansible-vault create/rekey/decrypt...
+ansible-playbook ... --ask-vault-password
+
+# create role structure
+ansible-galaxy init
+
+
