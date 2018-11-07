@@ -1,0 +1,14 @@
+# docker-compose.yml has to be present
+# see also https://devhints.io/docker-compose
+
+docker-compose start
+docker-compose stop
+
+docker-compose pause
+docker-compose unpause
+
+docker-compose ps
+docker-compose up
+docker-compose down
+
+

@@ -1,5 +1,6 @@
 [global_config]
   always_on_top = True
+  enabled_plugins = APTURLHandler, LaunchpadCodeURLHandler, LaunchpadBugURLHandler
   inactive_color_offset = 1.0
   sticky = True
   suppress_multiple_term_dialog = True
