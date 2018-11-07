@@ -7,4 +7,10 @@
 # capsule dns check
 /usr/share/katello-installer-base/checks/dns.rb
 
+# enable debug log in foreman
+in /etc/foreman/settings.yaml set:
+
+:logging:
+  :level: debug
+
 # pulp tools
