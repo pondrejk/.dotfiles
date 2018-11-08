@@ -1,3 +1,4 @@
+# see also https://devhints.io/bash
 # To implement a for loop:
 for file in *;
 do 
@@ -17,7 +18,7 @@ esac
 set -x
 
 # Turn off debugging:
-set +x
+set +x       # also set -e for exitin on any non-zero exit code
 
 # Retrieve N-th piped command exit status
 printf 'foo' | fgrep 'foo' | sed 's/foo/bar/'
@@ -26,7 +27,7 @@ echo ${PIPESTATUS[0]}  # replace 0 with N
 # Lock file:
 ( set -o noclobber; echo > my.lock ) || echo 'Failed to create lock file'
 
-# If with text comparison
+# If with text comparison // [[]] handles cases when command is not evaluted
 if [[ "$1" -eq '' ]]; then
   echo "default value"
 else 
@@ -34,7 +35,7 @@ else
 fi
 
 # Show help when no parameters are passed
-if [ $# -eq 0 ]; then
+if [[ $# -eq 0 ]]; then
   echo "$(basename $0) userlist"
   echo "$(basename $0) userinfo <USERNAME>"
 fi
@@ -58,3 +59,16 @@ $? exit code of previous command
 if [ ! -f /tmp/foo.txt ]; then
     echo "File not found!"
 fi
+
+# command substition
+$(ls) # equivalent is `` but this nests better
+
+# command output as a file, e.g.:
+diff <(grep somestring file1) <(grep somestring file2)
+
+# shortcuts
+!!      -- previous command
+!$      -- last param of previous command
+!:1-$   -- all args of prev coommand # same as !* but this allows indexing like !:2-3
+:h      -- extracts filename from a path e.g. !$:h
+
