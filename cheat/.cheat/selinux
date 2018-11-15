@@ -1,0 +1,43 @@
+# http://people.redhat.com/rsawhill/selinux/
+
+sestatus   # Show current & config-file status
+getenforce   # Show current status
+grep ^SELINUX= /etc/selinux/config   # Show config-file (permanent) status
+grep -e enforcing= -e selinux= /etc/default/grub /etc/grub2.cfg   # Check for kernel args
+
+# Set a file type on a directory
+
+semanage fcontext --add samba_share_t "/path/to/dir(/.*)?" && restorecon -RF /path/to/dir
+semanage fcontext -a httpd_sys_content_t "/path(/.*)?" && restorecon -RF /path
+
+# Create an alternate location (equivalency rule) based on an existing directory (which is useful because it recursively includes rules)
+
+semanage fcontext -a -e /var/www /web && restorecon -RF /web
+semanage fcontext -a -e /home /our/home && restorecon -RF /our/home
+
+# Check what a particular [source] process domain can do to a particular [target] file type
+
+sesearch -CA -s httpd_t -t var_log_t
+
+# Check for port labels for a particular domain/service
+semanage port -l | grep http   # Look for http-labeled ports
+sesearch -CA -s httpd_t -c tcp_socket -p name_bind   # Look for tcp port types that a particular domain is allowed to bind to
+semanage port -a -t http_port_t -p tcp 3333   # Permanently add a label to a specific port
+
+# Check for booleans for a particular domain
+
+semanage boolean -l | grep httpd
+
+# Set booleans
+
+setsebool httpd_can_sendmail on   # Immediate & temporary
+setsebool -P httpd_use_nfs on   # Permanent & takes a minute to rebuild policy
+
+# Use aureport to get a broad overview
+
+aureport -a   # Get a report of all AVC denial events
+aureport -i -a | awk 'NR==4 || NR>5' | column -t   # Interpret syscall numbers to names; show in columnized list
+
+# Use ausearch to drill down
+
+ausearch -i -m avc   # Show all from standard audit.log files
