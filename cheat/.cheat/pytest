@@ -10,3 +10,13 @@ pytest tests/foreman/{cli,api,ui}/test_host.py
 # run last failed, run last failed first
 -lf
 -ff
+
+# To run a specific test within a module:
+
+pytest test_mod.py::test_func
+
+# Another example specifying a test method in the command line:
+
+pytest test_mod.py::TestClass::test_method
+
+
