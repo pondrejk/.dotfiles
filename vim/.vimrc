@@ -291,4 +291,34 @@ let g:rainbow_active = 1
 "let g:miniBufExplMapWindowNavVim = 1
 "let g:miniBufExplMapCTabSwitchBufs = 1
 
+"folow symlink if opening it
+function! MyFollowSymlink(...)
+    if exists('w:no_resolve_symlink') && w:no_resolve_symlink
+        return
+    endif
+    if &ft == 'help'
+        return
+    endif
+    let fname = a:0 ? a:1 : expand('%')
+    let fname = simplify(fname)
+
+    let resolvedfile = resolve(fname)
+    if resolvedfile == fname
+        return
+    endif
+    let resolvedfile = fnameescape(resolvedfile)
+    redraw  " Redraw now, to avoid hit-enter prompt.
+    exec 'file ' . resolvedfile
+
+    if &modifiable
+        " Only display a note when editing a file, especially not for `:help`.
+        redraw  " Redraw now, to avoid hit-enter prompt.
+        echomsg 'Resolved symlink: =>' resolvedfile
+    endif
+endfunction
+
+command! -bar FollowSymlink call MyFollowSymlink()
+command! ToggleFollowSymlink let w:no_resolve_symlink = !get(w:, 'no_resolve_symlink', 0) | echo "w:no_resolve_symlink =>" w:no_resolve_symlink
+au BufReadPost * nested call MyFollowSymlink(expand('%'))
+
 finish
