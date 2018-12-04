@@ -83,6 +83,9 @@ inoremap <Down> <Esc>g<Down>a
 " Another escape
 inoremap jj <Esc>
 
+" yank deduplication
+nnoremap yy yaw
+
 " CTRL-Tab is Next window
 noremap  <C-Tab> <C-W>w
 inoremap <C-Tab> <C-O><C-W>w
