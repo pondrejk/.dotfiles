@@ -6,3 +6,19 @@ curl https://myproxy.example.com:9090/ssh/pubkey >> ~/.ssh/authorized_keys
 or distribute from server:
 
 ssh-copy-id -i ~foreman-proxy/.ssh/id_rsa_foreman_proxy.pub root@target.example.com
+
+# debug logging
+set:
+ssh_log_level: debug
+in /etc/smart_proxy_dynflow_core/settings.d/remote_execution_ssh.yml
+
+and  
+:log_level: DEBUG
+in /etc/smart_proxy_dynflow_core/settings.yml
+
+systemctl restart smart_proxy_dynflow_core
+and observe
+/var/log/foreman-proxy/smart_proxy_dynflow_core.log
+
+on client you can do
+journalctl -fl
