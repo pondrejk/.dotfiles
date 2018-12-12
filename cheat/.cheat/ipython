@@ -1,0 +1,28 @@
+# pattern matching 
+*Warning?
+str.*find*?
+
+# magic functions
+%paste -- for pasting code blocks from registry
+%cpaste -- opens an interactive prompt for pasting
+%run script.py -- run scripts from files
+%timeit <cmd> -- profiling, also %prun, %time
+
+# accessing history
+print(In[1])
+print(Out[])
+print(_) -- previous ouptut
+print(__) -- 2nd previous ouptut
+%history -n 1-8 -- first 8 inputs
+
+# running shell commands from ipython
+!pwd
+list = !ls
+!echo {python_var}
+env, ls, man, mkdir, more, mv, pwd, rm, rmdir -- can be used directly from ipython to affect shell
+
+# debugging
+%xmode Verbose -- verbose exception mode
+%xmode Plain
+%debug 
+%pdb on -- starts debugger automatically on exception
