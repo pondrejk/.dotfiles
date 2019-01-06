@@ -1,10 +1,11 @@
 [global_config]
   always_on_top = True
+  borderless = True
   enabled_plugins = APTURLHandler, LaunchpadCodeURLHandler, LaunchpadBugURLHandler
   inactive_color_offset = 1.0
   sticky = True
   suppress_multiple_term_dialog = True
-  title_font = Inconsolata Medium 10
+  title_font = Inconsolatazi4 13
 [keybindings]
   close_term = <Alt>c
   go_down = <Alt>j
@@ -72,6 +73,6 @@
     background_type = transparent
     cursor_color = "#aaaaaa"
     exit_action = hold
-    font = Inconsolata Medium 11
+    font = Inconsolata 12
     scrollback_infinite = True
     use_system_font = False

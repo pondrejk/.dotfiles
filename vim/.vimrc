@@ -15,7 +15,7 @@ set helplang=en                   " Specify the help language.
 "set spelllang=en_us               " Specify the spell checking language.
 set nospell                       " Disable spell checking by default.
 filetype off                      " Enable file type detection.
-set guifont=Inconsolata\ 11
+set guifont=Inconsolata\ 12
 set shell=/bin/bash
 
 " Environment settings:
