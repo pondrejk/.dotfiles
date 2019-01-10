@@ -1,0 +1,2 @@
+# extract to destination dir
+unrar x archive.rar dest/.
