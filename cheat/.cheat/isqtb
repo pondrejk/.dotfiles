@@ -1,0 +1,120 @@
+CH1 fundamentals
+------------------
+
+* human error (mistake) → defect (fault, bug) → failure
+* how much testing is enough: dep. on tech and business risks and project constraints
+* 7 testing principles:
+
+1) Testing shows presence of defects -- can't prove their absence
+2) Exhaustive testing is impossible -- rather assess risks and priorities
+3) Early testing -- cheaper
+4) Defect clustering -- small number of defects accounts for most failures
+5) Pesticide paradox -- repeating same test strategies no longer finds new bugs
+6) Testing is context depending -- how critical the software is?
+7) Absence–of–errors fallacy -- no errors != quality, usability, specs, etc.
+
+* test processes:
+planning and control > analysis and design > implementation and execution >  evaluating exit criteria and reporting > closure activities
+
+CH2 lifecycle
+---------------
+
+• verification -- is the deliverable built according to the specification?
+• validation -- does the deliverable fit its purpose?
+* waterfall:
+user requirements > system req. > high level desingn > low level d. > implementation
+acceptance test < system test < integration tests < compontent test
+
+* incremental models: RAD (rapid app dev) / Agile (closer integration of devs and testers)
+
+Test level -- a group of test activities that are organized and managed together (grouped by the matching stage in the development model -- aka. testing pyramid):
+- component -- looks at components in isolation, uses stubs and drivers to mimic other components
+- integration -- looks at interfaces betw. components or systems, approaches: big bang / one-by-one
+- system -- system as whole, close to production
+- acceptance -- focusing on an end user, exit criteria, business risks... (alpha/beta testing)
+
+stub - skeletal implementation of a comopnent that *is called* by the tested component
+driver - skeletal implementation of a comopnent that *calls* the tested component
+
+Test type -- is a group of test activities aimed at testing a component or system focused on a specific test objectives:
+○ functional testing -- testing what it does (black box)
+○ non-functional testing -- (ISO 9126): performance, load, stress, usability, maintainability, reliability, portability testing
+○ structural testing -- white-box
+○ testing related to changes - confirmation (was bug fixed?) and regression (no new defects introduced by the fix?) testing
+
+Maintenance testing -- triggers for maintenance testing: modification, migration or retirement of the system
+Impact analysis -- assesses the effect of a change to the system to determine how much regression testing to do
+
+CH3 Static
+------------------
+- static testing does not involve executing the code
+- can find: requirement defects, design defects, coding defects, deviations from standards, incorrect interface specifications,
+security vulnerabilities, gaps in test basis traceability or coverage
+- benefits: early testing, communication, awareness, feedback for stakeholders
+
+- reviews: informal (not documented), formal (planning, kick-off, preparation, review meeting, rework, follow-up)
+- from less formal to most formal: walkthrough (led by the author) > technical review > inspection
+review roles: Moderator, Author, Reviewers, Scribe, Manager
+
+Cyclomatic complexity -- based on number of decisions in a program, provides indication of the amount of testing, calculated as:
+-- number of binary decisions + 1
+-- number of edges - number of shapes + 2 # in diagram
+
+
+CH4 Test Design
+------------------
+traceability: linking test cases and test conditions for the test basis, horizontal (through test docs) / vertical (through test docs)
+test condition -- something we can test
+test case -- assess that system does what it is supposed to do, defined input and expected output
+test suite -- grouped test cases
+
+test design techniques: structure based (white-box), experience based (error guessing, exploratory testing), specification based (functional (equivalence partitioning, boundry value analysis, decision tables, state transition testing) / non-functional)
+
+Equivalence Partitioning (EP) -- Divide set of test conditions into groups or sets that can be considered the same
+Boundary Value Analysis (BVA) -- most errors expected at boundaries, 2 or 3 value boundary tests
+Decision Tables -- A table showing combinations of inputs and/or stimuli (causes) with their associated outputs and/or actions (effects), which can be used to design test cases
+State Transitions -- state graph of valid state transitions -- statement, branch and path coverage
+
+Test coverage:
+• Statement coverage = STATEMENTs exercised / all STATEMENTS
+• Decision coverage = DECISION outcomes exercised / all DECISIONs
+• Path coverage = PATHs executed / all PATHs
+100% decision coverage assure 100% statement coverage but not vice versa
+
+CH5 Test MGMT
+------------------
+test organization -- various levels of indepence, tester vs test leader
+test plan (What When Who How) -- success criteria (entry and exit c.), risks, approach/strategy
+test estimation -- estimate needed effort (previous projects, expert opinions)
+test strategies:
+• Analytical approaches, such as risk-based testing where testing is directed to areas of greatest risk.
+• Model based -- stochastic testing
+• Process or standard compliant
+• Consultative
+• Dynamic and heuristic approaches, such as exploratory testing where testing is more reactive to events than pre-planned
+• Methodical - adherence to a pre-planned, systematized approach. e.g. a checklist
+• Regression-averse - reuse of existing test material, extensive automation of functional regression tests, and standard test suites
+...
+test process monitoring -- manual or metrics
+test control -- did it go as planned?
+test reporting -- report of work done, analysis of information gathered
+
+configuration management -- All items (testware and test objects) are identified, version controlled, tracked
+for changes and relationships in between items are tracked. Required for traceability and reproducibility
+
+Risk -- possibility of a negative outcome occurring, quantified: risk = probability of occurrence (%) * impact (severity)
+product risks (does not work) / project risks (no funding)
+
+
+CH6 Tools
+------------------
+1. Test management tools -- (test, requirement, incident, configuration mgmt)
+2. Static testing tools -- (review, static analysis (coverity scan, RPMdiff, ABIcheck), modelling)
+3. Test specification tools -- (test design, test data prep tools)
+4. Test execution & logging tools -- (test harness/unit test frameworks, test comparators, security testing tools)
+5. Performance and monitoring tools -- (dynamic analysers, perf/load/stess test tools, monitoring tools)
+
+Benefits: 1. reduction of repetitive work 2. greater efficiency and reproducibility 3. objective assessment 4. visualization of information about testing
+
+Risks: 1. unrealistic expectations 2. underestimating time, cost and effort for implementation 3. over-reliance on the tool 4. failing to manage cross-tool interdependencies 5. bad vendor/community support
+
