@@ -1,0 +1,9 @@
+# in cmd line
+
+c+r -- history
+c+t -- subdir search, combine with command, e.g.: tail <c+t>
+
+# in vim 
+
+c+b -- search buffers (:Buffers)
+c+h -- search history (:History)
