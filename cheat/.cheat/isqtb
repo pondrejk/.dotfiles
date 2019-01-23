@@ -19,8 +19,8 @@ planning and control > analysis and design > implementation and execution >  eva
 CH2 lifecycle
 ---------------
 
-• verification -- is the deliverable built according to the specification?
-• validation -- does the deliverable fit its purpose?
+• verification -- is the deliverable built according to the specification? "did we build the prod right"
+• validation -- does the deliverable fit its purpose? "did we build the right prod"
 * waterfall:
 user requirements > system req. > high level desingn > low level d. > implementation
 acceptance test < system test < integration tests < compontent test
