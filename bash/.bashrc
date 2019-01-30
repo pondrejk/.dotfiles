@@ -80,6 +80,9 @@ alias pdftotextall='for file in *.pdf; do pdftotext "$file" "$file.txt"; done'
 # grep history
 alias hgrep='history|grep'
 
+# taskwarrior
+alias t='task'
+
 # required by libvirt-vagrant
 export VAGRANT_DEFAULT_PROVIDER=libvirt
 
