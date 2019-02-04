@@ -1,6 +1,11 @@
 task (alias t)   -- lists all tasks
 t add <name>     -- add task
 t <id> done      -- delete task
+t modify
 
+params:
+project:<name>
+due:<date>
+priority:L/M/H
 
 later see <https://taskwarrior.org/docs/best-practices.html>
