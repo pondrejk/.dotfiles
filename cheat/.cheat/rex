@@ -22,3 +22,6 @@ and observe
 
 on client you can do
 journalctl -fl
+
+to work around BZ#1656480
+sed -i '/ProxyCommand/s/^/#/g' /etc/ssh/ssh_config
