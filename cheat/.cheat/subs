@@ -13,3 +13,6 @@ subscription-manager repos --enable / --disable
 
 # get consumed pool
 subscription-manager list --pool-only --consumed
+
+# check certs
+rct cat-cert /etc/pki/product-default/230.pem
