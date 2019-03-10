@@ -5,3 +5,8 @@ npm start
 
 # developing components in isolation
 https://www.learnstorybook.com/react/en/get-started/
+
+# tests are seached for:
+    Files with .js suffix in __tests__ folders.
+    Files with .test.js suffix.
+    Files with .spec.js suffix.
