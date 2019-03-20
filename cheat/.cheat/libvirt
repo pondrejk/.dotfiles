@@ -12,3 +12,9 @@ listen_tcp = 1
 listen_tls = 0
 
 # restart libvirtd
+
+# is virtualization supported?
+egrep '(vmx|svm)' /proc/cpuinfo
+lsmod | egrep 'kvm'
+modprobe kvm-intel
+dmesg | grep kvm
