@@ -124,5 +124,12 @@ rmln () {
   sed -i -e "${ADDR[1]}d" "${ADDR[0]}"
 }
 
+# quick jira-cli acces
+
+jira () {
+  cd $HOME/Documents/jira_ticket_cli
+  workon jira-ticket-master
+}
+
 # vimx allows copying to clipboard from cmdline
 alias vim='vimx'
