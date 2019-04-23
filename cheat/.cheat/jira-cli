@@ -1,0 +1,8 @@
+# get to the doc and the virtualenv (bash shortcut)
+jira
+
+# create ticket
+./jira_ticket_cli.py create --summary "Name of ticket" --component Testing
+
+# mark issue done
+./jira_ticket_cli.py update --issue SATQE-2706 --status Done
