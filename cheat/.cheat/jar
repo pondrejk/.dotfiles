@@ -1,0 +1,11 @@
+# you can update your war from the command line using java commands as mentioned here:
+
+jar -uvf test.war yourclassesdir 
+
+# Command to unzip/explode the war file
+
+jar -xvf test.war
+
+# Command to create the war file
+
+jar -cvf test.war yourclassesdir 
