@@ -4,3 +4,8 @@
 - leastconn: The server with the lowest number of connections is chosen. Round-robin is performed between servers with the same load. Using this algorithm is recommended with long sessions, such as LDAP, SQL, TSE, etc, but it is not very well suited for short sessions such as HTTP.
 - first: The first server with available connection slots receives the connection. The servers are chosen from the lowest numeric identifier to the highest, which defaults to the server’s position on the farm. Once a server reaches its maxconn value, the next server is used.
 - source: The source IP address is hashed and divided by the total weight of the running servers to designate which server will receive the request. This way the same client IP address will always reach the same server while the servers stay the same.
+
+# config example: 
+https://github.com/theforeman/forklift/blob/master/roles/haproxy/templates/haproxy.cfg.j2 (/etc/haproxy/haproxy.cnf)
+
+# verification
