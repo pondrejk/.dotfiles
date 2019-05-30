@@ -1,0 +1,5 @@
+# indented
+csvjson data.csv > data.json -i 2
+
+# minified
+csvjson data.csv > data.json
