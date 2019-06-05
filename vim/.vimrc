@@ -250,14 +250,14 @@ autocmd VimEnter * wincmd p
 let NERDTreeIgnore = ['\.pyc$']
 
 " NERDTree toggles with f11
-" nmap <silent> <F11>  :NERDTreeToggle<CR>
-" imap <silent> <F11> <ESC>:NERDTreeToggle<CR>
-" cmap <silent> <F11> <ESC>:NERDTreeToggle<CR>
+nmap <silent> <F11>  :NERDTreeToggle<CR>
+imap <silent> <F11> <ESC>:NERDTreeToggle<CR>
+cmap <silent> <F11> <ESC>:NERDTreeToggle<CR>
 
-" Vimpanel toggles with f11
-nmap <silent> <F11> :VimpanelToggleLeft myprojects<CR>
-imap <silent> <F11> <ESC>:VimpanelToggleLeft myprojects<CR>
-cmap <silent> <F11> <ESC>:VimpanelToggleLeft myprojects<CR>
+" Vimpanel toggles with f11 -- not excluded from open buffers
+" nmap <silent> <F11> :VimpanelToggleLeft myprojects<CR>
+" imap <silent> <F11> <ESC>:VimpanelToggleLeft myprojects<CR>
+" cmap <silent> <F11> <ESC>:VimpanelToggleLeft myprojects<CR>
 
 " close NERDTree when closing vim
 autocmd VimLeave * NERDTreeClose
