@@ -173,6 +173,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-rails'
+Plugin 'mihaifm/vimpanel'
 
 "Plugin 'jhradilek/vim-docbk'
 "Plugin 'jhradilek/vim-mallard'
@@ -249,9 +250,14 @@ autocmd VimEnter * wincmd p
 let NERDTreeIgnore = ['\.pyc$']
 
 " NERDTree toggles with f11
-nmap <silent> <F11> :NERDTreeToggle<CR>
-imap <silent> <F11> <ESC>:NERDTreeToggle<CR>
-cmap <silent> <F11> <ESC>:NERDTreeToggle<CR>
+" nmap <silent> <F11>  :NERDTreeToggle<CR>
+" imap <silent> <F11> <ESC>:NERDTreeToggle<CR>
+" cmap <silent> <F11> <ESC>:NERDTreeToggle<CR>
+
+" Vimpanel toggles with f11
+nmap <silent> <F11> :VimpanelToggleLeft myprojects<CR>
+imap <silent> <F11> <ESC>:VimpanelToggleLeft myprojects<CR>
+cmap <silent> <F11> <ESC>:VimpanelToggleLeft myprojects<CR>
 
 " close NERDTree when closing vim
 autocmd VimLeave * NERDTreeClose

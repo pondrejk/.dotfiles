@@ -1,0 +1,13 @@
+Mappings inside the panel
+
+<CR> or o or double-click       expand directory or open file
+<F5>                            refresh panel
+<F6>                            toggle the display of hidden files and folders
+t                               open file in new tab
+<C-c> or yy                     copy selected node (file or dir)
+<C-v> or p                      paste nodes
+dd                              delete node
+r                               rename node
+a                               add new node
+ff                              copy node path to clipboard
+
