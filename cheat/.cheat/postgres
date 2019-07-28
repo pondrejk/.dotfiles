@@ -2,6 +2,14 @@
   yum install postgresql-server
 
 # postinstall
-  postgresql-setup initdb
-  systemctl enable postgresql.service
-  systemctl start postgresql.service
+  sudo postgresql-setup initdb
+  sudo systemctl enable postgresql.service
+  sudo systemctl start postgresql.service
+
+# create accounts
+sudo -u postgres psql
+postgres=# create role name createrole createdb replication login password 'pwd';
+
+# create database
+creatdb db-name
+psql db-name
