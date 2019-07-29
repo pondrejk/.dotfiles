@@ -1,0 +1,5 @@
+https://github.com/lukasmartinelli/pgfutter
+
+pgfutter --host "localhost" --port "5432" --db "myDB" --schema "public" --table "myTable" --user "postgres" --pw "myPwd" csv myFile.csv
+
+pgfutter [global options] command [command options] [arguments...]
