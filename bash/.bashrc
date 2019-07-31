@@ -51,6 +51,7 @@ alias bans-run='ansible-playbook ../../beaker_playbooks/basic-setup.yml -i beake
 alias rob='cd $HOME/Documents/robottelo'
 alias rci='cd $HOME/Documents/robottelo-ci'
 alias nail='cd $HOME/Documents/nailgun'
+alias air='cd $HOME/Documents/airgun'
 alias testfm='cd $HOME/Documents/testfm'
 alias at='cd $HOME/Documents/automation-tools'
 alias gitk='gitk -a &'
