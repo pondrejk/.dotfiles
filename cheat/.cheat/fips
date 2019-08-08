@@ -3,3 +3,8 @@ sysctl crypto.fips_enabled
 
 # enable
 <https://access.redhat.com/solutions/137833>
+
+# on sat, enable for hostgroup for provisioning
+hammer hostgroup set-parameter --name fips_enabled \
+ --value 'true' \
+ --hostgroup <NAME_OF_HOSTGROUP>
