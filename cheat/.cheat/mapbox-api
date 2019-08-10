@@ -1,0 +1,9 @@
+
+# list datasets (tweak url for tilesets)
+curl "https://api.mapbox.com/datasets/v1/ppeettoo?access_token=$YOUR_MAPBOX_ACCESS_TOKEN"
+
+# or use the cli wrapper: https://github.com/mapbox/mapbox-cli-py
+pip install mapboxcli
+mapbox --help
+
+# or script via mapbox py sdk https://mapbox-mapbox.readthedocs-hosted.com
