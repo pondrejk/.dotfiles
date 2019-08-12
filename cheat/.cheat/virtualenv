@@ -39,3 +39,7 @@ rmvirtualenv env_name
 # Create new Python3 environmment (with virtualenvwrapper)
 which python3 #Output: /usr/bin/python3
 mkvirtualenv --python=/usr/bin/python3 <nameOfEnvironment>
+
+# find where are packages stored in virtualenv
+echo $VIRTUAL_ENV
+go there and check /lib/python3.7/site-packages/
