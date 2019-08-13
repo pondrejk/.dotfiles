@@ -1,0 +1,5 @@
+# Lowercase all files and folders in current directory
+rename 'y/A-Z/a-z/' *
+
+# add extension to files 
+for f in *; do mv "$f" "$f.json"; done
