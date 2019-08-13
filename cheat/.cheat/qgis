@@ -5,3 +5,8 @@ for vLayer in iface.mapCanvas().layers():
     QgsVectorFileWriter.writeAsVectorFormat( vLayer,
         myDir + vLayer.name() + ".shp", "utf-8",
         vLayer.crs(), "ESRI Shapefile" )
+
+# to set a different crs for export:
+from qgis.core import QgsCoordinateReferenceSystem
+crs = QgsCoordinateReferenceSystem(4326, QgsCoordinateReferenceSystem.EpsgCrsId)
+then use crs in QgsVectorFileWriter
