@@ -1,0 +1,7 @@
+# access db
+su - postgres
+psql foreman
+
+# check tasks
+foreman=# select * from foreman_tasks_tasks where state = 'paused';
+foreman=# select * from foreman_tasks_tasks where state != 'stopped';
