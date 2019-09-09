@@ -1,0 +1,33 @@
+# logging
+ausearch -m avc -ts recent
+(pipe to less and search for name to find patterns)
+
+# list dontaudit rules
+sesearch -D (from setools-console pkg)
+
+# common issues:
+# 1. nonstandard locations for service data
+# add context type to dir recursively
+semanage fcontext -a -t httpd_sys_content_t '/mysites/sitea/www(/.*)?'
+restorecon -Rv /mysites/sitea/www
+
+# 2. swithching from disabled to enforcing
+touch /.autorelabel
+reboot
+
+# 3. wrong booleans
+semanage boolean list
+getsebool
+setsebool
+
+# 4. nonstandard ports
+semanage port -a -t http_port_t -p tcp 8001
+# if conflicts with existing label, add policy module
+
+# understanding selinux rules
+# info on type
+seinfo -thttpd_sys_content_t
+# info on port
+seinfo --portcon=443 --protocol=tcp
+# info on what boolean allows
+sesearch --allow -b httpd_can_connect_ldap

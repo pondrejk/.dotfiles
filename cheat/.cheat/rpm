@@ -27,7 +27,7 @@ rpm -i --test <package>
 # Display checksum against source
 rpm -K <package>
 
-# Verify a package
+# Verify a package (changes from the installed state)
 rpm -V <package>
 
 # reinstall package of the same version

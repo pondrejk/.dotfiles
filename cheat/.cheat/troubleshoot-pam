@@ -1,0 +1,11 @@
+# config stored per service in /etc/pam.d/ in form:
+type control module-path [module-arguments]
+
+# type is one of account, auth, password, and session
+# control is required, requisite, sufficient, optional, include, or substack
+# module-path of a pam module
+# module-argument optional (see docs in /usr/share/doc/pam-*/txts/)
+
+# issues usually: wrong control type or rule ordering
+# use authconfig to manage pam, to restore to default:
+authconfig --updateall
