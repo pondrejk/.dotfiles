@@ -1,7 +1,8 @@
 # debug mode
 hammer -d 
 
-# refresh apidoc
+# recreate apipie cache and refresh apidoc
+foreman-rake apipie:cache
 hammer -r
 
 # many fake hosts
