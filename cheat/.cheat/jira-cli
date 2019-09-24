@@ -6,3 +6,6 @@ jira
 
 # mark issue done
 ./jira_ticket_cli.py update --issue SATQE-2706 --status Done
+
+# using list from textfile
+while read -r i; do ./jira_ticket_cli.py create $i; done < weekly.txt
