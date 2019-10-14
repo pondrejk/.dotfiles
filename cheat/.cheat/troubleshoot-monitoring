@@ -1,0 +1,13 @@
+# monitoring logs
+
+# sosreports
+
+# pcp
+yum install -y pcp
+systemctl enable --now pmcd
+systemctl enable --now pmlogger
+
+# aide
+
+# aditctl
+

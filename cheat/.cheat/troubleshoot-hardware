@@ -1,0 +1,9 @@
+# monitoring hardware
+
+# kernel modules
+
+# virtualization issues
+- is virt supported?
+modprobe kvm-intel
+modprobe kvm-amd
+
