@@ -31,6 +31,7 @@ alias g='grep'
 alias l='less'
 alias doc='cd $HOME/Documents'
 alias dw='cd $HOME/Downloads'
+alias dev='cd $HOME/Documents/develsetup'
 alias drp='cd $HOME/Dropbox'
 alias drpd='~/.dropbox-dist/dropboxd &'
 
@@ -134,3 +135,6 @@ jira () {
 
 # vimx allows copying to clipboard from cmdline
 alias vim='vimx'
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
