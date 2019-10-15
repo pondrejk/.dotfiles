@@ -1,5 +1,20 @@
 # dependencies
+ldconfig -p  # check candidate libraries cache 
+strings      # outputs strings from a binary
+ldd </path/to/exec>   # lists shared libs of an executable
+which <command>       # to find the path
 
-# memory leaks
+# identify memory leaks
+valgrind --tool=memcheck <command> <params> # add --leak-check=full for more details
 
-# system and library calls
+# debugging app execution
+strace <cmd> # view system calls
+strace -p PID # -f option taces also forked processes
+
+get parent pid of a process:
+ps -o ppid= -p <PID>
+list stopped processes:
+ps -e -o stat,command,pid | grep '^S '
+
+ltrace <cmd> # view calls to shared library functions
+
