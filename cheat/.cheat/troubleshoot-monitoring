@@ -1,13 +1,40 @@
-# monitoring logs
+# monitoring logs (interesting topics)
+journalctl -- how to make persistant
+
+rsyslog -- configure remote logging:
+- on receiver, in /etc/rsyslog.conf:
+  $ModLoad imtcp
+  $InputTCPServerRun 514
+  $template DynamicFile,"/var/log/loghost/%HOSTNAME%/%syslogfacility-text%.log"
+  *.* -?DynamicFile
+
+- restart rsyslog, add entry to /etc/logrotate.d/syslog:
+/var/log/loghost/*/*.log
+- allow the port in firewall
+- on sender in /etc/rsyslog.conf:
+  *.* @@servera.lab.example.com:514
 
 # sosreports
+sosreport -l    # list plugins
+create:
+sosreport -k <plugin-option> -n <exclude>,<exclude>
+research:
+tar xvf <archive> + grep what you need
 
 # pcp
 yum install -y pcp
 systemctl enable --now pmcd
-systemctl enable --now pmlogger
+systemctl enable --now pmlogger # logs to /var/log/pcp/pmlogger/<hostname>
+pmstat -s 5            # like vmstat but interactive
+pminfo                 # list stored metrics, -d for description, -a to list from archive
+pmval -s 5 <metric>    # gather real-time data on metric
+pmval -a logger.data <metric>  # inspect pmlogger output
+# TODO time filtering for pmval, max cpu?
 
-# aide
+# aide - manual check for time changes
+config what to track in /etc/aide.conf
+aide --init    # create a database (store it outside of a system)
+aide --check   # check the current state against the db
 
 # aditctl
-
+TODO

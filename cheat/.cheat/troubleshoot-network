@@ -32,8 +32,12 @@ host redhat.com <nameserver>
 firewall-cmd --list-all-zones [--permanent]
 firewall-cmd --runtime-to-permanent
 iptables -L -t filter -n
+/usr/lib/firewalld/services/ # see find the ports for enabled services
 
 # ispecting network traffic 
 wireshark (ui)
 tcpdump -w file 'host hostname' # record in and out packet of hostname to file
 tcpdump -r file -X 'host hostname' # chceck ASCII data from packets
+
+# show open ports
+netstat -tulanp (though deprecated)
