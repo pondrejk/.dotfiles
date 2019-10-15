@@ -1,1 +1,30 @@
-# rpm
+# pkg dependencies
+yum deplist <pkg>
+rpm -qR <pkg> # also --provides shows a list of pkgs that may depend on pkg
+
+# downgrading
+yum downgrade
+rpm -U --force # as with --replacefiles and --replacepackages
+
+# versionlock
+yum versionlock list
+yum versionlock clear
+
+# recovering rpm database (/var/lib/rpm)
+/usr/lib/rpm_verify Packages
+/usr/lib/rpm_dump Packages
+rpm -v --rebuilddb
+
+# verifying packgages
+rpm -qf file # which pkg provides file
+rpm -Va <pkg>
+yum verify <pkg>    # exclude configs
+yum verify-rpm <pkg>    # with configs
+fixing changes:
+rpm --setperms <pkg> # adjust perms
+rpm --setugids <pkg> # fix ownerships
+yum reinstall
+
+# subscription manager configs
+/etc/rhsm/rhsm.conf
+/etc/rhsm/pluginconf.d/
