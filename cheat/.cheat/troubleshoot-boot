@@ -1,3 +1,17 @@
 # bios
+# reinstall grub2 into mbr
+- boot from an installation source (pxe?)
+- choose rescue an installed system (or add rescue to kernel cmd line)
+- continue until you obtain shell
+- in shell 
+chroot /mnt/sysimage
+ls -l /boot     # verify boot is mounted
+grub2-install /dev/vda   # use lsblk to find main disks  
+reboot
 
 # service failures
+systemctl show <unit>
+systemctl list-dependencies <unit>
+systemctl list-jobs  # observing jobs
+
+check Before, After, and Requires in /etc/systemd/system/ init files
