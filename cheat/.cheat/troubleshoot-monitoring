@@ -36,5 +36,11 @@ config what to track in /etc/aide.conf
 aide --init    # create a database (store it outside of a system)
 aide --check   # check the current state against the db
 
-# aditctl
-TODO
+# auditctl (systemctl start uditd)
+create a wathch rule
+auditctl -w <path/to/target> -p rwax -k custom-tag # watch rw, execute, attr. change
+auditctl -l   # list rules
+to make persistant add add rules to '/etc/audit/rules.d/filename'
+logs end up in '/var/log/audit/audit.log'
+tool to search the log ^
+ausearch -i -k key   # i interprets the numerical values
