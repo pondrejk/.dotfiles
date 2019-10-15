@@ -1,0 +1,39 @@
+# testing connectivity
+ping, ping6 (IMCP ECHO requests)
+
+# scanning network (what host/services, ports are there) [yum install nmap]
+nmap -n 127.0.0.1/8  # numerical output, no DNS 
+-sn                  # just service, no scan ports, faster
+-sU                  # scan UDP network
+
+# communicating with the service directly
+nc -l 2510           # netcat as a server on hostname
+nc hostname 2510     # netcat connects as a client, opens a session on server
+
+# monitoring traffic -- iptraf-ng tui
+
+# interface config issues (when using Network Manager)
+ip a                 # all interfaces 
+ip route             # routing table, check default gateway
+configs in /etc/sysconfig/network-scripts/ifcg-* # see BOOTPROTO, IPADDR, GATEWAY
+nmcli con
+nmcli dev
+nmcli con show "name" | grep ipv
+either edit network scripts and than 'nmcli conn reload'
+or 'nmcli conn mod ...' and bump 'nmcli con down "eth1"; nmcli con up "eth1"'
+
+# dns issues
+check items in /etc/resolf.conf via:
+host redhat.com <nameserver>
+- if issues, modify if via nmcli, bounce it -- ifcfg and resolv are autoupdated
+
+# firewall
+- compare permanent and runtime settings
+firewall-cmd --list-all-zones [--permanent]
+firewall-cmd --runtime-to-permanent
+iptables -L -t filter -n
+
+# ispecting network traffic 
+wireshark (ui)
+tcpdump -w file 'host hostname' # record in and out packet of hostname to file
+tcpdump -r file -X 'host hostname' # chceck ASCII data from packets
