@@ -1,9 +1,34 @@
 # monitoring hardware
+lscpu
+dmidecode -t memory
+lsscsi -v  # list physical disks
+hdparm -I /dev/sda  # info on individual disks
+lspci   # list pci hw
+lsusb
+
+# hw error reporting
+mcelog # enable service will log to journal about machine check expirations
+       # or ucomment /etc/cron.hourly/mcelog.cron to dump to /var/log/mcelog
+rasdeamon # replacement of mclog, enable service, provides cli:
+ras-mc-ctl --status
+ras-mc-ctl --errors
+
+# memory testing, using a separate boot entry:
+yum install memtest86+
+memtest-setup
+grub2-mkconfig -o /boot/grub2/grub.cfg
 
 # kernel modules
+lsmod  # list modules 
+modinfo -p <module>
+- add options (to /etc/modprobe.d)
+modprobe -v <module> <key>=<value>
 
 # virtualization issues
 - is virt supported?
 modprobe kvm-intel
 modprobe kvm-amd
-
+virsh capabilities 
+- linting virsh xml
+xmllint --noout <FILENAME>
+virt-xml-validate <FILENAME>
