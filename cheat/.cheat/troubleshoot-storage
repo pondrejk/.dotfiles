@@ -1,7 +1,67 @@
+# vfs tools
+cat /proc/meminfo 
+free -h
+
+# device mapper tools
+dmsetup ls # list device mappings
+ls -l /dev/mapper/<mapping> # see a link to logical dev mapper device
+dmsetup table /dev/mapper/<mapping> # see mappings on physical device
+
+# I/O scheduler algorithms: deadline, cfq, noop. see:
+cat /sys/block/sda/queue/scheduler
+blktrace /dev/sda # traces i/o and saves to current dir (sda.blktrace.0)
+blkparse, btt     # analyze trace file ^
+
 # filesystem corruption
+- ext3/ext4
+e2fsck -n /dev/vdb1   # check fs
+dumpe2fs /dev/vdb1 | grep 'Backup superblock' # find backup superblocks
+e2fsck -n /dev/vdb1 -b 32768  # use alternate superblock
+
+- xfs
+xfs_repair -n /dev/vdb1  # dry run, without -n actual repair, see output for orphaned files
+- check lost+found repo after repair 
 
 # lvm accidents
+config /etc/lvm/lvm.conf
+archive in /etc/lvm/archive - if the option is enabled in ^
+see vg change history via:
+vgcfgrestore -l <vg_name>
+vgcfgrestore -f <archive_file> <vg_name> # restore to previous state
+- reactivate associated lvs after vg restore:
+lvchange -an /dev/vg_example/lv_example
+lvchange -ay /dev/vg_example/lv_example
 
 # luks issues
+- list of encrypted devices:
+/etc/crypttab
+cryptsetup luksDump <device>  # show info
+- backup headers:
+cryptsetup luksHeaderBackup /path/to/encrypted/device --header-backup-file /path/to/backup/file
+- decrypt
+cryptsetup luksOpen /path/to/encrypted/device --header /path/to/backup/file
+- restore header from backup
+cryptsetup luksHeaderRestore /path/to/encrypted/device --header-backup-file /path/to/backup/file
+- add key to a slot
+cryptsetup luksAddKey --key-slot <n> <device> <keyfile>
 
 # iscsi issues
+possible problems:
+- network issues (check with nc): nc -z target_server_ip 3260
+firewall forbiding port
+to verify fixes, try discovery:
+iscsiadm -m discovery -t sendtargets -p target_server[:port]
+iscsiadm -m node
+- login issues:
+check initiator name in /etc/iscsi/initiatorname.iscsi, then restart iscsid
+login in verbose mode:
+iscsiadm -m node -T iqn.2016-01.com.example.lab:iscsistorage --login -d8
+
+after changing /etc/iscsi/iscsid.conf update also preexisting settings in /var/lib/iscsi/nodes
+- view existing settings via:
+iscsiadm -m node -T iqn.2016-01.com.example.lab:iscsistorage
+- edit some existing value like this:
+iscsiadm -m node -T iqn.2016-01.com.example.lab:iscsistorage -o update -n node.session.auth.authmethod -v None [-p target_server[:port]]
+- or alternatively purge existing settings from cache
+iscsiadm -m node -o delete [-p target_server[:port]]
+
