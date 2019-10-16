@@ -1,10 +1,52 @@
 # selinux
 
+- logging
+ausearch -m avc -ts recent
+(pipe to less and search for name to find patterns)
 
-# pam
+- list dontaudit rules
+sesearch -D (from setools-console pkg)
 
+common issues:
+1. nonstandard locations for service data
+- add context type to dir recursively
+semanage fcontext -a -t httpd_sys_content_t '/mysites/sitea/www(/.*)?'
+restorecon -Rv /mysites/sitea/www
+
+2. swithching from disabled to enforcing
+touch /.autorelabel
+reboot
+
+3. wrong booleans (setroubleshoot-server pkg)
+semanage boolean list
+getsebool
+setsebool
+
+4. nonstandard ports
+semanage port -a -t http_port_t -p tcp 8001 # if conflicts with existing label, add policy module
+
+understanding selinux rules  (setools-console pkg)
+- info on type
+seinfo -thttpd_sys_content_t
+- info on port
+seinfo --portcon=443 --protocol=tcp
+- info on what boolean allows
+sesearch --allow -b httpd_can_connect_ldap
+
+# pam - authentication for apps and services
+- configs per service in /etc/pam.d/, format:
+type control module-path [module args]
+- type is one of account, auth, password, and session
+- control: required, requisite, sufficient, optional, include, or substack
+- module-path: absolute or relative to /lib/security/ or /lib64/security/
+authconfig --updateall # erase manual changes
 
 # kerberos
+cat /etc/krb5.conf
+- possible issues:
+default_realm setting wrong, perms on keytab (klist -ek <file> to inspect), DNS SRV records for Kerberos incorect (if used), check krb5_realm and krb5_server settings in /etc/sssd/sssd.conf, issues in nfs shares
 
-
-# LDAP
+# LDAP (openldap-clients pkg)
+/etc/openldap/ldap.conf
+ldapsearch -x -ZZ -LL '(uid=ldapuser)' cn homeDirectory # search for ldap servers
+/etc/openldap/cacerts
