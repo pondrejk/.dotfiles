@@ -1,4 +1,21 @@
 # crash dumps
 
+systemct enable --now kdump
+dumps by default to /var/crash
+- config in /etc/kdump.conf, see line:
+  core_collector makedumpfile -l --message-level 1 -d 31
+kdumpctl status
+kdumpctl showmem
+kdumpctl propagate # setup ssh auth
+- crash dump triggers: oom events, hung processes, soft lockup, non-maskable intrerrupt, magic SysRq
+- testing kdump
+echo 1 > /proc/sys/kernel/sysrq
+echo c > /proc/sysrq-trigger
+- dump than contains vmcore file (big) and vmcore-dmesg.txt (smaller for first analysis)
 
-# systemtap
+# analyzing crash dumps (kernel-debuginfo, crash pkgs)
+crash <debug kernel image from kernel-debuginfo> <vmcore file from kdump>
+
+# systemtap (kernel probing)
+"stap" to run systemtap scripts
+...
