@@ -15,3 +15,5 @@ systemctl list-dependencies <unit>
 systemctl list-jobs  # observing jobs
 
 check Before, After, and Requires in /etc/systemd/system/ init files
+- reload config after changes
+systemctl daemon-reload

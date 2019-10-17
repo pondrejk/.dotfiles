@@ -48,5 +48,12 @@ default_realm setting wrong, perms on keytab (klist -ek <file> to inspect), DNS 
 
 # LDAP (openldap-clients pkg)
 /etc/openldap/ldap.conf
+ldapsearch -x
+ldapsearch -x -ZZ
 ldapsearch -x -ZZ -LL '(uid=ldapuser)' cn homeDirectory # search for ldap servers
-/etc/openldap/cacerts
+/etc/openldap/cacerts  # check in case of tls errors
+- if loading certs there:
+wget -O /etc/openldap/cacerts/example-ca.crt ftp://<src>/pub/example-ca.crt
+cacertdir_rehash /etc/openldap/cacerts
+-- restart sshd and autofs services
+

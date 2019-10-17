@@ -17,9 +17,18 @@ rsyslog -- configure remote logging:
 # sosreports
 sosreport -l    # list plugins
 create:
-sosreport -k <plugin-option> -n <exclude>,<exclude>
+sosreport -k <plugin-option>=<value> -n <exclude>,<exclude>
+sosreport -o <only-this-plugin> --tmp-dir <alternate dir>
 research:
-tar xvf <archive> + grep what you need
+tar xvf <archive> + grep what you need (e.g. var/log/messages, audit.log)
+
+last login attempts:
+  /var/log/wtmp – Logs of last login sessions
+  /var/run/utmp – Logs of the current login sessions
+  /var/log/btmp – Logs of the bad login attempts
+also:
+  /var/log/secure
+  /var/log/faillog
 
 # pcp
 yum install -y pcp
@@ -29,7 +38,11 @@ pmstat -s 5            # like vmstat but interactive
 pminfo                 # list stored metrics, -d for description, -a to list from archive
 pmval -s 5 <metric>    # gather real-time data on metric
 pmval -a logger.data <metric>  # inspect pmlogger output
-# TODO time filtering for pmval, max cpu?
+pmval -i "'1 minute','5 minute'" kernel.all.load # intervals
+pmval -S -T # starttime, endtime, syntax man PCPIntro
+
+pmlogsummary -HlfiImM <metric> # min, max, mintime, maxtime
+
 
 # aide - manual check for time changes
 config what to track in /etc/aide.conf
