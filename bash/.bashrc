@@ -35,6 +35,12 @@ alias dev='cd $HOME/Documents/develsetup'
 alias drp='cd $HOME/Dropbox'
 alias drpd='~/.dropbox-dist/dropboxd &'
 
+alias path='echo -e ${PATH//:/\\n}'
+alias now='date +"%T"'
+alias nowtime=now
+alias nowdate='date +"%d-%m-%Y"'
+alias ports='netstat -tulanp'
+
 # two names for dotfiles dir :/
 ls ~/.dotfiles >/dev/null 2>&1 && alias dot='cd ~/.dotfiles'
 ls ~/dotfiles >/dev/null 2>&1 && alias dot='cd ~/dotfiles'
