@@ -1,0 +1,7 @@
+https://devhints.io/xpath
+
+testing:
+ctrl-f in chrome console -- search by xpath
+
+e.g. get stuff from next div from a parent of identified location:
+//span[contains(@class, 'list-group-item-heading')]//parent::div/following-sibling::div
