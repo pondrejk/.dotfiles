@@ -1,0 +1,10 @@
+# https://realpython.com/python-debugging-pdb/
+
+import pdb; pdb.set_trace()
+
+ll      -- list where you are in the source
+p <var> -- print variable
+n       -- continue to next line (stays within current function)
+s       -- continue with descent to other function 
+q       -- quit
+<Enter> -- repeat last cmd
