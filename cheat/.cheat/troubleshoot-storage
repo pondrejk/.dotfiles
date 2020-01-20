@@ -27,7 +27,7 @@ config /etc/lvm/lvm.conf
 archive in /etc/lvm/archive - if the option is enabled in ^
 see vg change history via:
 vgcfgrestore -l <vg_name>
-vgcfgrestore -f <archive_file> <vg_name> # restore to previous state
+vgcfgrestore -f <archive_file> <vg_name> # restore to previous state, umount any filesystems on it
 - reactivate associated lvs after vg restore:
 lvchange -an /dev/vg_example/lv_example
 lvchange -ay /dev/vg_example/lv_example

@@ -23,7 +23,7 @@ yum verify-rpm <pkg>    # with configs
 fixing changes:
 rpm --setperms <pkg> # adjust perms
 rpm --setugids <pkg> # fix ownerships
-yum reinstall
+yum reinstall        # changed configs are not rewritten!
 
 # subscription manager configs
 /etc/rhsm/rhsm.conf
