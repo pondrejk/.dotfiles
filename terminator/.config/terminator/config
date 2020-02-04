@@ -8,6 +8,7 @@
   title_font = Inconsolatazi4 13
 [keybindings]
   close_term = <Alt>c
+  full_screen = F10
   go_down = <Alt>j
   go_left = <Alt>h
   go_right = <Alt>l

@@ -1,0 +1,6 @@
+# go to venv
+workon satlab-deploy
+
+# get the latest
+ansible-playbook playbooks/deploy-template/deploy-template.yml --extra-vars "template=satellite-6.7-latest"
+
