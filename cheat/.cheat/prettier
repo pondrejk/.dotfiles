@@ -1,0 +1,2 @@
+# run linter in react project
+npx prettier --single-quote --write "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}"
