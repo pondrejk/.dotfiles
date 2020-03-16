@@ -1,5 +1,8 @@
 # install
   yum install postgresql-server # rather https://computingforgeeks.com/how-to-install-postgresql-on-fedora/
+  # also
+  # postgis https://computingforgeeks.com/how-to-install-postgis-on-centos-7/
+  # pgadmin https://computingforgeeks.com/how-to-install-pgadmin-on-centos-fedora/
 
 # postinstall
   sudo postgresql-setup initdb
