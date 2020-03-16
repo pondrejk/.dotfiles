@@ -1,0 +1,3 @@
+https://morphocode.com/using-ogr2ogr-convert-data-formats-geojson-postgis-esri-geodatabase-shapefiles/
+
+ogr2ogr -f "PostgreSQL" PG:"dbname=my_database user=postgres" "source_data.json"
