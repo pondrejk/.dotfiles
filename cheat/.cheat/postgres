@@ -1,5 +1,5 @@
 # install
-  yum install postgresql-server
+  yum install postgresql-server # rather https://computingforgeeks.com/how-to-install-postgresql-on-fedora/
 
 # postinstall
   sudo postgresql-setup initdb
