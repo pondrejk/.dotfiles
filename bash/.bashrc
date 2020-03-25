@@ -34,6 +34,7 @@ alias dw='cd $HOME/Downloads'
 alias dev='cd $HOME/Documents/develsetup'
 alias drp='cd $HOME/Dropbox'
 alias drpd='~/.dropbox-dist/dropboxd &'
+alias sc='cd $HOME/Documents/scripts'
 
 alias path='echo -e ${PATH//:/\\n}'
 alias now='date +"%T"'
