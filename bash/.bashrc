@@ -133,10 +133,15 @@ rmln () {
 }
 
 # quick jira-cli acces
-
 jira () {
   cd $HOME/Documents/jira_ticket_cli
   workon jira-ticket-master
+}
+
+# quick satlab
+satlab () {
+  cd $HOME/Documents/satlab-ansible
+  workon satlab-deploy
 }
 
 # vimx allows copying to clipboard from cmdline
