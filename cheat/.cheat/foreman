@@ -5,3 +5,21 @@ psql foreman
 # check tasks
 foreman=# select * from foreman_tasks_tasks where state = 'paused';
 foreman=# select * from foreman_tasks_tasks where state != 'stopped';
+
+# inserting fake taks
+foreman=# insert into foreman_tasks_tasks (id, type, started_at, ended_at, state, result) values ('ca1f67aa-e90b-49fc-a687-3e2cb39390ff', 'ForemanTasks::Task::DynflowTask',  '2017-07-10 12:13:06', '2016-07-11 12:13:06','stopped', 'success');
+foreman=# insert into foreman_tasks_tasks (id, type, started_at, ended_at, state, result) values ('ca1f67aa-e90b-49fc-a687-3e2cb39xx0ff', 'ForemanTasks::Task::DynflowTask',  '2015-07-10 12:13:06', '2015-07-11 12:13:06','stopped', 'error');
+
+# if db is in docker container
+docker exec -it foreman-db-1 bash
+psql -U foreman -W foreman 
+
+(^ to get parameters for -U and -W):
+  bash-5.0# echo $POSTGRES_USER 
+  foreman
+  bash-5.0# echo $POSTGRES_PASSWORD
+  foreman
+  bash-5.0# echo $POSTGRES_DB
+  foreman
+
+

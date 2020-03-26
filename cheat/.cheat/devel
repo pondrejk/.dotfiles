@@ -21,13 +21,12 @@ vim autocommand for copying to testmachine:
 # apply commit in devel setup
 installation from forklift via reviewer role
 navigate to the respective repo
-rpr pr_id
-
-to restore
-rrpr pr_id
-
-to cherry pick
-crp pr_id
+  rpr pr_id
+  to restore
+  rrpr pr_id
+  to cherry pick
+  crp pr_id
+alternative hub pr <id>
 
 # webpack acting up
 allow what is on port 3808
