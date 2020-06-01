@@ -30,4 +30,5 @@ ansible-playbook ... --ask-vault-password
 # create role structure
 ansible-galaxy init
 
-
+# install on rhel 7
+subscription-manager repos --enable rhel-7-server-ansible-2.9-rpms
