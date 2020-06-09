@@ -1,0 +1,11 @@
+# list
+curl -X GET -s -k -u sat_username:sat_password https://satellite6.example.com/api/v2/hosts | python -m json.tool
+
+# search
+curl -X GET -s -k -u sat_username:sat_password https://satellite6.example.com/api/v2/hosts?search=environment=production | python -m json.tool
+
+# create (need to have json ready)
+curl -H "Accept:application/json,version=2" \
+     -H "Content-Type:application/json" -X POST \
+     -u username:password -k \
+     -d json-formatted-data https://satellite6.example.com
