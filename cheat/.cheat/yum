@@ -44,3 +44,7 @@ yum install @module_name:stream/profile # or enable just to make pkgs from modul
 yum install @module_name:stream:version:contex:arch/profile 
 
 yum distro-sync # as upgrade but also downgrades pkgs if they are higher version than available
+
+# history 
+yum history list
+yum history undo/redo id
