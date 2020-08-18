@@ -70,6 +70,13 @@ alias fm='cd $HOME/Documents/foreman'
 alias fk='cd $HOME/Documents/forklift'
 alias kat='cd $HOME/Documents/katello'
 
+# scool
+alias elwar='cd $HOME/Documents/elwar-source'
+alias hex='cd $HOME/Documents/hexbins-demo-brno'
+alias pondrejk='cd $HOME/Documents/pondrejk.net'
+alias dizzer='cd $HOME/Dropbox/!!!DIZZER!!!'
+alias biblio='cd $HOME/Dropbox/Biblio'
+
 # docker
 alias dockerkill='docker kill $(docker ps -q)'
 alias dockerrm='docker rm -v $(docker ps -a -q -f status=exited)'
