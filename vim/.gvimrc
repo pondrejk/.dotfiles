@@ -3,7 +3,7 @@
 "
 
 " General settings:
-set spell                         " Enable spell checking.
+set nospell                         " Enable spell checking.
 
 " User interface settings:
 set guioptions-=e                 " Disable all gui options
@@ -16,7 +16,9 @@ set guioptions-=m                 " Disable the menu bar
 set lines=55 columns=125          " Set the default window size
 set guifont=Inconsolata\ Mediun\ 11  " Set the default font.
 set background=dark
-colorscheme solarized             " Set the default color scheme.
+syntax on
+set guifont=Inconsolata\ 12
+colorscheme solarized8             " Set the default color scheme.
 
 "remember latest session 
 set sessionoptions+=resize,winpos

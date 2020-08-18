@@ -174,6 +174,7 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-rails'
 Plugin 'mihaifm/vimpanel'
+Plugin 'lifepillar/vim-solarized8'
 
 "Plugin 'jhradilek/vim-docbk'
 "Plugin 'jhradilek/vim-mallard'
