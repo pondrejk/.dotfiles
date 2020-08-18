@@ -146,6 +146,12 @@ satlab () {
   workon satlab-deploy
 }
 
+# quick broker
+brk () {
+  cd $HOME/Documents/broker
+  workon broker
+}
+
 # vimx allows copying to clipboard from cmdline
 alias vim='vimx'
 

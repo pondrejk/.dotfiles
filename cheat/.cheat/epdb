@@ -1,0 +1,8 @@
+# like pdb, supports remote debugging (e.g. for Ansible tests that spawn new process), alternative remote-pdb
+
+# in code:
+import epdb; epdb.serve()
+
+# in separate session (same virtualenv + ipython3):
+import epdb
+epdb.connect()
