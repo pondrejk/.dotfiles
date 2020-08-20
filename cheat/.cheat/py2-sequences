@@ -1,0 +1,59 @@
+# Python sequences
+- container - list, tuple, collections.deque (can hold items of different types)
+- flat - str, bytes, bytearray, array.array, memeoryview
+
+- mutable - list, bytearray, array.array, collections.deque, memoryview
+- immutable
+
+# listcomps []
+- can replace map() and filter()
+- can create cartesian products (all combinations) for 2 or more iterables:
+
+tshirts = [(color, size) for color in colors for size in sizes]
+
+# generator exp ()
+- better on memory than listcomp (yields resuts)
+- to create tuples and arrays
+
+tuple(symbol for symbol in symbols) # no need to duplicate ()
+array.array(I, (symbol for symbol in symbols)) # as a second param () needed
+for shirt in (f"{color}, {size}" for color in colors for size in sizes)):
+    print shirt
+
+# tuples
+- fixed order of items (e.g. for coordinate pairs)
+- tuple unpacking (parallel assignment, nested unpacking):
+
+tuple = (1,2)
+a,b = tuple # a assigned 1...
+func(*tuple) # tuple elements passed as separate args
+a,b,*rest = range(5)
+for a,b in list_of_tuples: # gets to tuple elements directly
+
+# named tuples
+- access tuple keys like in dict
+from collections import namedtuple
+City = namedtuple('City', 'name country')
+tokyo = City('Tokyo', 'JP')
+tokyo.coutry # 'JP'
+
+# slicing
+- slice objects 
+NAME=slice(0,6)
+textvar[NAME] # applies slice to text
+- multidimensional slicing - see numpy
+- assigning and deleting via slices:
+del somelist[3:5]
+
+# sorting
+- list.sort sorts in place, sorted creates a copy
+- both accept 2 args: reverse, key -- defines sorting key
+
+sorted(stringlist, key=len) # sort by length
+bisect.insort(list, new_value) # inserts at right place in sorted list
+
+# list alternatives
+- sets for lots of containment checks
+- array.array for lots of numbers (10mil floats), basically a C arrray
+- numpy.ndarray for matrices
+- deque for FIFO - collections.deque, simmilar in pkgs: queue, multiprocessing, asyncio, heapq
