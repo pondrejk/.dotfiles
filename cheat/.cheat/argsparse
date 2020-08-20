@@ -1,0 +1,22 @@
+# https://mkaz.blog/code/python-argparse-cookbook/
+# https://docs.python.org/3/howto/argparse.html
+
+```
+import argsparse
+
+parser = argparse.ArgumentParser()
+### Positional args
+parser.add_argument('positional1')
+parser.add_argument('positional2', help="positional argument 2")
+parser.add_argument('positional3', help="positional argument 3 type int", type=int)
+### Optional
+parser.add_argument("--optional1", help="optional argument 1", type=os.path.abspath)
+parser.add_argument("--optional2", help="optional argument 2", default=)
+parser.add_argument("-op3", "--optional3", action="store_true") # flag
+
+args = parser.parse_args()
+
+# access
+args.optional1
+```
+

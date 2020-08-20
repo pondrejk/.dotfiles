@@ -1,0 +1,23 @@
+# pyton argument parser
+
+```
+import click
+
+@click.command()
+@click.option('--count', default=1, help='Number of greetings.')
+@click.option('--name', prompt='Your name', type=str,
+              help='The person to greet.')
+@click.option("--all", "all_", is_flag=True, help="Select all VMs") # flag
+@click.argument("vm", type=str, nargs=-1) # last positional arg
+def hello(count, name, all_, vm):
+    """Simple program that greets NAME for a total of COUNT times."""
+    for x in range(count):
+        click.echo('Hello %s!' % name)
+
+if __name__ == '__main__':
+    hello()
+```
+
+# docs
+https://click.palletsprojects.com/en/7.x/#documentation
+
