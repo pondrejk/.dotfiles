@@ -1,0 +1,28 @@
+dicts & sets
+- dicts and sets - based on hashtables (keys must be hashable)
+- memory overload but fast key search
+- ordering depends on insertion and can change upon insertions (due to hashtable)
+
+# dict comprehension {:}
+{key:val for key, val in list_of_tuples} 
+
+# missing keys in dict
+dict.get(k, default) # reading, unlike dict[k] no error but default 
+dict.setdefault(k, defautl) # assigning to missing key
+collections.defaultdict() # produces a default value on call
+
+# dict alternatives
+collections.OrderedDict - remember insertion order
+collections.ChainMap - can group mapings for common search
+collections.Counter - hold count of elements from input
+collections.UserDict - to be subclassed for user customization
+
+# immutable mappings
+form types import MappingProxyType
+- creates an read-only instance from a dict
+
+# sets
+- guarantee uniqueness, allow infix operations, best performance for such operations
+a & b (intersection), a | b (union), a - b (difference), a ^ b (symdifference)
+- literal {}, epmty set set()
+- set comprehension via {}
