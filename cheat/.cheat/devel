@@ -30,3 +30,7 @@ alternative hub pr <id>
 
 # webpack acting up
 allow what is on port 3808
+
+# fake ansible roles
+cd /etc/ansible/roles/
+for i in {1..15}; do ansible-galaxy init --offline ansible-test$i; done
