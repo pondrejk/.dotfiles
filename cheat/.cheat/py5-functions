@@ -1,0 +1,41 @@
+# functions - first-class objects (can be assigned to a var, passed as an argument and returned from a higher-order function)
+
+# map, filter, reduce - common higher-order functions, in python being replaced with listcomps, genexps, and reducing build-ins like: 
+sum(), all(), any()  
+
+# lambdas - limited use, mainly as arguments to higher-order functions
+
+# 7 types of callable objects (functions, built-in funcs, methods, built-in methods, classes, class instances, generators)
+calllable() # inspect if object is callable
+__call__ method to create user-defined callable
+
+# function introspection
+dir(function) # shows function attributes
+__defaults__  # list of default vars
+__code__.co_varnames  # all used variables
+
+# function introspection with inspect module (better)
+from inspect import signature
+sig = signature(function)
+for param in sig.parameters.items():
+   param.kind,
+   param.default
+sig.bind() # for args validation
+
+# positional and keyword-only attributes
+def tag(name, *content, cls=None, **attrs) # positional attr, args, keyw-only, kwargs
+...
+tag(a, b, c, id=1) # b,c captured by *contnt, id=1 by **attrs
+tag(a, cls=b)      # cls= only captures cls=
+tag(content=a, name=b) # kwargs with names of positional args are captured by them!
+
+def(a, *, b) # kw-only attribute (b) must be defined after *args or *, doesn't need default val
+
+# operator module
+- aritmetic oparators as functions (dir(abs))
+operator.itemgetter # for reusing attr access
+operator.attrgetter
+
+# freezing arguments
+from functools import partial
+new_callable = partial(funct, frozen_attr)
