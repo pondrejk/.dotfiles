@@ -3,7 +3,7 @@ Decorator -- takes another function as an argument, and replaces it. Decorator f
 
 dis module -- disassembling bytecode
 
-Closures -- function that can access nonglobal variables defined outside of its body (matters only when you have nested functions). Closure retains bindings to free variables that exist when the function is defined so that they can be used when the function is invoked and the defining scope is no longer available
+Closures -- function that can access nonglobal variables defined outside of its body (matters only when you have nested functions). Closure retains bindings to free variables of the free variables that exist when the function is defined so that they can be used when the function is invoked and the defining scope is no longer available
 
 free variable -- not bound in the local scope
 nonlocal keyword -- allows to flag variable as free even when assigned within a function

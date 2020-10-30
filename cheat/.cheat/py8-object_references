@@ -1,0 +1,14 @@
+-- variables are labels not boxes, several vars can point to the same object (aliasing)
+-- each object has an identity, type and value
+-- == compares values, *is* compares identities (good for comparing to a singleton e.g. *x is None*)
+-- immutable objects (e.g. tuple) that store references to mutable objects can change, reference to *identity* is immutable but value can change
+-- shallow copy
+l2 = list(l1) -- container is duplicated but references the same internal objects (no problem if contents are immutable)
+-- deepcopy -- copies also the contained objects (tricky when there is a deep nesting)
+import copy; a = copy.deepcopy(b)
+
+*call by sharing* -- parameters inside the function become aliases of the actual arguments! -- function can change a mutable object passed as a parameter
+-- avoid mutable types as default parameters -- as multiple invocations can share the reference to the same default object and change it parallely -- consider the output expectations and make copies in function body if needed
+-- del statement deletes names (variables) but not the underlying objects, these are marked for garbage collection when all referencing vars are deleted
+-- weak references -- do not increase object's reference count (not for every object -- no dict or list).
+import weakref; weakref.WeakValueDictionary -- e.g useful for class that needs to remember its instances
