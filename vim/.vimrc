@@ -156,7 +156,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-surround'
 Plug 'Shutnik/jshint2.vim'
-Plug 'Shougo/neocomplete.vim'
+Plug 'ycm-core/YouCompleteMe'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'majutsushi/tagbar'
@@ -273,6 +273,10 @@ let g:airline_enable_branch     = 1
 let g:airline_enable_syntastic  = 1
 let g:airline#extensions#tabline#enabled = 1
 
+" Enable gitgutter by defaut
+let g:gitgutter_enabled = 1
+let g:gitgutter_toggle = 1
+
 " vim-airline symbols
 let g:airline_left_sep          = '⮀'
 let g:airline_left_alt_sep      = '⮁'
@@ -281,9 +285,6 @@ let g:airline_right_alt_sep     = '⮃'
 let g:airline_branch_prefix     = '⭠'
 let g:airline_readonly_symbol   = '⭤'
 let g:airline_linecolumn_prefix = '⭡'
-
-" Configure the rainbow plug-in
-let g:rainbow_active = 1
 
 
 " Mini buffer explorer
