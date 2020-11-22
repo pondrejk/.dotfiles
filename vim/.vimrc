@@ -167,6 +167,7 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-rails'
 Plug 'mihaifm/vimpanel'
 Plug 'lifepillar/vim-solarized8'
+Plug 'vim-voom/voom'
 
 "Plugin 'jhradilek/vim-docbk'
 "Plugin 'jhradilek/vim-mallard'
@@ -276,6 +277,7 @@ let g:airline#extensions#tabline#enabled = 1
 " Enable gitgutter by defaut
 let g:gitgutter_enabled = 1
 let g:gitgutter_toggle = 1
+let g:gitgutter_async = 0
 
 " vim-airline symbols
 let g:airline_left_sep          = '⮀'
