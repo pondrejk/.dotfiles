@@ -137,44 +137,36 @@ au BufNewFile,BufRead *.adoc set ft=asciidoc
 au FileType pandoc set ts=4 sw=4 expandtab
 au FileType python set ts=4 sw=4 expandtab
 
-" Configure the Vundle plug-in manager:
-set rtp+=~/.vim/bundle/Vundle.vim
-call  vundle#begin()
+" Configure thei plug plug-in manager:
+call  plug#begin()
 
-" Configure bundles:
-Plugin 'airblade/vim-gitgutter'
-Plugin 'gmarik/vundle'
-"Plugin 'SirVer/ultisnips'
-Plugin 'scrooloose/nerdtree'
-"Plugin 'jhradilek/vim-snippets'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'sickill/vim-pasta'
-Plugin 'tpope/vim-scriptease'
-Plugin 'chrisbra/Recover.vim'
-Plugin 'dahu/vim-asciidoc'
-Plugin 'tpope/vim-fugitive'
-Plugin 'easymotion/vim-easymotion'
-"Plugin 'helino/vim-json'
-Plugin 'Raimondi/delimitMate'
-Plugin 'pangloss/vim-javascript'
-Plugin 'tpope/vim-surround'
-Plugin 'Shutnik/jshint2.vim'
-"Plugin 'ternjs/tern_for_vim'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
-Plugin 'majutsushi/tagbar'
-"Plugin 'xolox/vim-misc'
-"Plugin 'xolox/vim-easytags' slow
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-"Plugin 'grassdog/tagman.vim'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'honza/vim-snippets'
-Plugin 'tpope/vim-rails'
-Plugin 'mihaifm/vimpanel'
-Plugin 'lifepillar/vim-solarized8'
+" Configure plugins:
+Plug 'airblade/vim-gitgutter'
+Plug 'gmarik/vundle'
+Plug 'scrooloose/nerdtree'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'sickill/vim-pasta'
+Plug 'tpope/vim-scriptease'
+Plug 'chrisbra/Recover.vim'
+Plug 'dahu/vim-asciidoc'
+Plug 'tpope/vim-fugitive'
+Plug 'easymotion/vim-easymotion'
+Plug 'Raimondi/delimitMate'
+Plug 'pangloss/vim-javascript'
+Plug 'tpope/vim-surround'
+Plug 'Shutnik/jshint2.vim'
+Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'majutsushi/tagbar'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-rails'
+Plug 'mihaifm/vimpanel'
+Plug 'lifepillar/vim-solarized8'
 
 "Plugin 'jhradilek/vim-docbk'
 "Plugin 'jhradilek/vim-mallard'
@@ -185,6 +177,13 @@ Plugin 'lifepillar/vim-solarized8'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'scrooloose/syntastic' pomale
 "Plugin 'nvie/vim-flake8'
+"
+"Plugin 'xolox/vim-misc'
+"Plugin 'ternjs/tern_for_vim'
+"Plugin 'xolox/vim-easytags' slow
+"Plugin 'SirVer/ultisnips'
+"Plugin 'jhradilek/vim-snippets'
+"Plugin 'helino/vim-json'
 
 " Tried but turned off
 "Plugin 'luochen1990/rainbow'
@@ -203,7 +202,7 @@ Plugin 'lifepillar/vim-solarized8'
 "chrisbra/Colorizer
 "chrisbra/vim-show-whitespace
 "
-call  vundle#end()
+call  plug#end()
 filetype plugin indent on     "Enable automatic indentation.
 
 " Configure the neosnippet plug-in:
