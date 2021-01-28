@@ -103,11 +103,8 @@ alias t='task'
 # required by libvirt-vagrant
 export VAGRANT_DEFAULT_PROVIDER=libvirt
 
-#django bash completion
-source $HOME/.django_bash_completion.sh
-
 # changing the path to virtualenvwrapper.sh depending on where it was installed by pip
-source /usr/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper.sh
 WORKON_HOME=~/Envs
 
 # local server in current directory, accepts optional port argument
