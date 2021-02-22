@@ -32,6 +32,10 @@ curl https://github.com/<commit>.patch | git apply # add --exclude <file> if nee
 # revert patch
 git apply -R <patch>
 
+# recover from unwanted amend
+git reset --soft HEAD@{1}
+git commit -C HEAD@{1}
+
 # squashing commits
 git rebase -i HEAD~4
 -- in editor keep first commit, squash others
