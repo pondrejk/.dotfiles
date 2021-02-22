@@ -137,44 +137,37 @@ au BufNewFile,BufRead *.adoc set ft=asciidoc
 au FileType pandoc set ts=4 sw=4 expandtab
 au FileType python set ts=4 sw=4 expandtab
 
-" Configure the Vundle plug-in manager:
-set rtp+=~/.vim/bundle/Vundle.vim
-call  vundle#begin()
+" Configure thei plug plug-in manager:
+call  plug#begin()
 
-" Configure bundles:
-Plugin 'airblade/vim-gitgutter'
-Plugin 'gmarik/vundle'
-"Plugin 'SirVer/ultisnips'
-Plugin 'scrooloose/nerdtree'
-"Plugin 'jhradilek/vim-snippets'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'sickill/vim-pasta'
-Plugin 'tpope/vim-scriptease'
-Plugin 'chrisbra/Recover.vim'
-Plugin 'dahu/vim-asciidoc'
-Plugin 'tpope/vim-fugitive'
-Plugin 'easymotion/vim-easymotion'
-"Plugin 'helino/vim-json'
-Plugin 'Raimondi/delimitMate'
-Plugin 'pangloss/vim-javascript'
-Plugin 'tpope/vim-surround'
-Plugin 'Shutnik/jshint2.vim'
-"Plugin 'ternjs/tern_for_vim'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
-Plugin 'majutsushi/tagbar'
-"Plugin 'xolox/vim-misc'
-"Plugin 'xolox/vim-easytags' slow
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-"Plugin 'grassdog/tagman.vim'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'honza/vim-snippets'
-Plugin 'tpope/vim-rails'
-Plugin 'mihaifm/vimpanel'
-Plugin 'lifepillar/vim-solarized8'
+" Configure plugins:
+Plug 'airblade/vim-gitgutter'
+Plug 'gmarik/vundle'
+Plug 'scrooloose/nerdtree'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'sickill/vim-pasta'
+Plug 'tpope/vim-scriptease'
+Plug 'chrisbra/Recover.vim'
+Plug 'dahu/vim-asciidoc'
+Plug 'tpope/vim-fugitive'
+Plug 'easymotion/vim-easymotion'
+Plug 'Raimondi/delimitMate'
+Plug 'pangloss/vim-javascript'
+Plug 'tpope/vim-surround'
+Plug 'Shutnik/jshint2.vim'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'majutsushi/tagbar'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-rails'
+Plug 'mihaifm/vimpanel'
+Plug 'lifepillar/vim-solarized8'
+Plug 'vim-voom/voom'
 
 "Plugin 'jhradilek/vim-docbk'
 "Plugin 'jhradilek/vim-mallard'
@@ -185,6 +178,13 @@ Plugin 'lifepillar/vim-solarized8'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'scrooloose/syntastic' pomale
 "Plugin 'nvie/vim-flake8'
+"
+"Plugin 'xolox/vim-misc'
+"Plugin 'ternjs/tern_for_vim'
+"Plugin 'xolox/vim-easytags' slow
+"Plugin 'SirVer/ultisnips'
+"Plugin 'jhradilek/vim-snippets'
+"Plugin 'helino/vim-json'
 
 " Tried but turned off
 "Plugin 'luochen1990/rainbow'
@@ -203,7 +203,7 @@ Plugin 'lifepillar/vim-solarized8'
 "chrisbra/Colorizer
 "chrisbra/vim-show-whitespace
 "
-call  vundle#end()
+call  plug#end()
 filetype plugin indent on     "Enable automatic indentation.
 
 " Configure the neosnippet plug-in:
@@ -274,6 +274,11 @@ let g:airline_enable_branch     = 1
 let g:airline_enable_syntastic  = 1
 let g:airline#extensions#tabline#enabled = 1
 
+" Enable gitgutter by defaut
+let g:gitgutter_enabled = 1
+let g:gitgutter_toggle = 1
+let g:gitgutter_async = 0
+
 " vim-airline symbols
 let g:airline_left_sep          = '⮀'
 let g:airline_left_alt_sep      = '⮁'
@@ -282,9 +287,6 @@ let g:airline_right_alt_sep     = '⮃'
 let g:airline_branch_prefix     = '⭠'
 let g:airline_readonly_symbol   = '⭤'
 let g:airline_linecolumn_prefix = '⭡'
-
-" Configure the rainbow plug-in
-let g:rainbow_active = 1
 
 
 " Mini buffer explorer

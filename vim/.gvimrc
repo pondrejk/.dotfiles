@@ -16,6 +16,7 @@ set guioptions-=m                 " Disable the menu bar
 set lines=55 columns=125          " Set the default window size
 set guifont=Inconsolata\ Mediun\ 11  " Set the default font.
 set background=dark
+filetype plugin indent on
 syntax on
 set guifont=Inconsolata\ 12
 colorscheme solarized8             " Set the default color scheme.
