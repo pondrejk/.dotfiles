@@ -1,0 +1,5 @@
+# human readable system info (instead of dmidecode)
+inxi -Fmxxxz
+
+# graphics
+inxi -G
