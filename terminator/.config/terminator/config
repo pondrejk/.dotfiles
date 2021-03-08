@@ -1,22 +1,32 @@
 [global_config]
-  always_on_top = True
   borderless = True
-  enabled_plugins = APTURLHandler, LaunchpadCodeURLHandler, LaunchpadBugURLHandler
-  inactive_color_offset = 1.0
+  always_on_top = True
   sticky = True
+  inactive_color_offset = 1.0
+  enabled_plugins = APTURLHandler, LaunchpadCodeURLHandler, LaunchpadBugURLHandler
   suppress_multiple_term_dialog = True
-  title_font = Inconsolatazi4 13
+  title_use_system_font = False
+  title_font = Inconsolata 12
 [keybindings]
-  close_term = <Alt>c
-  full_screen = F10
+  go_up = <Alt>k
   go_down = <Alt>j
   go_left = <Alt>h
   go_right = <Alt>l
-  go_up = <Alt>k
-  hide_window = F12
-  layout_launcher = <Alt>o
   split_horiz = <Primary>h
   split_vert = <Primary>s
+  close_term = <Alt>c
+  full_screen = F10
+  hide_window = F12
+  layout_launcher = <Alt>o
+[profiles]
+  [[default]]
+    background_darkness = 0.89
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Inconsolata 12
+    scrollback_infinite = True
+    exit_action = hold
+    use_system_font = False
 [layouts]
   [[default]]
     [[[child0]]]
@@ -68,12 +78,3 @@
       type = Terminal
       uuid = d8a3cca6-a58b-4939-a76c-bcca70517441
 [plugins]
-[profiles]
-  [[default]]
-    background_darkness = 0.89
-    background_type = transparent
-    cursor_color = "#aaaaaa"
-    exit_action = hold
-    font = Inconsolata 12
-    scrollback_infinite = True
-    use_system_font = False
