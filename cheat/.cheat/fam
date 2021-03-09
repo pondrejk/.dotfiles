@@ -1,1 +1,2 @@
 yum install -y ansible-collection-redhat-satellite --disableplugin=foreman-protector
+ls /usr/share/ansible/collections/ansible_collections/redhat/satellite/plugins/modules/
