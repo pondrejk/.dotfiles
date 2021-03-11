@@ -20,3 +20,11 @@ pytest test_mod.py::test_func
 pytest test_mod.py::TestClass::test_method
 
 pytest gathers tests according to a naming convention. By default any file that is to contain tests must be named starting with test_, classes that hold tests must be named starting with Test, and any function in a file that should be treated as a test must also start with test_. 
+
+# scopes of @pytest.fixture(scope="")
+
+function -- before every function (like setUp, use yield to tearDown)
+class    -- before every class (like setUpClass, yield to tearDownClass)
+module   -- runs per module
+package  -- runs per package
+session  -- per session, use conftest.py file (will be available to tests within the same dir)
