@@ -8,9 +8,10 @@
 /usr/share/katello-installer-base/checks/dns.rb
 
 # enable debug log in foreman
-in /etc/foreman/settings.yaml set:
 
-:logging:
-  :level: debug
+~foreman/config/environments/production.rb add:
+config.log_level = :debug
+
+then systemctl restart foreman.
 
 # pulp tools
