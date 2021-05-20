@@ -5,7 +5,7 @@
   # pgadmin https://computingforgeeks.com/how-to-install-pgadmin-on-centos-fedora/
 
 # postinstall
-  sudo postgresql-setup initdb
+  sudo postgresql-setup --initdb --unit postgresql
   sudo systemctl enable postgresql.service
   sudo systemctl start postgresql.service
 
@@ -13,6 +13,14 @@
 sudo -u postgres psql
 postgres=# create role name createrole createdb replication login password 'pwd';
 
-# create database
-creatdb db-name
-psql db-name
+
+# create user and database
+sudo -i -u postgres
+createuser username
+creatdb db-name -O username
+psql -d db-name
+
+# enable postgis
+CREATE EXTENSION postgis;
+# verify
+select PostGIS_version();
