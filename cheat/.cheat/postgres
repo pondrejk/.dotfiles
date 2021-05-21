@@ -21,6 +21,14 @@ creatdb db-name -O username
 psql -d db-name
 
 # enable postgis
-CREATE EXTENSION postgis;
+=# CREATE EXTENSION postgis;
 # verify
-select PostGIS_version();
+=# select PostGIS_version();
+
+# allowing connections
+=# show hba_file; (find path e.g. /var/lib/pgsql/data/pg_hba.conf)
+# to trust local connection modify to 
+local	all	all	trust
+host	all	127.0.0.1/32	trust
+# then restart service
+systemctl restart postgresql.service
