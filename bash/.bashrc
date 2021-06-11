@@ -71,9 +71,9 @@ alias fk='cd $HOME/Documents/forklift'
 alias kat='cd $HOME/Documents/katello'
 
 # scool
-alias elwar='cd $HOME/Documents/elwar-source'
-alias hex='cd $HOME/Documents/hexbins-demo-brno'
-alias pondrejk='cd $HOME/Documents/pondrejk.net'
+alias elwar='cd $HOME/Documents/PROJECTS/elwar-source'
+alias hex='cd $HOME/Documents/PROJECTS/hexbins-demo-brno'
+alias pondrejk='cd $HOME/Documents/PROJECTS/pondrejk.net'
 alias dizzer='cd $HOME/Dropbox/!!!DIZZER!!!'
 alias biblio='cd $HOME/Dropbox/Biblio'
 
