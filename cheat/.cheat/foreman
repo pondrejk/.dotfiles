@@ -22,4 +22,19 @@ psql -U foreman -W foreman
   bash-5.0# echo $POSTGRES_DB
   foreman
 
+# content host registration manual
+# Install the pre-built bootstrap RPM:
+
+curl --insecure --output katello-ca-consumer-latest.noarch.rpm https://<sat-hostname>/pub/katello-ca-consumer-latest.noarch.rpm
+yum localinstall katello-ca-consumer-latest.noarch.rpm 
+
+# Register using subscription-manager:
+# Using an Activation Key:
+
+subscription-manager register --org="Default_Organization" --activationkey="<Activation Key Name>"
+
+# Using a username and password:
+
+subscription-manager register --org="Default_Organization" --environment="Library"
+
 
