@@ -44,6 +44,8 @@ set nojoinspaces                  " Do not insert a second space after
 set laststatus=2                  " Display airline with one open window
 "set lazyredraw
 
+set encoding=UTF-8
+
 " folding
 set foldmethod=indent
 set foldlevelstart=99
@@ -150,13 +152,12 @@ Plug 'sickill/vim-pasta'
 Plug 'tpope/vim-scriptease'
 Plug 'chrisbra/Recover.vim'
 Plug 'dahu/vim-asciidoc'
-Plug 'tpope/vim-fugitive'
+""Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'Raimondi/delimitMate'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-surround'
 Plug 'Shutnik/jshint2.vim'
-Plug 'ycm-core/YouCompleteMe'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'majutsushi/tagbar'
@@ -168,6 +169,14 @@ Plug 'tpope/vim-rails'
 Plug 'mihaifm/vimpanel'
 Plug 'lifepillar/vim-solarized8'
 Plug 'vim-voom/voom'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdcommenter'
+
+
+"Plug 'ycm-core/YouCompleteMe'
 
 "Plugin 'jhradilek/vim-docbk'
 "Plugin 'jhradilek/vim-mallard'
@@ -238,9 +247,11 @@ let g:NERDTreeWinPos = 'left'     " Place the window to the left.
 let g:NERDTreeWinSize = 30        " Change the window width.
 
 " Start NERDTree in selected folder
+" type C in nerdtree to change root at runtime
+" U to go up a tree
 function! StartUp()
     if 0 == argc()
-        NERDTree ~/Documents/robottelo
+        NERDTree ~/Documents/PROJECTS
     endif
 endfunction
 
@@ -248,17 +259,13 @@ autocmd VimEnter * call StartUp()
 autocmd VimEnter * wincmd p
 
 " NERDTree ignores pyc files
-let NERDTreeIgnore = ['\.pyc$']
+let g:NERDTreeIgnore = ['\.pyc$']
+let g:NERDTreeIgnore = ['^node_modules$']
 
 " NERDTree toggles with f11
 nmap <silent> <F11>  :NERDTreeToggle<CR>
 imap <silent> <F11> <ESC>:NERDTreeToggle<CR>
 cmap <silent> <F11> <ESC>:NERDTreeToggle<CR>
-
-" Vimpanel toggles with f11 -- not excluded from open buffers
-" nmap <silent> <F11> :VimpanelToggleLeft myprojects<CR>
-" imap <silent> <F11> <ESC>:VimpanelToggleLeft myprojects<CR>
-" cmap <silent> <F11> <ESC>:VimpanelToggleLeft myprojects<CR>
 
 " close NERDTree when closing vim
 autocmd VimLeave * NERDTreeClose
@@ -267,6 +274,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Prettier NERDTree
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+
+" Hide brackets in NERDTree status 
+let g:NERDTreeGitStatusConcealBrackets = 1
 
 " Configure the vim-airline plug-in
 let g:airline_theme             = 'molokai'
@@ -289,16 +299,52 @@ let g:airline_readonly_symbol   = '⭤'
 let g:airline_linecolumn_prefix = '⭡'
 
 
-" Mini buffer explorer
-"let g:miniBufExplModSelTarget = 1
-"let g:miniBufExplorerMoreThanOne = 0
-"let g:miniBufExplMapWindowNavArrows = 1
-"let g:miniBufExplUseSingleClick = 1
-"let g:miniBufExplVSplit = 23
-"let g:miniBufExplSplitBelow=1
+cmap w!! %!sudo tee > /dev/null
 
-"let g:miniBufExplMapWindowNavVim = 1
-"let g:miniBufExplMapCTabSwitchBufs = 1
+" COC settings
+"completion with import
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Give more space for displaying messages.
+set cmdheight=2
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming.
+"nmap <leader>F2 <Plug>(coc-rename)
+
+" pretier config
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" run prettier on save
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
+
 
 "folow symlink if opening it
 function! MyFollowSymlink(...)
