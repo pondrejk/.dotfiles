@@ -1,0 +1,3 @@
+# rpr -- add comment:
+trigger: test-robottelo
+pytest: <test_file> -k <test>

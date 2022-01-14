@@ -10,7 +10,7 @@ ssh-copy-id -i ~foreman-proxy/.ssh/id_rsa_foreman_proxy.pub root@target.example.
 # debug logging
 set:
 ssh_log_level: debug
-in /etc/smart_proxy_dynflow_core/settings.d/remote_execution_ssh.yml
+in /etc/foreman-proxy/settings.d/remote_execution_ssh.yml
 
 and  
 :log_level: DEBUG
@@ -25,3 +25,5 @@ journalctl -fl
 
 to work around BZ#1656480
 sed -i '/ProxyCommand/s/^/#/g' /etc/ssh/ssh_config
+
+# todo using alternate ssh cyphers
