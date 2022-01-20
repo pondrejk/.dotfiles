@@ -1,7 +1,6 @@
 "
 " $HOME/.gvimrc -- A configuration file for GTK Vi IMproved
 "
-
 " General settings:
 set nospell                         " Enable spell checking.
 
@@ -22,6 +21,8 @@ set guifont=Inconsolata\ 12
 colorscheme solarized8             " Set the default color scheme.
 
 "remember latest session 
+"sometimes causes trouble with syntax highlight
+"put finish here to mitigate
 set sessionoptions+=resize,winpos
 autocmd VIMEnter * :source Session.vim
 autocmd VIMLeave * :mksession! Session.vim
