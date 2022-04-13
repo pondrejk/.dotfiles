@@ -29,6 +29,10 @@ git revert <commit>     # adds another commit
 # apply patch from github commit (in a correct location)
 curl https://github.com/<commit>.patch | git apply # add --exclude <file> if needed 
 
+# checkout to a remote pull request in a branch
+git fetch <remote> pull/<PR_ID>/head:<NEW_BRANCHNAME>
+git checkout NEW_BRANCHNAME
+
 # revert patch
 git apply -R <patch>
 

@@ -46,5 +46,7 @@ yum install @module_name:stream:version:contex:arch/profile
 yum distro-sync # as upgrade but also downgrades pkgs if they are higher version than available
 
 # history 
-yum history list
-yum history undo/redo id
+yum history list all
+yum history undo/redo/rollback id
+yum history info <package>
+yum history summary <package>

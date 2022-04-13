@@ -16,9 +16,9 @@ and
 :log_level: DEBUG
 in /etc/smart_proxy_dynflow_core/settings.yml
 
-systemctl restart smart_proxy_dynflow_core
+systemctl restart foreman-proxy
 and observe
-/var/log/foreman-proxy/smart_proxy_dynflow_core.log
+/var/log/foreman-proxy/proxy.log
 
 on client you can do
 journalctl -fl

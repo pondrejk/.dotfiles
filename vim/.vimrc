@@ -343,7 +343,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " pretier config
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " run prettier on save
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html Prettier
 
 
 "folow symlink if opening it
