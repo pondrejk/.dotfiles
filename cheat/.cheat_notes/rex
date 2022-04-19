@@ -27,3 +27,9 @@ to work around BZ#1656480
 sed -i '/ProxyCommand/s/^/#/g' /etc/ssh/ssh_config
 
 # todo using alternate ssh cyphers
+
+# force execution through the registered trough capsule
+use setting "Prefer registered through Capsule for remote execution" under content
+
+# see host to capsule mapping in for job invocations
+foreman=# select * from host_proxy_invocations;
