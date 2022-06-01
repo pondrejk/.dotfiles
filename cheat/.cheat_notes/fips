@@ -1,6 +1,9 @@
 # is enabled?
 sysctl crypto.fips_enabled
 
+# how to bypass rpm digest check
+rpm -ivh --nodigest --nofiledigest <pkg>
+
 # enable
 <https://access.redhat.com/solutions/137833>
 
