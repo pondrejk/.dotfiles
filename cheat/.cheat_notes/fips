@@ -4,6 +4,14 @@ sysctl crypto.fips_enabled
 # how to bypass rpm digest check
 rpm -ivh --nodigest --nofiledigest <pkg>
 
+# check if rpm signature is valid for fips
+rpm --checksig -v tapir-8.4.4-1.noarch.rpm 
+tapir-8.4.4-1.noarch.rpm:
+    Header SHA256 digest: OK
+    Header SHA1 digest: OK
+    Payload SHA256 digest: OK
+    MD5 digest: OK
+
 # enable
 <https://access.redhat.com/solutions/137833>
 
