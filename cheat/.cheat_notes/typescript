@@ -1,0 +1,55 @@
+# basic types
+any, void, boolean, number, string, null, undefined
+string[] --  or Array<string> 
+[string, number]  -- tuple 
+string | null | undefined  -- union 
+never -- unreachable
+
+# type annotations
+let myName: string = "Alice"; -- variables
+-- functions # more https://www.typescriptlang.org/docs/handbook/2/functions.html
+function greet(name: string) {... 
+function getFavoriteNumber(): number {... -- return type annotation
+-- classes # more https://www.typescriptlang.org/docs/handbook/2/classes.html
+class Account extends SuperClass implements Interface1, Interface2 {
+  id: string; // A field
+  displayName?: boolean; // An optional field
+  name!: string; // A ‘trust me, it’s there’ field
+  #attributes: Map<any, any>; // A private field
+  roles = ["user"]; // A field with a default
+  readonly createdAt = new Date() // A readonly field with a default
+
+
+# literal types 
+-- expect specifict values, good to combine with unions
+function printText(s: string, alignment: "left" | "right" | "center") {...
+
+# type assertions
+-- to set more specific type
+const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement;
+
+# type alias and type interface
+type Point = {
+  x: number;
+  y: number;
+};
+
+interface Point {
+  x: number;
+  y: number;
+}
+
+function getPoint(point: Point) { ... }
+
+Both provide reusability, type cannot be re-opened to add new properties vs an interface which is always extendable. Interfaces can be expanded and combined:
+
+interface AddressWithUnit extends BasicAddress {
+  unit: string;
+}
+interface ColorfulCircle extends Colorful, Circle {}
+
+# narrowing
+-- conditionals to act on union type members individually (typeof)
+function printAll(strs: string | string[] | null) {
+  if (typeof strs === "object") {...
+
