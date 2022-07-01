@@ -1,0 +1,20 @@
+# rules
+Only Call Hooks at the Top Level, Don’t call Hooks inside loops, conditions, or nested functions. Don’t call Hooks from regular JavaScript functions. Instead, you can: Call Hooks from React function components; Call Hooks from custom Hooks
+
+
+# useState
+# defines state variable, value and setter functio
+const [count, setCount] = useState(0);
+...
+<button onClick={() => setCount(count + 1)}>
+
+# useEffect
+# replaces componentDidMount, componentDidUpdate, and componentWillUnmount, e.g.:
+useEffect(() => {    
+   function someHandlerFunction(status) {      
+   ...}       
+   // optional cleanup function
+   return function cleanup() {      
+   ...
+   };  
+});
