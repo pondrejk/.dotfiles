@@ -1,0 +1,26 @@
+## Parent props (applied to flex container), with examples
+display: flex; -- enable container, set flex context for children
+
+flex-direction: row | row-reverse | column | column-reverse; -- establishes the main axis
+flex-wrap: nowrap | wrap | wrap-reverse; -- should items break to next line if they overflow?
+flex-flow: column wrap; -- direction and wrap combined
+
+justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly... -- how to stack items along the main axis
+align-items: stretch | flex-start | flex-end | center | baseline... -- how to stack/stretch items along the cross axis (perpendicular to the main axis)
+align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch... -- how to stack lines along the cross axis (only for multiline wrapped items) 
+
+gap: 10px 20px; -- explicitely controls gaps between elements (or separately: row-gap/column-gap)
+
+
+## Children props (applied to individual flex items)
+order: 5; -- changes the rendering order
+
+flex-grow: 4; -- sets the proportion for item's width along the main axis (If all items have flex-grow set to 1, the remaining space in the container will be distributed equally to all children. If one of the children has a value of 2, that child would take up twice as much of the space either one of the others (or it will try, at least).)
+flex-shrink -- defines the ability for a flex item to shrink if necessary
+
+flex-basis: <width> | auto | 0; -- default size of an element before the remaining space is distributed, the auto keyword means “look at my width or height property”. If set to 0, the extra space around content isn’t factored in.
+
+flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ] -- combination of flex-grow, flex-shrink and flex-basis, latter two are optional, (recommended over setting those individually, default -- 0 1 auto
+
+align-self: auto | flex-start | flex-end | center | baseline | stretch; -- allows the default alignment (or the one specified by align-items) to be overridden for individual flex items.
+
