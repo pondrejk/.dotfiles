@@ -65,6 +65,15 @@ alias testfm='cd $HOME/Documents/testfm'
 alias at='cd $HOME/Documents/automation-tools'
 alias gitk='gitk -a &'
 
+# projects
+alias prj='cd $HOME/Documents/PROJECTS'
+alias site='cd $HOME/Documents/PROJECTS/pondrejk.net'
+alias lex='cd $HOME/Documents/PROJECTS/LEXICS'
+alias elw='cd $HOME/Documents/PROJECTS/elwar-source'
+alias ink='cd $HOME/Documents/PROJECTS/InkVisitor'
+alias ehr='cd $HOME/Documents/PROJECTS/early-heresy-map'
+
+
 # foreman
 alias fm='cd $HOME/Documents/foreman'
 alias fk='cd $HOME/Documents/forklift'
