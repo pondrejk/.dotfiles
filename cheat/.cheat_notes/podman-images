@@ -1,0 +1,24 @@
+# registries
+- registry.access.redhat.com -- requires no authentication
+- registry.redhat.io -- by subscription, all certified
+- quay.io -- upstream
+
+registry order specified in /etc/containers/registries.conf (when you pull without specifying registry)
+aliases for registry names specified in /etc/containers/registries.conf.d/
+
+# read image metadata from registry
+skopeo inspect <img>
+skopeo copy <img1> <img2>
+
+# login 
+podman login -u <usr> -p <pwd> <registry>
+podman logout --all
+
+# tagging
+podman image tag local_image:tag local_image:new_tag
+
+podman search <name> # goes trough registries
+podman image ls      # shows pulled images
+podman push <image>  # registry is specified as part of image name 
+podman image inspect <image>
+podman image rm (-f)
