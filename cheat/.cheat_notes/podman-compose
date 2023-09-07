@@ -1,0 +1,43 @@
+# multi-compose applications, microservices
+# you might need more: kubernetes (openshift)
+# compose file yaml -- managing multiple container at once
+
+services:                                  # containers
+   orders:                                 # container named orders 
+       image: quay.io/user/python-app      # params for podman run command
+       ports:
+         - 3030:8080
+       networks:
+         - net_name
+       volumes:
+         - vol_name:/path/in/cont 
+       environment:
+           ACCOUNTS_SERVICE: bla
+
+other than services keywords that go to compose: networks, volumes, configs, secrets
+
+networks:
+   net_name: {} # means default config 
+volumes:
+   vol_name: {}
+   vol_name2:
+      external: true # not controlled by podman-compose
+
+# container dependencies
+    depends_on:
+      - container_name
+
+# prepare stuff for production
+podman generate kube
+podman play kube
+
+# manage compose
+podman-compose up   # starts stuff based on compose
+-- common options: -d, --force-recreate, --remove-orphans
+podman-compose ps
+podman-compose logs -n -f 
+
+podman-compose stop
+podman-compose down # stops and turns off
+
+

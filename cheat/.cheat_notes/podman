@@ -1,0 +1,47 @@
+# commands
+
+podman pull <registry>/subdivision/image:tag # tag assumed latest if unspecified, you use run and initial pull is done automatically
+
+podman images # lists images
+
+podman run <image> # starts a container 
+
+# some options:
+--rm   # remove after finishing
+-d     # run in background (detached)
+--name # specify custom name
+
+-p <port_on_host>:<port_in_container> # expose ports
+-e NAME='value'                       # set env variable in container
+
+podman ps          # lists container
+podman ps -a       # also exited ones
+
+# container networks
+# default podman (DNS off)
+podman network create <nw_name>
+podman network inspect <nw_name>
+podman run --net <nw1>,<nw2> ... # to specify network for container
+
+# more on ports
+-p 8080:8080              # all networks on host can access port
+-p 127.0.0.1:8080:8080    # limit host ip address
+podman port <cont>        # list container's port mappings
+podman port --all         # all port mappings 
+podman inspect <cont> -f '{{.NetworkSettings.Networks}}' # list containers networks
+
+# access container
+podman exec <container> <command>
+podman exec -l <command>    # execute on last used container
+podman exec -ti <container> # get interactive sudo terminal on container, also -til
+
+podman cp <container>:<location> <host_location> # copy from container, also vice-versa
+
+# other mgmt
+podman pause <cont>
+podman unpause <cont>
+podman stop <cont> # graceful --time=to_wait 
+podman kill <cont> # forceful
+
+podman rm <cont> -f # remove even if running or paused
+
