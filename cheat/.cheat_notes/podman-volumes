@@ -1,0 +1,34 @@
+# Reasons for volumes:
+- performance -- Images use copy on write file system -- we want to reduce layers, better to use external storage for write-intensive apps
+- persisting data -- containers are short lived
+- data reuse betw containers, (NFS also possible but discouraged)
+
+# volume vs bind-mount
+mapping files from containers to the host machine, use with `podman run` 
+- volume is managed by podman, easier 
+- bind mount is a location on host or NFS
+
+2 type syntax:
+`--volume <path on host/volume name>:<path_in_container>:options` (options rw, ro, Z etc)
+`--mount type=TYPE,source=<path_on_host>,destination=<p_in_cont>`
+TYPE is one of bind, volume, tmpfs (temporary file system, just for perf optimization, configurable only in mount syntax)
+
+# troubleshooting bind mounts
+-- possible permission issues, check with:
+
+`podman unshare ls -l` user namespace share (use podman's namespace that mapps external to container users)
+
+-- possible SELinux issues, label `container_file_t` has to be on the bind mount, podman can fix it with z (accessible to all containers) or Z (exclusive to a given container) option that changes the context on the file (can have bad consequences)
+
+--volume <src>:<dst>:z
+
+# volumes
+
+podman volume create <name>
+podman volume import <vol_name> data.tar.gz (also export)
+
+# providing data to database containers
+podman cp file container:path
+podman exec cotainer psql...
+-- or use volumes and bind mounts, e.g. -v <volume>:/var/lib/pgsql/data
+

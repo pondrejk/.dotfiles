@@ -1,0 +1,25 @@
+# startup issues
+
+podman ps -a (see also exited ones)
+podman logs <container>
+podman logs -f <container> (real time)
+
+# network
+port mapping issues, no common network, no DNS enabled
+
+podman port <container> -- list port mapping in cont, contaier port shown first
+
+-- use linux tools to check where the cont app is listening, like ss (BUT troubleshooting tools could be removed from the container for lower footprint):
+
+podman exec -it CONTAINER ss -pant  (socket stats, processes that listen, on ports, etc.)
+
+-- enter the container namespace to use troubleshooting tools from container host in it
+podman inspect CONTAINER --format '{{.State.Pid}}' -- get cont PID
+sudo nsenter -n -t CONTAINER_PID ss -pant
+
+-- what network is used in cont
+podman inspect CONTAINER --format='{{.NetworkSettings.Networks}}
+
+-- is dns on? (not on default podman netw, but in any other newly created netw on by default)
+podman network inspect <netw>
+
