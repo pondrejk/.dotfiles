@@ -86,7 +86,7 @@ inoremap <Down> <Esc>g<Down>a
 inoremap jj <Esc>
 
 " yank deduplication
-nnoremap yy yaw
+nnoremap <S-y> yaw
 
 " CTRL-Tab is Next window
 noremap  <C-Tab> <C-W>w
@@ -309,10 +309,6 @@ set cmdheight=2
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=300
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " code navigation.
 nmap <silent> gd <Plug>(coc-definition)
