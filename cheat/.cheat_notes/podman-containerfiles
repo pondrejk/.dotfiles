@@ -1,0 +1,36 @@
+# Containerfile -- recipe for image
+instructions:
+
+FROM - base image to build upon
+WORKDRIR - sets pwd for the next instructions
+COPY - copies files like cp
+ADD - copies files, unpacks tars and pulls from web
+RUN - runs a command at build time and creates new image layer
+ENTRYPOINT - initial command to run at container startup (override for debuging purposes using --entrypoint option)
+CMD - arguments to entrypoint, override by passing args to podman build
+
+USER - defines user for next instructions
+LABEL - metadata
+EXPOSE - what port the containerized app exposes (just for docs)
+ENV - set env variable for container
+ARG - sets build time variables
+VOLUME - defines external storage
+
+# multistage builds
+- used to build artifacts using images that are not needed in the final products (like node environment), only layers from the final stage are present in the image, syntax (FROM as)
+
+FROM registry.access.redhat.com/ubi8/nodejs-14:1 as builder
+COPY ./ /opt/app-root/src/
+RUN npm install
+RUN npm run build
+
+# Second stage
+FROM registry.access.redhat.com/ubi8/nginx-120
+COPY --from=builder /opt/app-root/src/ /usr/share/nginx/html
+
+# reducing layers by chaining commands (instead of 3 run instructions)
+RUN mkdir /etc/gitea && chown root:gitea /etc/gitea && chmod 770 /etc/gitea
+
+# rootles podman
+-- root in container is mapped to user that run the container on host (never run as root)
+-- user mapping from host to container is defined in /etc/subid and /etc/subgit files
