@@ -33,3 +33,6 @@ use setting "Prefer registered through Capsule for remote execution" under conte
 
 # see host to capsule mapping in for job invocations
 foreman=# select * from host_proxy_invocations;
+
+# check smart proxy memory consumption
+top -p `pgrep "smart-proxy"`

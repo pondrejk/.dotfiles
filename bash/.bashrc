@@ -166,7 +166,8 @@ brk () {
 }
 
 # vimx allows copying to clipboard from cmdline
-alias vim='vimx'
+# alias vim='vimx'
+alias vim='nvim'
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"

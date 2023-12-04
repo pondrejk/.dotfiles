@@ -1,0 +1,7 @@
+# AAT used for satlab-tower PRs
+
+get hosts synced from regular AT
+Inventories > osp-rhos01-satellite-users > sources > sync the one with OpenStack
+
+check sync of AAT to latest reconfigure commit
+Projects > satlab_tower_master > Details > Source control revision -- compare with latest commit hash, eventually sync
