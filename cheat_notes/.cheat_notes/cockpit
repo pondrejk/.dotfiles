@@ -1,0 +1,22 @@
+# setup on sat
+- subscription-manager register --user --password
+- satellite-installer --enable-foreman-plugin-remote-execution-cockpit
+- register host via global registration
+
+optional if custom key is required
+- ssh-keygen -o -a 100 -t rsa -m pem -f ssh/id_passwd -C "foreman-proxy@<hostname>" (choose passwd)
+- chown foreman-proxy:foreman-proxy ssh/id_passwd
+- chown foreman-proxy:foreman-proxy ssh/id_passwd.pub
+- in /etc/foreman-proxy/settings.d/remote_execution_ssh.yml set 
+     :ssh_identity_key_file: /var/lib/foreman-proxy/ssh/id_passwd
+- systemctl restart foreman-proxy
+
+# on client
+yum install cockpit (if not there by default)
+
+(optional for custom ssh key)
+- curl https://sat_hostname:9090/ssh/pubkey >> ~/.ssh/authorized_keys
+- hammer host set-parameter --name remote_execution_ssh_key_passphrase --value <passwd> --host-id <host_id>
+
+back on satellite:
+- verify key's working: ssh root@<client> -i ssh/id_passwd
