@@ -1,0 +1,11 @@
+# sync inventory 
+broker inventory --sync AnsibleTower
+
+# inventory info
+broker inventory --details
+
+# custom pr over stream
+broker execute --workflow deploy-upstream-satellite --pull_requests pr.json
+
+cat pr.json:
+[{"repo_name":"foreman","pr_number":9847}]
