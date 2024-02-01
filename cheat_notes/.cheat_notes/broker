@@ -9,3 +9,6 @@ broker execute --workflow deploy-upstream-satellite --pull_requests pr.json
 
 cat pr.json:
 [{"repo_name":"foreman","pr_number":9847}]
+
+# checkout using nick (defined in broker_settings)
+broker checkout -n usat615
