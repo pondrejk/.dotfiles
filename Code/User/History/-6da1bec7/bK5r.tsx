@@ -1,0 +1,32 @@
+import "./App.css";
+import { MainPage } from "./components/MainPage";
+import ErrorPage from "./errorPage.tsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  FailuresTable,
+  loader as resourceLoader,
+} from "./components/FailuresTable.tsx";
+import { useAppSelector } from "./app/hooks.tsx";
+
+function App() {
+  const selectedVersion = useAppSelector((state) => state.main.selectedVersion);
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <MainPage />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: ":selectedVersion",
+          element: <FailuresTable />,
+          loader: async () => resourceLoader(selectedVersion),
+        },
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
+}
+
+export default App;

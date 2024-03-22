@@ -1,0 +1,15 @@
+{
+    "workbench.colorCustomizations": {
+
+    },
+    "vim.insertModeKeyBindings": [
+        {
+        "before": ["j", "j"],
+        "after": ["<Esc>"]
+        }
+    ],
+    "workbench.colorTheme": "Better Solarized Dark",
+    "workbench.startupEditor": "none",
+    "editor.formatOnSave": true,
+
+}

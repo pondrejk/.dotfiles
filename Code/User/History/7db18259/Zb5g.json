@@ -1,0 +1,1532 @@
+{
+  "launch_id": "634",
+  "clusters": [
+    {
+      "id": 4300,
+      "index": 81032902741791921,
+      "launchId": 634,
+      "message": "navmazing._errors.NavigationTriesExceeded: Navigation failed to reach [Edit] in the specified tries",
+      "testItems": [
+        {
+          "id": 378444,
+          "uuid": "04f9cea8-f4e6-4dc0-a0b4-418799d930f4",
+          "name": "tests/foreman/ui/test_activationkey.py::test_positive_service_level_subscription_with_custom_product[rhel7_contenthost0]",
+          "description": "<table>\n  <thead>\n    <tr><td>UI Sessions</td></tr>\n  </thead>\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <tr><td><a href=http://infra-grid-01.infra.sat.rdu2.redhat.com/videos/d992d9954ef1e894f8ea7c7e0d3383c2/video.mp4 target=\"_blank\">video</a></td></tr>\n  \n  \n  \n  \n  \n</table>\n\n\ntest_positive_service_level_subscription_with_custom_product[rhel7_contenthost0] time: 314.387",
+          "parameters": [],
+          "attributes": [
+            { "key": "endpoint", "value": "ui" },
+            { "key": "importance", "value": "High" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "ClientOS", "value": "7" },
+            { "key": "component", "value": "ActivationKeys" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "team", "value": "phoenix-subscriptions" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706896243000,
+          "endTime": 1706896557387,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 378188,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 378188, "name": "ActivationKeys" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:5e78bcc45b69bb8cf503e0df034ec1db",
+          "testCaseHash": -1603370737,
+          "patternTemplates": ["NavigationTriesExceeded"],
+          "path": "378188.378444"
+        },
+        {
+          "id": 378471,
+          "uuid": "88ac5a48-88de-43b7-b059-10c3abf335e0",
+          "name": "tests/foreman/ui/test_subscription.py::test_positive_view_vdc_subscription_products[rhel7_contenthost0]",
+          "description": "<table>\n  <thead>\n    <tr><td>UI Sessions</td></tr>\n  </thead>\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <tr><td><a href=http://infra-grid-01.infra.sat.rdu2.redhat.com/videos/78b8c5198081e7035ae14eeb167f150e/video.mp4 target=\"_blank\">video</a></td></tr>\n  \n  \n  \n  \n  \n</table>\n\n\ntest_positive_view_vdc_subscription_products[rhel7_contenthost0] time: 178.099",
+          "parameters": [],
+          "attributes": [
+            { "key": "endpoint", "value": "ui" },
+            { "key": "importance", "value": "High" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "component", "value": "SubscriptionManagement" },
+            { "key": "ClientOS", "value": "7" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "team", "value": "phoenix-subscriptions" },
+            { "key": "SatelliteVersion", "value": "6.15.0" },
+            { "key": "run_in_one_thread", "value": "None" }
+          ],
+          "type": "STEP",
+          "startTime": 1706898313000,
+          "endTime": 1706898491099,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 378458,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 378458, "name": "SubscriptionManagement" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:e5864d5b6a3e79adc343a7fa5138dd02",
+          "testCaseHash": 381581404,
+          "patternTemplates": ["NavigationTriesExceeded"],
+          "path": "378458.378471"
+        },
+        {
+          "id": 378477,
+          "uuid": "b81d7c32-f699-4843-9b44-94a79d56d446",
+          "name": "tests/foreman/ui/test_subscription.py::test_positive_candlepin_events_processed_by_STOMP[rhel7_contenthost0]",
+          "description": "<table>\n  <thead>\n    <tr><td>UI Sessions</td></tr>\n  </thead>\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <tr><td><a href=http://infra-grid-01.infra.sat.rdu2.redhat.com/videos/c775241b1020affa95a0d44e276ee17f/video.mp4 target=\"_blank\">video</a></td></tr>\n  \n  \n  \n  \n  \n</table>\n\n\ntest_positive_candlepin_events_processed_by_STOMP[rhel7_contenthost0] time: 154.153",
+          "parameters": [],
+          "attributes": [
+            { "key": "endpoint", "value": "ui" },
+            { "key": "importance", "value": "High" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "component", "value": "SubscriptionManagement" },
+            { "key": "ClientOS", "value": "7" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "team", "value": "phoenix-subscriptions" },
+            { "key": "SatelliteVersion", "value": "6.15.0" },
+            { "key": "run_in_one_thread", "value": "None" }
+          ],
+          "type": "STEP",
+          "startTime": 1706898313000,
+          "endTime": 1706898467153,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 378458,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 378458, "name": "SubscriptionManagement" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:49c62e4f79febf870a9c8c5314da4e01",
+          "testCaseHash": -1736819957,
+          "patternTemplates": ["NavigationTriesExceeded"],
+          "path": "378458.378477"
+        },
+        {
+          "id": 378622,
+          "uuid": "a4e7fbd2-4e9e-4393-8fd5-b01d8fc150f7",
+          "name": "tests/foreman/ui/test_hostcollection.py::test_negative_install_via_remote_execution",
+          "description": "<table>\n  <thead>\n    <tr><td>UI Sessions</td></tr>\n  </thead>\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <tr><td><a href=http://infra-grid-01.infra.sat.rdu2.redhat.com/videos/9cabc1dc7a8ca29a9b03c8276433f940/video.mp4 target=\"_blank\">video</a></td></tr>\n  \n  \n  \n  \n  \n</table>\n\n\ntest_negative_install_via_remote_execution time: 62.556",
+          "parameters": [],
+          "attributes": [
+            { "key": "endpoint", "value": "ui" },
+            { "key": "importance", "value": "High" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "component", "value": "HostCollections" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "team", "value": "phoenix-subscriptions" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706896797000,
+          "endTime": 1706896859556,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 378548,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 378548, "name": "HostCollections" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:9e8a257ce79da1dd9120d7403e7cb64d",
+          "testCaseHash": -400879906,
+          "patternTemplates": ["NavigationTriesExceeded"],
+          "path": "378548.378622"
+        },
+        {
+          "id": 378623,
+          "uuid": "bfdadbb6-6212-4a1a-8afa-5c91753bb66e",
+          "name": "tests/foreman/ui/test_hostcollection.py::test_negative_install_via_custom_remote_execution",
+          "description": "<table>\n  <thead>\n    <tr><td>UI Sessions</td></tr>\n  </thead>\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <tr><td><a href=http://infra-grid-01.infra.sat.rdu2.redhat.com/videos/1b37ca5b6e6bed3b002d6d1aebd1ce4f/video.mp4 target=\"_blank\">video</a></td></tr>\n  \n  \n  \n  \n  \n</table>\n\n\ntest_negative_install_via_custom_remote_execution time: 63.093",
+          "parameters": [],
+          "attributes": [
+            { "key": "endpoint", "value": "ui" },
+            { "key": "importance", "value": "High" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "component", "value": "HostCollections" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "team", "value": "phoenix-subscriptions" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706896797000,
+          "endTime": 1706896860093,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 378548,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 378548, "name": "HostCollections" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:d46c082f73110990973e08d454d7f62a",
+          "testCaseHash": -948766706,
+          "patternTemplates": ["NavigationTriesExceeded"],
+          "path": "378548.378623"
+        },
+        {
+          "id": 379530,
+          "uuid": "2b3c4282-7c0a-4147-8e31-dcb5a94bf0d8",
+          "name": "tests/foreman/ui/test_bookmarks.py::test_positive_end_to_end[Repository]",
+          "description": "<table>\n  <thead>\n    <tr><td>UI Sessions</td></tr>\n  </thead>\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <tr><td><a href=http://infra-grid-01.infra.sat.rdu2.redhat.com/videos/659a94806c801889658a246913e5ac5c/video.mp4 target=\"_blank\">video</a></td></tr>\n  \n  \n  \n  \n  \n</table>\n\n\ntest_positive_end_to_end[Repository] time: 68.102",
+          "parameters": [],
+          "attributes": [
+            { "key": "upgrade", "value": "None" },
+            { "key": "endpoint", "value": "ui" },
+            { "key": "importance", "value": "High" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "component", "value": "Search" },
+            { "key": "team", "value": "endeavour" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706894757000,
+          "endTime": 1706894825102,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 378929,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 378929, "name": "Search" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:c77d06c29a143f28a152eeb9752fab35",
+          "testCaseHash": -804038203,
+          "patternTemplates": ["NavigationTriesExceeded"],
+          "path": "378929.379530"
+        },
+        {
+          "id": 379531,
+          "uuid": "f663900c-18df-432d-ae0f-7fdc7b036fcc",
+          "name": "tests/foreman/ui/test_bookmarks.py::test_positive_create_bookmark_public[Repository]",
+          "description": "<table>\n  <thead>\n    <tr><td>UI Sessions</td></tr>\n  </thead>\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <tr><td><a href=http://infra-grid-01.infra.sat.rdu2.redhat.com/videos/20bc004cf70273d19ab91bace4b8b527/video.mp4 target=\"_blank\">video</a></td></tr>\n  \n  \n  \n  \n  \n</table>\n\n\ntest_positive_create_bookmark_public[Repository] time: 65.260",
+          "parameters": [],
+          "attributes": [
+            { "key": "endpoint", "value": "ui" },
+            { "key": "importance", "value": "High" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "component", "value": "Search" },
+            { "key": "team", "value": "endeavour" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706894757000,
+          "endTime": 1706894822260,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 378929,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 378929, "name": "Search" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:7f3c357b15f62d2d7e77f07e1e588ce0",
+          "testCaseHash": -1431205863,
+          "patternTemplates": ["NavigationTriesExceeded"],
+          "path": "378929.379531"
+        },
+        {
+          "id": 379534,
+          "uuid": "2a977498-f79b-4c2d-88b1-9dbf8905db5d",
+          "name": "tests/foreman/ui/test_bookmarks.py::test_negative_create_with_duplicate_name[Repository]",
+          "description": "<table>\n  <thead>\n    <tr><td>UI Sessions</td></tr>\n  </thead>\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <tr><td><a href=http://infra-grid-01.infra.sat.rdu2.redhat.com/videos/c36dc5efc514e16b8333e8fa6008d313/video.mp4 target=\"_blank\">video</a></td></tr>\n  \n  \n  \n  \n  \n</table>\n\n\ntest_negative_create_with_duplicate_name[Repository] time: 69.533",
+          "parameters": [],
+          "attributes": [
+            { "key": "endpoint", "value": "ui" },
+            { "key": "importance", "value": "High" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "component", "value": "Search" },
+            { "key": "team", "value": "endeavour" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706894757000,
+          "endTime": 1706894826533,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 378929,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 378929, "name": "Search" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:6cca6718380df5f45d89a0d318daa699",
+          "testCaseHash": 1438055971,
+          "patternTemplates": ["NavigationTriesExceeded"],
+          "path": "378929.379534"
+        },
+        {
+          "id": 380860,
+          "uuid": "f8013b93-3321-4d07-b848-95549dde33ff",
+          "name": "tests/foreman/ui/test_settings.py::test_positive_update_restrict_composite_view[restrict_composite_view]",
+          "description": "<table>\n  <thead>\n    <tr><td>UI Sessions</td></tr>\n  </thead>\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <tr><td><a href=http://infra-grid-01.infra.sat.rdu2.redhat.com/videos/32c64989715e1da8faf7c466d27baa37/video.mp4 target=\"_blank\">video</a></td></tr>\n  \n  \n  \n  \n  \n</table>\n\n\ntest_positive_update_restrict_composite_view[restrict_composite_view] time: 99.727",
+          "parameters": [],
+          "attributes": [
+            { "key": "team", "value": "rocket" },
+            { "key": "endpoint", "value": "ui" },
+            { "key": "importance", "value": "Critical" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "component", "value": "Settings" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "SatelliteVersion", "value": "6.15.0" },
+            { "key": "run_in_one_thread", "value": "None" }
+          ],
+          "type": "STEP",
+          "startTime": 1706908633000,
+          "endTime": 1706908732727,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 380829,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 380829, "name": "Settings" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:ed2a8bb2e7da0a622074e1fa712d062f",
+          "testCaseHash": -1460006651,
+          "patternTemplates": ["NavigationTriesExceeded"],
+          "path": "380829.380860"
+        }
+      ]
+    },
+    {
+      "id": 4301,
+      "index": 86769186541424151,
+      "launchId": 634,
+      "message": "assert 1 == 0\n + where 1 = stdout:\\nUpdating Subscription Management repositories.\\nLast metadata expiration check: 0:00:15 ago on Fri Feb 2 20:37:04 :\\nUnable to resolve argument duck\\nError: Problems in request:\\nmissing groups or modules: : 1.status",
+      "testItems": [
+        {
+          "id": 380658,
+          "uuid": "6813da13-dcf2-4c65-b65f-869cd54f7883",
+          "name": "tests/foreman/ui/test_contenthost.py::test_module_stream_update_from_satellite[rhel8_contenthost0-module_repos_collection_with_manifest0]",
+          "description": "<table>\n  <thead>\n    <tr><td>UI Sessions</td></tr>\n  </thead>\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <tr><td><a href=http://infra-grid-01.infra.sat.rdu2.redhat.com/videos/None/video.mp4 target=\"_blank\">video</a></td></tr>\n  \n  \n  \n  \n  \n</table>\n\n\ntest_module_stream_update_from_satellite[rhel8_contenthost0-module_repos_collection_with_manifest0] time: 202.764",
+          "parameters": [],
+          "attributes": [
+            { "key": "component", "value": "Hosts-Content" },
+            { "key": "upgrade", "value": "None" },
+            { "key": "endpoint", "value": "ui" },
+            { "key": "importance", "value": "High" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "ClientOS", "value": "8" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "team", "value": "phoenix-subscriptions" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706897176000,
+          "endTime": 1706897378764,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 380631,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 380631, "name": "Hosts-Content" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:2a3b4cba36821ef686779a009a5dffa7",
+          "testCaseHash": 2092761747,
+          "patternTemplates": [],
+          "path": "380631.380658"
+        }
+      ]
+    },
+    {
+      "id": 4302,
+      "index": 85876232476967001,
+      "launchId": 634,
+      "message": "assert 1 == 0\n + where 1 = stdout:\\nUpdating Subscription Management repositories.\\nLast metadata expiration check: 0:00:14 ago on Fri Feb 2 20:33:42 :\\nUnable to resolve argument walrus\\nError: Problems in request:\\nmissing groups or modules: : 1.status",
+      "testItems": [
+        {
+          "id": 380657,
+          "uuid": "789ad408-a4df-4e08-a1ff-a46d49b6d0e1",
+          "name": "tests/foreman/ui/test_contenthost.py::test_module_status_update_without_force_upload_package_profile[rhel8_contenthost0-module_repos_collection_with_manifest0]",
+          "description": "<table>\n  <thead>\n    <tr><td>UI Sessions</td></tr>\n  </thead>\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <tr><td><a href=http://infra-grid-01.infra.sat.rdu2.redhat.com/videos/None/video.mp4 target=\"_blank\">video</a></td></tr>\n  \n  \n  \n  \n  \n</table>\n\n\ntest_module_status_update_without_force_upload_package_profile[rhel8_contenthost0-module_repos_collection_with_manifest0] time: 184.282",
+          "parameters": [],
+          "attributes": [
+            { "key": "component", "value": "Hosts-Content" },
+            { "key": "endpoint", "value": "ui" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "ClientOS", "value": "8" },
+            { "key": "importance", "value": "Medium" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "team", "value": "phoenix-subscriptions" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706897176000,
+          "endTime": 1706897360282,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 380631,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 380631, "name": "Hosts-Content" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:5afbd6e78042fb943889e40308276518",
+          "testCaseHash": 195377610,
+          "patternTemplates": [],
+          "path": "380631.380657"
+        }
+      ]
+    },
+    {
+      "id": 4303,
+      "index": 11714528902035821,
+      "launchId": 634,
+      "message": "assert 1 == 0\n + where 1 = stdout:\\nUpdating Subscription Management repositories.\\nLast metadata expiration check: 0:00:15 ago on Fri Feb 2 20:30:37 :\\nUnable to resolve argument walrus\\nError: Problems in request:\\nmissing groups or modules: : 1.status",
+      "testItems": [
+        {
+          "id": 380656,
+          "uuid": "1fb6d5ec-63fa-4938-a53d-85cc4c24e3b9",
+          "name": "tests/foreman/ui/test_contenthost.py::test_module_status_update_from_content_host_to_satellite[rhel8_contenthost0-module_repos_collection_with_manifest0]",
+          "description": "<table>\n  <thead>\n    <tr><td>UI Sessions</td></tr>\n  </thead>\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <tr><td><a href=http://infra-grid-01.infra.sat.rdu2.redhat.com/videos/None/video.mp4 target=\"_blank\">video</a></td></tr>\n  \n  \n  \n  \n  \n</table>\n\n\ntest_module_status_update_from_content_host_to_satellite[rhel8_contenthost0-module_repos_collection_with_manifest0] time: 222.428",
+          "parameters": [],
+          "attributes": [
+            { "key": "component", "value": "Hosts-Content" },
+            { "key": "endpoint", "value": "ui" },
+            { "key": "importance", "value": "High" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "ClientOS", "value": "8" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "team", "value": "phoenix-subscriptions" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706897176000,
+          "endTime": 1706897398428,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 380631,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 380631, "name": "Hosts-Content" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:1e520408716025f97c88895dd42c6f80",
+          "testCaseHash": -492571116,
+          "patternTemplates": [],
+          "path": "380631.380656"
+        }
+      ]
+    },
+    {
+      "id": 4304,
+      "index": 94744473233150081,
+      "launchId": 634,
+      "message": "widgetastic.exceptions.RowNotFound: Row not found when using filters ()/{'name': 'kangaroo', 'stream': '0'}",
+      "testItems": [
+        {
+          "id": 380655,
+          "uuid": "c9425d7b-267b-4a18-9c55-1e448513d506",
+          "name": "tests/foreman/ui/test_contenthost.py::test_install_modular_errata[rhel8_contenthost0-module_repos_collection_with_manifest0]",
+          "description": "<table>\n  <thead>\n    <tr><td>UI Sessions</td></tr>\n  </thead>\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <tr><td><a href=http://infra-grid-01.infra.sat.rdu2.redhat.com/videos/3b3f4455c1a25cc13b23bc60fe4537fa/video.mp4 target=\"_blank\">video</a></td></tr>\n  \n  \n  \n  \n  \n</table>\n\n\ntest_install_modular_errata[rhel8_contenthost0-module_repos_collection_with_manifest0] time: 230.277",
+          "parameters": [],
+          "attributes": [
+            { "key": "component", "value": "Hosts-Content" },
+            { "key": "upgrade", "value": "None" },
+            { "key": "endpoint", "value": "ui" },
+            { "key": "importance", "value": "High" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "ClientOS", "value": "8" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "team", "value": "phoenix-subscriptions" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706897176000,
+          "endTime": 1706897406277,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 380631,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 380631, "name": "Hosts-Content" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:070ad18de07049c742b2a205a6f51ef9",
+          "testCaseHash": -576479353,
+          "patternTemplates": [],
+          "path": "380631.380655"
+        }
+      ]
+    },
+    {
+      "id": 4305,
+      "index": 82333690388963721,
+      "launchId": 634,
+      "message": "assert 1 == 0\n + where 1 = stdout:\\nUpdating Subscription Management repositories.\\nLast metadata expiration check: 0:00:15 ago on Fri Feb 2 20:23:04 :\\nUnable to resolve argument walrus\\nError: Problems in request:\\nmissing groups or modules: : 1.status",
+      "testItems": [
+        {
+          "id": 380654,
+          "uuid": "3e71a594-2603-427d-9178-9a95ae2e0414",
+          "name": "tests/foreman/ui/test_contenthost.py::test_module_streams_customize_action[rhel8_contenthost0-module_repos_collection_with_manifest0]",
+          "description": "<table>\n  <thead>\n    <tr><td>UI Sessions</td></tr>\n  </thead>\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <tr><td><a href=http://infra-grid-01.infra.sat.rdu2.redhat.com/videos/None/video.mp4 target=\"_blank\">video</a></td></tr>\n  \n  \n  \n  \n  \n</table>\n\n\ntest_module_streams_customize_action[rhel8_contenthost0-module_repos_collection_with_manifest0] time: 218.268",
+          "parameters": [],
+          "attributes": [
+            { "key": "component", "value": "Hosts-Content" },
+            { "key": "endpoint", "value": "ui" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "ClientOS", "value": "8" },
+            { "key": "importance", "value": "Medium" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "team", "value": "phoenix-subscriptions" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706897176000,
+          "endTime": 1706897394268,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 380631,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 380631, "name": "Hosts-Content" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:0f3e98d636ceba6783391ab373492bd4",
+          "testCaseHash": 1303670034,
+          "patternTemplates": [],
+          "path": "380631.380654"
+        }
+      ]
+    },
+    {
+      "id": 4306,
+      "index": 18732946848062711,
+      "launchId": 634,
+      "message": "widgetastic.exceptions.RowNotFound: Row not found when using filters ()/{'name': 'walrus', 'stream': '5.21'}",
+      "testItems": [
+        {
+          "id": 380653,
+          "uuid": "d0bc92be-7d12-4859-a5af-e7551144cf40",
+          "name": "tests/foreman/ui/test_contenthost.py::test_module_stream_actions_on_content_host[rhel8_contenthost0-module_repos_collection_with_manifest0]",
+          "description": "<table>\n  <thead>\n    <tr><td>UI Sessions</td></tr>\n  </thead>\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <tr><td><a href=http://infra-grid-01.infra.sat.rdu2.redhat.com/videos/db811713ab5cdb453fc688b4ac3b1366/video.mp4 target=\"_blank\">video</a></td></tr>\n  \n  \n  \n  \n  \n</table>\n\n\ntest_module_stream_actions_on_content_host[rhel8_contenthost0-module_repos_collection_with_manifest0] time: 248.950",
+          "parameters": [],
+          "attributes": [
+            { "key": "component", "value": "Hosts-Content" },
+            { "key": "upgrade", "value": "None" },
+            { "key": "endpoint", "value": "ui" },
+            { "key": "importance", "value": "High" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "ClientOS", "value": "8" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "team", "value": "phoenix-subscriptions" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706897176000,
+          "endTime": 1706897424950,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 380631,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 380631, "name": "Hosts-Content" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:72e158c97db6c93596bc8d0b59f964d7",
+          "testCaseHash": -1761573213,
+          "patternTemplates": [],
+          "path": "380631.380653"
+        }
+      ]
+    },
+    {
+      "id": 4307,
+      "index": 42275709338032941,
+      "launchId": 634,
+      "message": "assert False",
+      "testItems": [
+        {
+          "id": 380329,
+          "uuid": "231f0e04-d1f7-4434-aec3-b43c9ddc500e",
+          "name": "tests/foreman/cli/test_host.py::test_positive_list_infrastructure_hosts[rhel7_contenthost0]",
+          "description": "test_positive_list_infrastructure_hosts[rhel7_contenthost0] time: 17.037",
+          "parameters": [],
+          "attributes": [
+            { "key": "component", "value": "Hosts" },
+            { "key": "importance", "value": "High" },
+            { "key": "endpoint", "value": "cli" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "team", "value": "endeavour" },
+            { "key": "ClientOS", "value": "7" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "cli_host_create", "value": "None" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706894743000,
+          "endTime": 1706894760037,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 380143,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 380143, "name": "Hosts" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:80419e9421d1216a399c71e1ec3a11af",
+          "testCaseHash": -284639296,
+          "patternTemplates": [],
+          "path": "380143.380329"
+        }
+      ]
+    },
+    {
+      "id": 4308,
+      "index": 85626363590477721,
+      "launchId": 634,
+      "message": "navmazing._errors.NavigationTriesExceeded: Navigation failed to reach [VMImport] in the specified tries",
+      "testItems": [
+        {
+          "id": 379792,
+          "uuid": "dc22ae82-4ad7-4441-b806-32ed4f40aa1a",
+          "name": "tests/foreman/ui/test_computeresource.py::test_positive_VM_import",
+          "description": "<table>\n  <thead>\n    <tr><td>UI Sessions</td></tr>\n  </thead>\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <tr><td><a href=http://infra-grid-01.infra.sat.rdu2.redhat.com/videos/c8b301f4c94fa28cc77afff273aa5687/video.mp4 target=\"_blank\">video</a></td></tr>\n  \n  \n  \n  \n  \n</table>\n\n\ntest_positive_VM_import time: 102.556",
+          "parameters": [],
+          "attributes": [
+            { "key": "component", "value": "ComputeResources" },
+            { "key": "team", "value": "rocket" },
+            { "key": "endpoint", "value": "ui" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "importance", "value": "Medium" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706904065000,
+          "endTime": 1706904167556,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 379744,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 379744, "name": "ComputeResources" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:5a7cfd64e5744167ae72fab009b20cf2",
+          "testCaseHash": 46610281,
+          "patternTemplates": ["NavigationTriesExceeded"],
+          "path": "379744.379792"
+        }
+      ]
+    },
+    {
+      "id": 4309,
+      "index": 40658932232231311,
+      "launchId": 634,
+      "message": "widgetastic.exceptions.RowNotFound: Row not found when using filters ()/{'discovered_repository__contains': 'fakerepo01'}",
+      "testItems": [
+        {
+          "id": 378765,
+          "uuid": "9b006f67-2319-459b-8bd1-d1883094a0f0",
+          "name": "tests/foreman/ui/test_contentcredentials.py::test_positive_add_product_using_repo_discovery",
+          "description": "<table>\n  <thead>\n    <tr><td>UI Sessions</td></tr>\n  </thead>\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <tr><td><a href=http://infra-grid-01.infra.sat.rdu2.redhat.com/videos/4104df2522f48ee2304c648a15138ca8/video.mp4 target=\"_blank\">video</a></td></tr>\n  \n  \n  \n  \n  \n</table>\n\n\ntest_positive_add_product_using_repo_discovery time: 56.123",
+          "parameters": [],
+          "attributes": [
+            { "key": "upgrade", "value": "None" },
+            { "key": "endpoint", "value": "ui" },
+            { "key": "importance", "value": "High" },
+            { "key": "component", "value": "ContentCredentials" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "team", "value": "phoenix-content" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706901636000,
+          "endTime": 1706901692123,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 378635,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 378635, "name": "ContentCredentials" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:64cb4cc892303349cba9299898dbfb4c",
+          "testCaseHash": -1066374187,
+          "patternTemplates": [],
+          "path": "378635.378765"
+        },
+        {
+          "id": 378771,
+          "uuid": "f885ee83-0e40-4408-bc11-6d6b3cd21d85",
+          "name": "tests/foreman/ui/test_contentcredentials.py::test_positive_update_key_for_product_using_repo_discovery",
+          "description": "<table>\n  <thead>\n    <tr><td>UI Sessions</td></tr>\n  </thead>\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <tr><td><a href=http://infra-grid-01.infra.sat.rdu2.redhat.com/videos/701d09acd8cf7cc8063fee914ae68617/video.mp4 target=\"_blank\">video</a></td></tr>\n  \n  \n  \n  \n  \n</table>\n\n\ntest_positive_update_key_for_product_using_repo_discovery time: 50.449",
+          "parameters": [],
+          "attributes": [
+            { "key": "upgrade", "value": "None" },
+            { "key": "endpoint", "value": "ui" },
+            { "key": "importance", "value": "High" },
+            { "key": "component", "value": "ContentCredentials" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "team", "value": "phoenix-content" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706901636000,
+          "endTime": 1706901686449,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 378635,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 378635, "name": "ContentCredentials" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:ea16b309959847779a4982bd6219b242",
+          "testCaseHash": -1497733679,
+          "patternTemplates": [],
+          "path": "378635.378771"
+        }
+      ]
+    },
+    {
+      "id": 4310,
+      "index": 2372816068408841,
+      "launchId": 634,
+      "message": "failed on teardown with \"assert 4750 == 0\n + where 4750 = len(' :2024-02-02 13:27:56,288 [thread=Thread-8 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 99: argument \"content\" is :2024-02-02 13:28:26,298 [thread=Thread-5 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 101: argument \"content\" is :2024-02-02 13:28:56,306 [thread=Thread-9 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 103: argument \"content\" is :2024-02-02 13:29:26,313 [thread=Thread-7 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 105: argument \"content\" is :2024-02-02 13:29:56,322 [thread=Thread-10 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 107: argument \"content\" is nul.nt\" is :2024-02-02 13:57:50,313 [thread=Thread-17 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 208: argument \"content\" is :2024-02-02 13:58:20,318 [thread=Thread-15 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 210: argument \"content\" is :2024-02-02 13:58:50,323 [thread=Thread-16 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 212: argument \"content\" is :2024-02-02 13:59:20,326 [thread=Thread-16 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 214: argument \"content\" is :2024-02-02 13:59:50,333 [thread=Thread-18 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 216: argument \"content\" is null\\n')\n + where ' :2024-02-02 13:27:56,288 [thread=Thread-8 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 99: argument \"content\" is :2024-02-02 13:28:26,298 [thread=Thread-5 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 101: argument \"content\" is :2024-02-02 13:28:56,306 [thread=Thread-9 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 103: argument \"content\" is :2024-02-02 13:29:26,313 [thread=Thread-7 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 105: argument \"content\" is :2024-02-02 13:29:56,322 [thread=Thread-10 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 107: argument \"content\" is nul.nt\" is :2024-02-02 13:57:50,313 [thread=Thread-17 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 208: argument \"content\" is :2024-02-02 13:58:20,318 [thread=Thread-15 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 210: argument \"content\" is :2024-02-02 13:58:50,323 [thread=Thread-16 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 212: argument \"content\" is :2024-02-02 13:59:20,326 [thread=Thread-16 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 214: argument \"content\" is :2024-02-02 13:59:50,333 [thread=Thread-18 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 216: argument \"content\" is null\\n' = stdout:\\n/var/log/candlepin/candlepin.log:2024-02-02 13:27:56,288 [thread=Thread-8 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 99: argument \"content\" is :2024-02-02 13:28:26,298 [thread=Thread-5 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 101: argument \"content\" is :2024-02-02 13:28:56,306 [thread=Thread-9 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 103: argument \"content\" is :2024-02-02 13:29:26,313 [thread=Thread-7 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 105: argument \"content\" is :2024-02-02 13:29:56,322 [thread=Thread-10 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 107: argument \"content\" is :2024-02-02 13:57:50,313 [thread=Thread-17 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 208: argument \"content\" is :2024-02-02 13:58:20,318 [thread=Thread-15 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 210: argument \"content\" is :2024-02-02 13:58:50,323 [thread=Thread-16 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 212: argument \"content\" is :2024-02-02 13:59:20,326 [thread=Thread-16 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 214: argument \"content\" is :2024-02-02 13:59:50,333 [thread=Thread-18 (ActiveMQ-client-global-threads)] [=, org=, csid=] ERROR org.candlepin.audit.DefaultEventMessageReceiver - Unable to process message 216: argument \"content\" is :\\n(0, b'')\\nstatus: 0.stdout\"",
+      "testItems": [
+        {
+          "id": 378547,
+          "uuid": "c2c1cb82-1092-4f57-b295-ffeea25a5820",
+          "name": "tests/foreman/installer/test_installer.py::test_satellite_installation",
+          "description": "test_satellite_installation time: 1340.669",
+          "parameters": [],
+          "attributes": [
+            { "key": "endpoint", "value": "installer" },
+            { "key": "importance", "value": "Critical" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "team", "value": "platform" },
+            { "key": "pit_client", "value": "None" },
+            { "key": "component", "value": "Installer" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "first_sanity", "value": "None" },
+            { "key": "", "value": "markers" },
+            { "key": "build_sanity", "value": "None" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706896134000,
+          "endTime": 1706897474669,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 378522,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 378522, "name": "Installer" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:f2ef336b03cfb415b7e8b2e604df1326",
+          "testCaseHash": 377485389,
+          "patternTemplates": [],
+          "path": "378522.378547"
+        }
+      ]
+    },
+    {
+      "id": 4311,
+      "index": 70177764097903801,
+      "launchId": 634,
+      "message": "assert 5 == 2",
+      "testItems": [
+        {
+          "id": 377763,
+          "uuid": "063a0f8b-1cc0-47ca-a906-2d63097eabc5",
+          "name": "tests/foreman/cli/test_templatesync.py::TestTemplateSyncTestCase::test_positive_update_templates_in_git[non_empty_repo-http]",
+          "description": "test_positive_update_templates_in_git[non_empty_repo-http] time: 9.707",
+          "parameters": [],
+          "attributes": [
+            { "key": "e2e", "value": "None" },
+            { "key": "importance", "value": "High" },
+            { "key": "endpoint", "value": "cli" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "component", "value": "TemplatesPlugin" },
+            { "key": "team", "value": "endeavour" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706895947000,
+          "endTime": 1706895956707,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 377759,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 377759, "name": "TemplatesPlugin" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:bfcad994b8307678f9f26a2cfaa3ec7b",
+          "testCaseHash": -944383010,
+          "patternTemplates": [],
+          "path": "377759.377763"
+        },
+        {
+          "id": 377765,
+          "uuid": "b06694ed-0306-457f-933a-4efd42fb3ed1",
+          "name": "tests/foreman/cli/test_templatesync.py::TestTemplateSyncTestCase::test_positive_export_filtered_templates_to_git[non_empty_repo-http]",
+          "description": "test_positive_export_filtered_templates_to_git[non_empty_repo-http] time: 2.189",
+          "parameters": [],
+          "attributes": [
+            { "key": "importance", "value": "Critical" },
+            { "key": "endpoint", "value": "cli" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "component", "value": "TemplatesPlugin" },
+            { "key": "team", "value": "endeavour" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706895947000,
+          "endTime": 1706895949189,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 377759,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 377759, "name": "TemplatesPlugin" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:02b01551c997c7c4c5054aa74448a7ae",
+          "testCaseHash": 782178543,
+          "patternTemplates": [],
+          "path": "377759.377765"
+        },
+        {
+          "id": 378493,
+          "uuid": "efb2442c-3b86-4ce6-8c26-a0b42cc37a13",
+          "name": "tests/foreman/api/test_subscription.py::test_positive_candlepin_events_processed_by_stomp[rhel7_contenthost0]",
+          "description": "test_positive_candlepin_events_processed_by_stomp[rhel7_contenthost0] time: 84.645",
+          "parameters": [],
+          "attributes": [
+            { "key": "importance", "value": "High" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "component", "value": "SubscriptionManagement" },
+            { "key": "ClientOS", "value": "7" },
+            { "key": "endpoint", "value": "api" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "team", "value": "phoenix-subscriptions" },
+            { "key": "SatelliteVersion", "value": "6.15.0" },
+            { "key": "run_in_one_thread", "value": "None" }
+          ],
+          "type": "STEP",
+          "startTime": 1706898313000,
+          "endTime": 1706898397645,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 378458,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 378458, "name": "SubscriptionManagement" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:a593f95bb75acf1ed7a12eaa2acc30d6",
+          "testCaseHash": 139926503,
+          "patternTemplates": [],
+          "path": "378458.378493"
+        }
+      ]
+    },
+    {
+      "id": 4312,
+      "index": 99431124082974461,
+      "launchId": 634,
+      "message": "failed on setup with \"Failed: ScopeMismatch: You tried to access the function scoped fixture function_entitlement_manifest_org with a module scoped request object, involved factories:\n :34: def golden_ticket_host_setup(function_entitlement_manifest_org, module_target_sat)\n :126: def function_entitlement_manifest_org(function_org, function_entitlement_manifest, target_sat)\"",
+      "testItems": [
+        {
+          "id": 378476,
+          "uuid": "84464161-afc9-4901-beb7-d8d9a5a5686f",
+          "name": "tests/foreman/ui/test_subscription.py::test_positive_subscription_status_disabled_golden_ticket[rhel7_contenthost0]",
+          "description": "test_positive_subscription_status_disabled_golden_ticket[rhel7_contenthost0] time: 0.002",
+          "parameters": [],
+          "attributes": [
+            { "key": "endpoint", "value": "ui" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "importance", "value": "Medium" },
+            { "key": "component", "value": "SubscriptionManagement" },
+            { "key": "ClientOS", "value": "7" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "team", "value": "phoenix-subscriptions" },
+            { "key": "SatelliteVersion", "value": "6.15.0" },
+            { "key": "run_in_one_thread", "value": "None" }
+          ],
+          "type": "STEP",
+          "startTime": 1706898313000,
+          "endTime": 1706898313002,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 378458,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 378458, "name": "SubscriptionManagement" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:40f93b528d874e040bc097d3f4effbf1",
+          "testCaseHash": 1540417604,
+          "patternTemplates": [],
+          "path": "378458.378476"
+        }
+      ]
+    },
+    {
+      "id": 4313,
+      "index": 18771423569338861,
+      "launchId": 634,
+      "message": "Failed: hammer activation-key info\n Added options:\n * show-hosts\nhammer alternate-content-source\n Added subcommands:\n * bulk\nhammer alternate-content-source bulk (new command)\n * destroy\n * refresh\n * refresh-all\n * help\nhammer alternate-content-source bulk destroy (new command)\n * ids\nhammer alternate-content-source bulk refresh (new command)\nhammer alternate-content-source bulk refresh-all (new command)\nhammer auth login\n * basic-external\nhammer auth login basic-external (new command)\n * password\n * username\nhammer capsule content\n * reclaim-space\n * update-counts\nhammer capsule content reclaim-space (new command)\n * async\n * id\n * name\nhammer capsule content update-counts (new command)\n * organization-id\n * organization\nhammer content-export incremental library\n * format\nhammer content-export incremental repository\nhammer content-export incremental version\nhammer content-view publish\n * publish-only-if-needed\nhammer content-view version info\n * include-applied-filters\nhammer content-view version list\n * file-id\n * nondefault\nhammer erratum list\n * environment\n * environment-id\n * lifecycle-environment\nhammer host errata apply\n Removed options:\n * full-result\n * host\n * host-id\n * sort-by\n * errata-ids\n * page\n * search\n * sort-order\n * per-page\n * order\nhammer host package install\n * packages\nhammer host package remove\nhammer host package upgrade\nhammer host package upgrade-all\nhammer host package-group install\n * groups\nhammer host package-group remove\nhammer host-collection erratum install\n * organization-title\n * errata\n * organization-label\nhammer host-collection package install\nhammer host-collection package remove\nhammer host-collection package update\nhammer host-collection package-group install\n * package-groups\nhammer host-collection package-group remove\nhammer host-collection package-group update\nhammer host-registration generate-command\n * lifecycle-environment-id\nhammer job-invocation create\n * time-to-pickup\n * time-span\nhammer job-template create\n * ansible-callback-enabled\nhammer job-template update\nhammer lifecycle-environment paths\n * content-source-id\nhammer organization update\n * simple-content-access\nhammer proxy content\nhammer proxy content reclaim-space (new command)\nhammer proxy content update-counts (new command)\nhammer repository create\n * metadata-expire\n * docker-tags-whitelist\n * mirror-on-sync\nhammer repository delete\n * delete-empty-repo-filters\nhammer repository types\n * creatable\nhammer repository update\nhammer repository-set list\n * repository-type\nhammer virt-who-config create\n * ahv-update-interval\nhammer virt-who-config update",
+      "testItems": [
+        {
+          "id": 377644,
+          "uuid": "492a2168-af53-4073-89cd-02b26c566f06",
+          "name": "tests/foreman/cli/test_hammer.py::test_positive_all_options",
+          "description": "test_positive_all_options time: 763.748",
+          "parameters": [],
+          "attributes": [
+            { "key": "component", "value": "Hammer" },
+            { "key": "importance", "value": "Critical" },
+            { "key": "endpoint", "value": "cli" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "team", "value": "endeavour" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706894768000,
+          "endTime": 1706895531748,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 377643,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 377643, "name": "Hammer" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:683a6c6130c6bfac19aa9be928e57880",
+          "testCaseHash": 916915013,
+          "patternTemplates": [],
+          "path": "377643.377644"
+        }
+      ]
+    },
+    {
+      "id": 4314,
+      "index": 95984944557370811,
+      "launchId": 634,
+      "message": "Failed: {\n \"added_names\": [\n \"create_lookup_values\",\n \"view_remote_execution_features\",\n \"view_lookup_values\",\n \"destroy_lookup_values\",\n \"edit_lookup_values\"\n ],\n \"added_resource_types\": [\n \"LookupValue\"\n ]\n}",
+      "testItems": [
+        {
+          "id": 378144,
+          "uuid": "d2f8d9b2-2bf4-4d70-9db2-cd143dbb811a",
+          "name": "tests/foreman/api/test_permission.py::TestPermission::test_positive_search",
+          "description": "test_positive_search time: 0.265",
+          "parameters": [],
+          "attributes": [
+            { "key": "importance", "value": "Critical" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "team", "value": "endeavour" },
+            { "key": "endpoint", "value": "api" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "SatelliteVersion", "value": "6.15.0" },
+            { "key": "component", "value": "UsersRoles" }
+          ],
+          "type": "STEP",
+          "startTime": 1706895998000,
+          "endTime": 1706895998265,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 377805,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 377805, "name": "UsersRoles" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:9897b71a324fc2110fb88c66fa844bb2",
+          "testCaseHash": -1288435438,
+          "patternTemplates": [],
+          "path": "377805.378144"
+        }
+      ]
+    },
+    {
+      "id": 4315,
+      "index": 74625592928674501,
+      "launchId": 634,
+      "message": "Failed: {\n \"RemoteExecutionFeature\": {\n \"added\": [\n \"view_remote_execution_features\"\n ]\n }",
+      "testItems": [
+        {
+          "id": 378143,
+          "uuid": "fb2b1970-9de6-44eb-a280-35511a17137a",
+          "name": "tests/foreman/api/test_permission.py::TestPermission::test_positive_search_by_resource_type",
+          "description": "test_positive_search_by_resource_type time: 11.276",
+          "parameters": [],
+          "attributes": [
+            { "key": "importance", "value": "Critical" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "team", "value": "endeavour" },
+            { "key": "endpoint", "value": "api" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "SatelliteVersion", "value": "6.15.0" },
+            { "key": "component", "value": "UsersRoles" }
+          ],
+          "type": "STEP",
+          "startTime": 1706895998000,
+          "endTime": 1706896009276,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 377805,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 377805, "name": "UsersRoles" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:3c2e62190bf6276f079d3967e3fa018c",
+          "testCaseHash": 1539847792,
+          "patternTemplates": [],
+          "path": "377805.378143"
+        }
+      ]
+    },
+    {
+      "id": 4316,
+      "index": 5334357254702111,
+      "launchId": 634,
+      "message": "assert \"WARNING: Using local file ' '\" in \"File / .xml is missing. Downloading it from proxy.\\nDownload SCAP content xml from: \\nDEBUG: running: oscap xccdf eval --local-files /root --profile xccdf_org.ssgproject.content_profile_ospp --results-arf / .xml\\nWARNING: Data stream component 'scap_org.open-scap_cref_security-data-oval-v2-RHEL8-rhel-8.oval.xml.bz2' points out to the remote ' The option --local-files '/root' has been provided, but the file ' ' can't be used locally: No such file or directory.\\nWARNING: Skipping ./security-data-oval-v2-RHEL8-rhel-8.oval.xml.bz2 file which is referenced from XCCDF content\\nDEBUG: running: bzip2 results to uploaded, report id: 6\\n\"",
+      "testItems": [
+        {
+          "id": 377755,
+          "uuid": "e722ea64-0e22-404f-b71a-70ae3590b703",
+          "name": "tests/foreman/longrun/test_oscap.py::test_positive_oscap_run_via_local_files[rhel8]",
+          "description": "test_positive_oscap_run_via_local_files[rhel8] time: 625.244",
+          "parameters": [],
+          "attributes": [
+            { "key": "importance", "value": "Critical" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "team", "value": "endeavour" },
+            {
+              "key": "markers",
+              "value": "importance=Critical, component=SCAPPlugin, team=endeavour"
+            },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "endpoint", "value": "longrun" },
+            { "key": "component", "value": "SCAPPlugin" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706894772000,
+          "endTime": 1706895397244,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 377655,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 377655, "name": "SCAPPlugin" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:9488cfbe55431e6657c36157fad88132",
+          "testCaseHash": 1841962524,
+          "patternTemplates": [],
+          "path": "377655.377755"
+        }
+      ]
+    },
+    {
+      "id": 4317,
+      "index": 72907624827206651,
+      "launchId": 634,
+      "message": "KeyError: 'template'",
+      "testItems": [
+        {
+          "id": 380805,
+          "uuid": "dc6a515f-80fc-4c56-ac37-4331157ec3cc",
+          "name": "tests/foreman/ui/test_provisioningtemplate.py::test_positive_end_to_end",
+          "description": "<table>\n  <thead>\n    <tr><td>UI Sessions</td></tr>\n  </thead>\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  <tr><td><a href=http://infra-grid-01.infra.sat.rdu2.redhat.com/videos/4f57f1801ac346a380f11156e0e7625a/video.mp4 target=\"_blank\">video</a></td></tr>\n  \n  \n  \n  \n  \n</table>\n\n\ntest_positive_end_to_end time: 61.444",
+          "parameters": [],
+          "attributes": [
+            { "key": "team", "value": "rocket" },
+            { "key": "upgrade", "value": "None" },
+            { "key": "endpoint", "value": "ui" },
+            { "key": "e2e", "value": "None" },
+            { "key": "importance", "value": "High" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "component", "value": "ProvisioningTemplates" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706908033000,
+          "endTime": 1706908094444,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 380788,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 380788, "name": "ProvisioningTemplates" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:842e04b79d8fbd44df68e67b26f773ff",
+          "testCaseHash": 52968127,
+          "patternTemplates": ["KeyError"],
+          "path": "380788.380805"
+        }
+      ]
+    },
+    {
+      "id": 4318,
+      "index": 98658722712463761,
+      "launchId": 634,
+      "message": "KeyError: 'content_view_id'",
+      "testItems": [
+        {
+          "id": 380369,
+          "uuid": "41223cd7-f017-4f6f-9db9-7e0e32c379e0",
+          "name": "tests/foreman/api/test_host.py::test_positive_create_and_update_with_content_view",
+          "description": "test_positive_create_and_update_with_content_view time: 1.927",
+          "parameters": [],
+          "attributes": [
+            { "key": "component", "value": "Hosts" },
+            { "key": "importance", "value": "High" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "team", "value": "endeavour" },
+            { "key": "endpoint", "value": "api" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706894743000,
+          "endTime": 1706894744927,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 380143,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 380143, "name": "Hosts" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:a58367384b331a08339d345d28108e07",
+          "testCaseHash": 539537173,
+          "patternTemplates": ["KeyError"],
+          "path": "380143.380369"
+        }
+      ]
+    },
+    {
+      "id": 4319,
+      "index": 48658157928243661,
+      "launchId": 634,
+      "message": "KeyError: 'lifecycle-environment'",
+      "testItems": [
+        {
+          "id": 380332,
+          "uuid": "ebafdc46-8c77-4367-93dd-fff7019d7544",
+          "name": "tests/foreman/cli/test_host.py::test_positive_list_with_nested_hostgroup",
+          "description": "test_positive_list_with_nested_hostgroup time: 24.856",
+          "parameters": [],
+          "attributes": [
+            { "key": "component", "value": "Hosts" },
+            { "key": "importance", "value": "High" },
+            { "key": "endpoint", "value": "cli" },
+            { "key": "SnapVersion", "value": "9.0" },
+            { "key": "team", "value": "endeavour" },
+            { "key": "BaseOS", "value": "8.9" },
+            { "key": "", "value": "markers" },
+            { "key": "cli_host_create", "value": "None" },
+            { "key": "SatelliteVersion", "value": "6.15.0" }
+          ],
+          "type": "STEP",
+          "startTime": 1706894743000,
+          "endTime": 1706894767856,
+          "status": "FAILED",
+          "statistics": {
+            "executions": { "total": 1, "failed": 1 },
+            "defects": { "to_investigate": { "total": 1, "ti001": 1 } }
+          },
+          "parent": 380143,
+          "pathNames": {
+            "launchPathName": { "name": "CI-6.15", "number": 10 },
+            "itemPaths": [{ "id": 380143, "name": "Hosts" }]
+          },
+          "issue": {
+            "issueType": "ti001",
+            "autoAnalyzed": false,
+            "ignoreAnalyzer": false,
+            "externalSystemIssues": []
+          },
+          "hasChildren": false,
+          "hasStats": true,
+          "launchId": 634,
+          "uniqueId": "auto:66aa945fb6218b20cbc16e45193e076a",
+          "testCaseHash": -440809723,
+          "patternTemplates": ["KeyError"],
+          "path": "380143.380332"
+        }
+      ]
+    }
+  ]
+}

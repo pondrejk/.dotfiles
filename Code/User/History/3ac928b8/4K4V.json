@@ -1,0 +1,20 @@
+{
+  "workbench.colorCustomizations": {},
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "workbench.colorTheme": "Better Solarized Dark",
+  "workbench.startupEditor": "none",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.minimap.enabled": false,
+  "settingsSync.ignoredSettings": [],
+  "window.zoomLevel": 1,
+  "workbench.settings.applyToAllProfiles": []
+}

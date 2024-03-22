@@ -1,0 +1,32 @@
+{
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [","],
+      "after": ["z", "a"]
+    }
+  ],
+  "workbench.colorTheme": "Better Solarized Dark",
+  "workbench.startupEditor": "none",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.minimap.enabled": false,
+  "settingsSync.ignoredSettings": [],
+  "window.zoomLevel": 1,
+  "workbench.settings.applyToAllProfiles": []
+  "editor.guides.indentation": false,
+  "eslint.rules.customizations": [
+    { "rule": "*", "severity": "warn" },
+  ]
+  "workbench.colorCustomizations": {
+    "editorError.foreground": "#00ff00"
+}
+}

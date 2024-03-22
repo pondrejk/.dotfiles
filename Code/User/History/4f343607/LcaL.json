@@ -1,0 +1,4 @@
+{
+  "vim.foldfix": true,
+  "editor.formatOnSave": true
+}
