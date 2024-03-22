@@ -14,7 +14,7 @@ in /etc/foreman-proxy/settings.d/remote_execution_ssh.yml
 
 and  
 :log_level: DEBUG
-in /etc/smart_proxy_dynflow_core/settings.yml
+in /etc/foreman-proxy/settings.yml (prev. in /etc/smart_proxy_dynflow_core/settings.yml)
 
 systemctl restart foreman-proxy
 and observe
