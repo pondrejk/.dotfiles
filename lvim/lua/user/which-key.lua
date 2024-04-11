@@ -36,4 +36,5 @@ wk.mappings["t"] = {
   name = 'Telescope',
   p = { ':Telescope projects<cr>', 'Projects' }, -- requires telescope-project.nvim plugin
   r = { ':Telescope resume<cr>', 'Resume' },
+  b = { ':Telescope buffers<cr>', 'Buffers' },
 }
