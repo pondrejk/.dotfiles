@@ -1,2 +1,5 @@
 *.swp
 vim/.vim/plugged
+Code/User/globalStorage/*
+Code/User/workspaceStorage/*
+Code/User/History/*
