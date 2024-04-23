@@ -1,3 +1,6 @@
 # rpr -- add comment:
 trigger: test-robottelo
 pytest: <test_file> -k <test>
+
+# this comment in pr to run pre-commit stuff and commit results
+pre-commit.ci autofix
