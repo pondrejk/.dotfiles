@@ -1,0 +1,89 @@
+## openshift-intro
+
+oc -- cli managing openshift cluster (kubectl has a subset of commands)
+
+# login 
+oc login -u username -p password https://endpoint.rednat.com:port
+- context sotred in .kube file in homedir
+
+# node represents a host in kubernetes 
+- (node roles: master - dedicated to decision making in cluster - assign tasks to worker nodes, master makes sure the cluster state corresponds to configuration / worker - run user workloads) / control-plane (controls config and infra)
+- node is a coreos rhel (immutable, doesn't use packages but an image tree -- like e.g. android)
+- master nodes run buch of containers, e.g.: etcd -- database that is the source of config, openshift-kube-shceduler -- schedules and runs containers on nodes -- using proces kubelet services that runs on all hosts
+- systemct status kubelet -- the service instructs the crio service (container engine)
+- *resource* -- unit of configuration of cluster, declarative style
+
+# oc command style
+oc <verb> <resource-type> <instance-node>(optional - omit to get all nodes)
+
+oc get node
+
+# run a container on openshift
+pod - a shared resource for one or more containers (but mostly one container per pod), provides ipaddr, memory, etc.
+
+oc run myhttpd --image registry.access.redhat.com/ubi/httpd-24 --dry-run > pod.yaml
+
+(oc creates config for the pod, sends it to opensift via api) 
+- config contains info on what config is created (kind: Pod), metadata and spec (that depend on kind)
+- all configuration of oc is done via specification documents
+- apply existing config:
+
+oc apply -f pod.yml
+
+# service resource
+- makes a pod available to the os cluster using a stable ip address (pod ips are volatile)
+- internally it uses a haproxy
+- ip is cluster-wide -- not available outside cluser -- you need route resource for that
+- object desc:
+
+oc get pod -o wide
+
+oc expose pod/myhttpd --port 8080 --dry-run=client -o yaml > service.yaml
+- create a service
+oc get service 
+os describe service myhttpd
+- shows endpoint -- points to pod
+
+# project -- a name space for pods
+oc new-project name
+
+# route resource
+- routes use services to reach the pod
+- only for http, https
+- sort of mapping between outside world and a service
+
+oc expose svc/myhttpd --dry-run=client -o yaml  > route.yml
+oc get routes -- shows a fqdn
+
+oc get all
+- shows pod > service > route
+- request goes from the route fqdn > service > pod
+
+# deployment resource
+- pod is an immutable resource
+- we can pass parameters to it via env variables (env: in pod spec yaml), but need to recreate the spec and re-deploy
+- deployment contains a template for pods
+- deployment is not immutable
+
+oc create deployment myttpd --image <container-image> --dry-run -o yaml > dry.run 
+- creates a pod as well
+
+oc rhs pod/<podname> -- remote shell to pod
+oc edit deployment/myttpd
+- change env vars for pods in deployment
+
+oc get pods --labels
+- conection betw service and pod is defined by labels, see service spec...
+- or expose the deployment -- oc does the connection automatically, non need to edit specs 
+
+# replicaset resource
+-- manages how many replicas of the app should be there
+-- configurable by the deployment resource
+
+oc scale deployment httpd --count 3
+
+# the opensift way
+oc new-app <image>
+-- does all the above, creates resources in one go and extends it with some more resources (openshift functionality)
+-- sets ports based on image metadata
+

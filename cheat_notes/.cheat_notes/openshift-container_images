@@ -1,0 +1,78 @@
+## opensift-container_images
+
+standard ubi images
+- universal base image (size/usablility treshold), predefined types: standard/init/minimal/micro
+- source-to-image deployment scripts -- ubi images contain those, so that you can use them as builders for your application
+- should be tested by RH
+- runtime images -- versioned popular runtimes on ubi
+
+# optimizing containers for os
+
+- use rh runtime images, e.g.:
+FROM registry.access.redhat.com/ubi9/nodejs-18-minimal:1-56
+- check the UBI specific instructions in the RH ecosystem catalog 
+- os by default ignores USER instructions in dockerfiles and uses a random user that is a member of a root group
+- so for the contaier instructions keep in mind: root group must have perms to read/write/execute any dirs & files, use: 
+RUN chgrp -R 0 directory && chmod -R g=u directory
+- container should handle interruption signals, os sends SITERM to containers (use entrypoit, or preStop lifecycle hook)
+- use container footprint reduction techniques
+- use metadata labels
+
+# pushing to quay registry
+
+podman images
+podman push localhost/myapache quay.io/user/image_name
+
+- using private image with oc
+- oc create-app with image will fail if there is no access configured
+- opensift needs to be able to authenticate to quay with the os credentials:
+
+# 'secret' resource
+- not easily revealed in cli, ui
+- similar resource config-map -- can be printed, not so with secrets
+- os can encrypt secret if configured to do so
+- 3 types: tls, generic, docker-registry
+
+oc create secret docker-registry quay --docker-username=<usr> --docker-password=<pwd> --docker-server=quay.io
+
+# 'service-account'
+- binds secrets and other metadata to service
+- types: builder, default, builder, pipeline -- service accounts to match with deployments...
+
+oc get sa
+oc describe sa default
+
+- binding a secret to default would make it available to all user
+
+oc create sa quayaccess
+- gets some defualt secret type: pull, mountable, tokens
+
+oc secrets link service-account-name secret-name --for=pull
+- binds secret to service account, for a specific reason
+
+oc explain deployment.spec.template.spec|less
+- just to check wich deployment param is being set (ServiceAccountName)
+
+oc set serviceaccount deployment/myappache <sa-name>
+- to set for an existing deployment
+- or edit the spec for deployment under ImagePullSecrests
+
+# imagestream resource
+- new-app creates it
+
+oc import-image <is-name>:<tag> --from registry:8443/image:tag -f
+- create imagestream during importing an image
+oc describe is <is-name>
+- images stream is a container for imagestream tags
+- is gives me control over versioning
+
+oc new-app --name myapache myweb:latest 
+- changing the version to a custom one
+oc tag myweb:2 myweb:latest
+
+- image is not directly reflected in deployment, it is done trough the imagestream, so it is a kind of intermediate resource 
+
+oc tag --alias myweb:3 myweb:latest 
+- creates a link between tags
+- without --alias, I would be creating a copy
+

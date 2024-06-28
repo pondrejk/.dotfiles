@@ -1,0 +1,41 @@
+## opensift multicontainer apps
+
+# template resource
+- os specific feature
+- descibes resources for multicontainer app (objects and parameters)
+- create app from a template
+oc new-app --file mytemplate.yaml -p PARAM1=value1 -p PARAM2=value2
+
+alternative:
+- process a template to get a resouce list, then create app
+oc process -f mytemplate.yaml -p PARAM1=value1 -p PARAM2=value2 > myresourcelist.json
+oc create -f myresourcelist.json
+
+# helm chart
+- adopted by kubernetes community
+- you can call it a packager, to create standardized, reproducible, and predictable deployments of kubernetes resources
+
+helm create my project
+- creates files and dirs:
+- - templates - dir containing yaml files for resources like deployment, service, route (special kind that contain references to objects -- golang objects, e.g. {{.Release.Name}})
+- - values.yaml -- contains yaml objects that can serve as parameters, similar to ansible variables. Can be referenced in templates like {{ .Values.myparam }}
+- - Chart.yaml -- contains chart metadata, version of the chart (pkg/release version) and app version
+
+- verify a template:
+helm template .
+
+- helm includes annotations to all resources it creates, so that they can be associated with a release:
+helm upgrade <myrelease> . # or a diferent dir that contains the upgrade
+helm history <myrelease>
+helm rollback <myrelease> 1 # revision number
+
+# kustomize cli
+- define multiple resources in yaml, config management tool for kubernetes, no use of templates
+overlays - extended functionality
+- kustomization.yaml
+apply kustomizations:
+oc kustomize overlays/stage
+- or:
+oc apply -k overlay/stage
+
+- add, remove, modify resources

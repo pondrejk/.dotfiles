@@ -1,0 +1,57 @@
+## opensift continous deployment
+CI/CD enables fast delivery cycles, high reliability, short feedback loops, and low lead times
+
+# pipeline
+- set of tasks with steps in order (build, test, release, deploy)
+- each individual step requires a pod to be created - and a command is run in that pod
+- relatively new addition to os
+- under development, ongoing change from tekton engine to something else...
+
+# resources required for pipeline:
+
+task resource 
+- steps -- items of tasks resource
+- task has a pod 
+- steps in a task create individual containers in the task pod (because they can use different images)
+- 2 task scopes: *task* and *cluster task* (project vs cluster scoped)
+
+pipeline resource
+- consists of tasks
+
+task run resource
+pipeline run resource
+- both used to test tasks/pipelines
+- takes a resource as a template
+
+parameter resource
+- allow for parametrization of tasks and pipelines
+
+workspace resource
+- allows for communication between tasks and pipelines
+
+trigger resource
+- can run tasks and pipelines based on external events
+- not well supported in cli and ui 
+- new thing
+
+# pipeline builder 
+- ui tool to create pipelines
+- you can define parameters -- script, version, workspace ...
+
+# task specificaiton
+- task kind: ClusterTask 
+- result specification 
+- working dir, volume mounts
+- tekton cli to work with tasks
+tkn <type> <command>
+- describe tasks and pipelines
+tkn t describe fetch-url
+tkn p describe my-pipeline
+
+tkn t start fetch-url
+tkn p start my-pipeline
+
+- check pipeline runs:
+tkn pr list
+tkn pr logs my-pipeline-1
+

@@ -1,0 +1,58 @@
+## build process in openshift
+
+-- kubernetes alone can't deploy sourcecode, os thing
+
+# buildconfig resource
+-- configuration of the build
+-- build is a result of buildconfig 
+-- build strategies: docker build, source to image build, custom build
+
+# docker build
+oc new-app --name myapache https://github.com/... # public repo
+-- use Dockerfile in that repo, openshift won't accept Containerfile :)
+
+oc logs build/myapache-1 
+-- alternative syntax -- some verbs take just a single parameter, so use / to merge resource and instance specification
+
+# source to image build
+-- if it can autotedtect the builder image, then it is as building from Dockerfile
+-- if not, more specs are needed:
+
+- try to define strategy
+oc new-app --name myapache https://github.com/... --strategy=source
+- define imagestream
+oc new-app --name myapache python:3.8-ubi8~https://github.com/... 
+
+- build scripts:
+assemble, run, save-artifacts, usage
+
+# managing application build 
+oc new-app -- creates initial build config
+oc start-build buildconfig/app
+- starts the build
+oc get builds
+- see the build objects
+oc cancel-build buildconfig/app
+
+# troubleshooting build issues
+- BUILD_LOGLEVEL env var to set the log level
+oc set env buildconfig/app BUILD_LOGLEVEL="3"
+oc logs build/app-1
+- or use debug shell
+oc debug deploy/app
+
+# triggering builds
+- image change triggers / webhook triggers
+oc set triggers bc/name --from-image=project/image:tag
+- from parameters, e.g. --from-image
+- use --remove to cancel the trigger
+oc set trigger deployment/name
+- for apps deployed based on container
+oc set triggers bc/name --from-gitlab
+- using webhook trigger
+
+- replacing exsting triggers, e.g.:
+oc patch bc/name -p '{"spec": {"triggers": [{"type": "GitHub",
+"github": {"secretReference": {"name": "github-trigger-secret"}}}]}}
+
+

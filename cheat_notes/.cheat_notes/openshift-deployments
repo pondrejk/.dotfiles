@@ -1,0 +1,150 @@
+## openshift managing deployments 
+
+# selecting a deployment strategy
+2 options to manage downtime:
+- stop all instances
+- roll out in batches (2 versions are running for a while at the same time) -- but there should be backward-compatibilty betw versions (mostly not a difference in storage config) 
+
+2 strategies: recreate, rollingUpdate
+
+btw. deploymentconfig resource -- deprecated, mostly overlaps with deployment
+
+# rollingUpdate
+- default
+- deployment spec > strategy > rollingUpdate params: maxUnavailable specifies how many replicas can be unavailable during deployment 
+maxSearch - how many replicas can be created above the set number of pods during re-deployment
+
+# recreate
+- all replicas are recreated at the same time 
+
+# deployment version switching
+
+blue-green deployment
+- switching back nd forth betw versions
+- editing route config allows for simple switching
+
+a/b deployment
+- gradual swiching by percentage
+- alternateBackends setting in route specification
+- weights for ^
+
+# rollout
+- provides the cancel, pause, undo, retry, and more options for deployments
+- making several changes in one go to deployment (env changes, volume mounts)
+oc rollout pause deployment/app
+- config changes won't rebuild the deployment
+
+oc rollout resume deployment/app
+
+oc rollout  history
+- revisions list
+
+- you can annotate revisions to show up in rollout history:
+oc annotate deployment/app kubernetes.io/change-cause="<user defined annotation>"
+
+- getting back to the previous version
+- interally: deployments use replicaset to control instances (replicaset stores deployment config for a particular revision):
+
+oc rollout undo deployment/applcation # goes one rev back
+oc rollout undo deployment/applcation --to-revision=5
+- this takes the specified revision and makes it the last revision in history
+
+# scale
+- scales the number of replicas for a given deployment or deployment config
+oc scale deployment example-deployment --replicas=3
+
+# configmap resource
+# secret resource
+- storing configuration/sensitve config data
+- designed to store read-only data to be shared with application
+- secrets can be encrypted
+- sets of key value pairs
+
+- 3 ways of creating:
+oc crete configmap mycfg --from-literal=mykey=myval --from-literal=mykey1=mykey2
+oc create cm mycfg2 --from-file=myfile # filenames become keys, contents become values
+oc create cm mycfg3 --from-file=mydir # all files in dir are used as configuration, filenames become keys, file contents become values
+
+- similar with secrets
+- secrets have 3 types: docker-registry, tls, generic
+- types have predefined params
+
+# sharing cm/secret with deployments
+- via env vars:
+oc set env deploment/app --from=cm/mycfg
+- vars from cm are used in deployment, similarly for secret:
+oc set env deploment/app --from=secret/mysecr
+
+- via volume:
+oc set volume deployment/app --add --secret-name=secret1 --mount-path /mysecret # mount path will be created in the pod by os
+- use --cm-name to use config map
+
+- application in the pod needs to be configured to use this configuration 
+
+# pod security
+- security context constraits
+- default one:
+oc describe scc 
+- can be defined in the Deployment object under securityContext
+
+- modify scc associated with a deployment
+- serviceaccount can do the binding betw deployment and scc
+
+os get scc
+- many predefined ones
+
+- create service account
+oc create sa runasny
+oc adm po
+oc adm policy add-scc-to-user anyuid -z runasany
+- adding policy to a service account
+oc set serviceaccount deployment/app runasany
+- binds sa with a deployment
+
+# deploying stateful apps
+- apps requiring persistent storage
+- persistent volumes -- different lifecycle from the attaching pods (filesystem or block volume type)
+- persistent volume claims -- represent a request for PV
+oc get pvc
+- dynamic provisioning -- cluster dynamically creates a PV for PVC
+
+- adding storage to deployments
+oc set volumes deploy/mydeployment ...
+
+- statefulset resource -- pods with stable id
+- not supported in oc cli yet
+- need to create a spec
+- ui: admim persc, workloads > statfulSets -- here you can get a template, or use chatgpt
+
+# application health
+- resource allocation
+- 2 properties for an deployment:
+
+oc set resources deployment <mydep> --limits=cpu=200m --requests=cpu=100m,memory=256Mi
+- requests param influences scheduling by openshift -- it will reserve reources for app only on nodes that have enough resources 
+- limits param provides ceiling for an app, m-suffix for CPU uses milicore values
+
+- health check
+oc set probe dc/myapp --startup
+- checks on the start, retries if failure, if successful it never runs again
+- restart actions can be tracked in os, you could get an sms
+
+oc set probe dc/myapp --readiness
+- it checks if app can serve data
+- if it fails, it removes the pod from the service
+- if success, the ip addr of the pod is put back to the service
+
+oc set probe dc/myapp --liveness
+- checks if the processes are alive
+- if it fails, it restarts the pod
+
+other params to probe
+--get-url=URL -- probe url, e.g. http://:8080/startup -- uses localhost of the pod
+--get-tcp=PORT -- probe port
+-- CMD -- run a custom code that does the check
+--initial-delay-seconts -- give it time to start up
+--failure-treshold -- how many restarts allowed until considered failed -- crashes the entire pod -- detectable event by the alerting system, you could get an sms
+--period-seconts -- how often to check for readiness and liveness probes
+
+
+

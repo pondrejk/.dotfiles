@@ -122,11 +122,13 @@
                     },
                     {
                         "id": "workbench.action.files.save",
-                        "label": "&&Save"
+                        "label": "&&Save",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.files.saveAs",
-                        "label": "Save &&As..."
+                        "label": "Save &&As...",
+                        "enabled": false
                     },
                     {
                         "id": "saveAll",
@@ -166,7 +168,7 @@
                             "items": [
                                 {
                                     "id": "submenuitem.Profiles",
-                                    "label": "Profiles (Default)",
+                                    "label": "Profile (Default)",
                                     "submenu": {
                                         "items": [
                                             {
@@ -251,15 +253,15 @@
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
-                                    "id": "settings.filterByOnline",
-                                    "label": "&&Online Services Settings"
+                                    "id": "workbench.userDataSync.actions.turnOn",
+                                    "label": "Backup and Sync Settings..."
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
-                                    "id": "workbench.userDataSync.actions.turnOn",
-                                    "label": "Backup and Sync Settings..."
+                                    "id": "settings.filterByOnline",
+                                    "label": "&&Online Services Settings"
                                 }
                             ]
                         }
@@ -269,11 +271,13 @@
                     },
                     {
                         "id": "workbench.action.files.revert",
-                        "label": "Re&&vert File"
+                        "label": "Re&&vert File",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.closeActiveEditor",
-                        "label": "&&Close Editor"
+                        "label": "&&Close Editor",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.closeFolder",
@@ -506,13 +510,17 @@
                                     "submenu": {
                                         "items": [
                                             {
-                                                "id": "workbench.action.activityBarLocation.side",
-                                                "label": "&&Side",
+                                                "id": "workbench.action.activityBarLocation.default",
+                                                "label": "&&Default",
                                                 "checked": true
                                             },
                                             {
                                                 "id": "workbench.action.activityBarLocation.top",
                                                 "label": "&&Top"
+                                            },
+                                            {
+                                                "id": "workbench.action.activityBarLocation.bottom",
+                                                "label": "&&Bottom"
                                             },
                                             {
                                                 "id": "workbench.action.activityBarLocation.hide",
@@ -618,7 +626,7 @@
                                 },
                                 {
                                     "id": "breadcrumbs.toggle",
-                                    "label": "&&Breadcrumbs",
+                                    "label": "Toggle &&Breadcrumbs",
                                     "checked": true
                                 },
                                 {
@@ -762,10 +770,6 @@
                         "label": "E&&xtensions"
                     },
                     {
-                        "id": "workbench.view.extension.test",
-                        "label": "T&&esting"
-                    },
-                    {
                         "id": "vscode.menubar.separator"
                     },
                     {
@@ -806,8 +810,7 @@
                     },
                     {
                         "id": "workbench.action.navigateToLastEditLocation",
-                        "label": "&&Last Edit Location",
-                        "enabled": false
+                        "label": "&&Last Edit Location"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1619,7 +1622,7 @@
             "foreground": "#cccccc",
             "background": "#002b36",
             "editorBackground": "#002b36",
-            "titleBarBackground": "#002c39",
+            "titleBarBackground": "#002b36",
             "activityBarBackground": "#003847",
             "sideBarBackground": "#00212b",
             "statusBarBackground": "#00212b",
@@ -1630,7 +1633,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 0,
             "activityBarWidth": 48,
-            "sideBarWidth": 223,
+            "sideBarWidth": 170,
             "statusBarHeight": 22,
             "windowBorder": false
         }
@@ -1642,11 +1645,13 @@
             "uiState": {
                 "mode": 0,
                 "x": 0,
-                "y": 180,
-                "width": 1720,
-                "height": 638
+                "y": 69,
+                "width": 1920,
+                "height": 1131,
+                "zoomLevel": 0
             }
         },
         "openedWindows": []
-    }
+    },
+    "telemetry.devDeviceId": "0f4a2cd7-66a7-48b2-9db5-89ae3a929185"
 }

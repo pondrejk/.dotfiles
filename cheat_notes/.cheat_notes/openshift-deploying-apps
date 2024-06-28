@@ -1,0 +1,71 @@
+## opensift deploying apps
+
+# find console url from cli
+oc whoami --show-console
+- os uses external identity providers (kube:admin defalut, should be removed after admin pwd change)
+
+# perspective
+- administrator (administration of individual resources, not admin priviledges!)/developer (focus on app deployment) switch on top left
+
+creating a project
+- project is an os extension of kubernetes namespace project (adds RBAC)
+- in project pane you have tiles to create items...
+
+create a deployment
+- form, select image, resource type, advanced options...
+- shows as an app
+
+admin view
+- project actions for deployment: enable health checks
+- adding environment vars 
+- events -- sort of logs 
+- when you modify the pod template in deployment -- pods get recated 
+
+- pod details -- similar to deployment view, if you delete the pod, it gets recreated if deployment has replicaset defined
+- logs: container sourced log
+- terminal: get into the container, good for troubleshooting
+- env tab -- read only in the pod view
+
+- for all resources you can modify yaml same as in cli
+- route/secure route -- the latter is with https
+
+# deployment from a source code
+- builder images -- contains dependencies for various languages 
+- dev perspective - add - deploy from git - edit builder strategy to detect lang environment if needed
+- *build resource* - controls the runtime env and the build, pulls the builder image, builds it and builds application image on top of it, pushes it to the internal openshift registry
+- add a webhook - redeploy on git change, in git repo -- add webhook, payload url (os instance)
+
+- the same form cli:
+oc new-app --name pyweb <git-project-url> # but a problem if os cant detect lang
+- imagestream -- internal representation of a repository in os
+oc new-app --name pyweb python:3.8-ubi8~<git-project-url> # syntax: `builder image to deploy on + ~ + git url` 
+oc get pods # app created
+
+# Developer catalog 
+- pre-installed backi builders in os: 
+- templates -- combination of reasources, can be parametrized
+- devFiles -- ci/cd decriptions
+- * helmCharts -- versioned resource combinations, like templates but with history 
+
+
+## opensift-odo
+
+cli tool for deployment/development (optional utility for os)
+- description of CI/CD pipeline
+- supports various langs
+
+- go to project dir
+odo init
+- detects lang version, runs cli questionare
+- creates files: dev file (covers deployment and development parts -- in the second you define commands you want to run), dockerfile, kubernetes resources (all are templates)
+
+odo dev --platform podman
+-- creates a container locally, and inside it runs the application
+-- it watches the directory, it redeploys on source code change
+
+odo login -u developer -p developer
+-- configure odo to use openshift
+
+odo create namespace <myspace>
+odo deploy
+-- reads the spec from the dev file and builds the image, pushes it, creates the resources
