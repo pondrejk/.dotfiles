@@ -17,7 +17,11 @@
                 "folderUri": "file:///home/pondrejk/Documents/QE/unique-errors-dashboard"
             }
         ],
-        "emptyWindows": []
+        "emptyWindows": [
+            {
+                "backupFolder": "1724167738062"
+            }
+        ]
     },
     "lastKnownMenubarData": {
         "menus": {
@@ -34,6 +38,18 @@
                     {
                         "id": "workbench.action.newWindow",
                         "label": "New &&Window"
+                    },
+                    {
+                        "id": "submenuitem.OpenProfile",
+                        "label": "New Window with Profile",
+                        "submenu": {
+                            "items": [
+                                {
+                                    "id": "workbench.profiles.actions.createProfile",
+                                    "label": "New Profile..."
+                                }
+                            ]
+                        }
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -122,13 +138,11 @@
                     },
                     {
                         "id": "workbench.action.files.save",
-                        "label": "&&Save",
-                        "enabled": false
+                        "label": "&&Save"
                     },
                     {
                         "id": "workbench.action.files.saveAs",
-                        "label": "Save &&As...",
-                        "enabled": false
+                        "label": "Save &&As..."
                     },
                     {
                         "id": "saveAll",
@@ -188,7 +202,7 @@
                                             },
                                             {
                                                 "id": "workbench.profiles.actions.createProfile",
-                                                "label": "Create Profile..."
+                                                "label": "New Profile..."
                                             },
                                             {
                                                 "id": "workbench.profiles.actions.deleteProfile",
@@ -223,11 +237,11 @@
                                 },
                                 {
                                     "id": "workbench.action.openSnippets",
-                                    "label": "Configure User Snippets"
+                                    "label": "Configure Snippets"
                                 },
                                 {
                                     "id": "workbench.action.tasks.openUserTasks",
-                                    "label": "User Tasks"
+                                    "label": "Tasks"
                                 },
                                 {
                                     "id": "submenuitem.ThemesSubMenu",
@@ -253,13 +267,6 @@
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
-                                    "id": "workbench.userDataSync.actions.turnOn",
-                                    "label": "Backup and Sync Settings..."
-                                },
-                                {
-                                    "id": "vscode.menubar.separator"
-                                },
-                                {
                                     "id": "settings.filterByOnline",
                                     "label": "&&Online Services Settings"
                                 }
@@ -271,13 +278,11 @@
                     },
                     {
                         "id": "workbench.action.files.revert",
-                        "label": "Re&&vert File",
-                        "enabled": false
+                        "label": "Re&&vert File"
                     },
                     {
                         "id": "workbench.action.closeActiveEditor",
-                        "label": "&&Close Editor",
-                        "enabled": false
+                        "label": "&&Close Editor"
                     },
                     {
                         "id": "workbench.action.closeFolder",
@@ -535,9 +540,8 @@
                                     "submenu": {
                                         "items": [
                                             {
-                                                "id": "workbench.action.positionPanelBottom",
-                                                "label": "Bottom",
-                                                "checked": true
+                                                "id": "workbench.action.positionPanelTop",
+                                                "label": "Top"
                                             },
                                             {
                                                 "id": "workbench.action.positionPanelLeft",
@@ -546,6 +550,11 @@
                                             {
                                                 "id": "workbench.action.positionPanelRight",
                                                 "label": "Right"
+                                            },
+                                            {
+                                                "id": "workbench.action.positionPanelBottom",
+                                                "label": "Bottom",
+                                                "checked": true
                                             }
                                         ]
                                     }
@@ -770,6 +779,10 @@
                         "label": "E&&xtensions"
                     },
                     {
+                        "id": "workbench.view.extension.test",
+                        "label": "T&&esting"
+                    },
+                    {
                         "id": "vscode.menubar.separator"
                     },
                     {
@@ -810,7 +823,8 @@
                     },
                     {
                         "id": "workbench.action.navigateToLastEditLocation",
-                        "label": "&&Last Edit Location"
+                        "label": "&&Last Edit Location",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1633,7 +1647,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 0,
             "activityBarWidth": 48,
-            "sideBarWidth": 170,
+            "sideBarWidth": 258,
             "statusBarHeight": 22,
             "windowBorder": false
         }
@@ -1644,10 +1658,10 @@
             "backupPath": "/home/pondrejk/.config/Code/Backups/63f0e1c5c9d7ad6d05d2d9c772483c3a",
             "uiState": {
                 "mode": 0,
-                "x": 0,
-                "y": 69,
-                "width": 1920,
-                "height": 1131,
+                "x": 1295,
+                "y": 1856,
+                "width": 1024,
+                "height": 768,
                 "zoomLevel": 0
             }
         },
