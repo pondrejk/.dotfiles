@@ -149,6 +149,12 @@ rmln () {
   sed -i -e "${ADDR[1]}d" "${ADDR[0]}"
 }
 
+# fetch open PR branch and checkout to it
+ghpr () {
+  git fetch upstream pull/$1/head:$1
+  git checkout $1
+}
+
 # quick jira-cli acces
 jira () {
   cd $HOME/Documents/jira_ticket_cli
