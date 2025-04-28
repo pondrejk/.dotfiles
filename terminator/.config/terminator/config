@@ -4,6 +4,7 @@
   sticky = True
   inactive_color_offset = 1.0
   enabled_plugins = APTURLHandler, LaunchpadCodeURLHandler, LaunchpadBugURLHandler
+  ask_before_closing = never
 [keybindings]
   go_up = <Alt>k
   go_down = <Alt>j
@@ -25,6 +26,118 @@
     use_system_font = False
 [layouts]
   [[default]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:32
+      maximised = False
+      fullscreen = False
+      size = 1920, 1048
+      title = pondrejk@provo:~/Documents/robottelo
+      last_active_window = True
+    [[[child1]]]
+      type = Notebook
+      parent = child0
+      order = 0
+      labels = None, None, None
+      last_active_term = d8a3cca6-a58b-4939-a76c-bcca70517441, a65fe0a4-d0a9-4f38-8b11-e71846239e9c, c70ed151-457a-41b2-a780-2eb7cc2fe160
+      active_page = 1
+    [[[child2]]]
+      type = HPaned
+      parent = child1
+      order = 0
+      position = 956
+      ratio = 0.4997386304234187
+    [[[terminal3]]]
+      type = Terminal
+      parent = child2
+      order = 0
+      profile = default
+      uuid = 70469436-4da5-4c89-8153-10cb02dd94e7
+      command = git sh
+      directory = /home/pondrejk/Documents/robottelo
+    [[[child4]]]
+      type = VPaned
+      parent = child2
+      order = 1
+      position = 502
+      ratio = 0.5
+    [[[terminal5]]]
+      type = Terminal
+      parent = child4
+      order = 0
+      group = Pill
+      profile = default
+      uuid = 5627b0a3-98b1-4b96-9fbf-af27e0750208
+      command = ""
+      directory = /home/pondrejk/Documents/robottelo
+    [[[terminal6]]]
+      type = Terminal
+      parent = child4
+      order = 1
+      profile = default
+      uuid = d8a3cca6-a58b-4939-a76c-bcca70517441
+      directory = /home/pondrejk/Documents/robottelo
+    [[[child7]]]
+      type = VPaned
+      parent = child1
+      order = 1
+      position = 502
+      ratio = 0.5
+    [[[child8]]]
+      type = HPaned
+      parent = child7
+      order = 0
+      position = 956
+      ratio = 0.4997386304234187
+    [[[terminal9]]]
+      type = Terminal
+      parent = child8
+      order = 0
+      profile = default
+      uuid = a65fe0a4-d0a9-4f38-8b11-e71846239e9c
+      command = git sh
+      directory = /home/pondrejk/Documents/QE/unique-errors-dashboard
+    [[[terminal10]]]
+      type = Terminal
+      parent = child8
+      order = 1
+      profile = default
+      uuid = 723ea4cf-1bce-48cd-a934-c87032dea3e6
+      command = ""
+      directory = /home/pondrejk/Documents/QE/unique-errors-dashboard/backend
+    [[[child11]]]
+      type = HPaned
+      parent = child7
+      order = 1
+      position = 956
+      ratio = 0.4997386304234187
+    [[[terminal12]]]
+      type = Terminal
+      parent = child11
+      order = 0
+      profile = default
+      uuid = c1fe566c-df95-48f0-8103-3b4ae28a1f8b
+      directory = /home/pondrejk/Documents/QE/unique-errors-dashboard/frontend
+      command = npm run dev
+    [[[terminal13]]]
+      type = Terminal
+      parent = child11
+      order = 1
+      profile = default
+      uuid = 7caaf28f-5a85-4aaf-838e-80177224d7aa
+      directory = /home/pondrejk/Documents/QE/unique-errors-dashboard
+      command = podman run -e POSTGRES_PASSWORD=fero -e POSTGRES_USER=fero -e POSTGRES_DB=ued  -p 5432:5432 -v /home/pondrejk/Documents/QE/tfa_helper_data:/var/lib/postgresql/data:z docker.io/postgres:16
+    [[[terminal14]]]
+      type = Terminal
+      parent = child1
+      order = 2
+      profile = default
+      uuid = c70ed151-457a-41b2-a780-2eb7cc2fe160
+      command = ""
+      directory = /home/pondrejk/Documents/broker
+  [[minimal]]
     [[[child0]]]
       fullscreen = False
       last_active_term = 70469436-4da5-4c89-8153-10cb02dd94e7
