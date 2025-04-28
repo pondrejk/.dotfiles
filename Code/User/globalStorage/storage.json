@@ -2,8 +2,8 @@
     "userDataProfilesMigration": true,
     "profileAssociations": {
         "workspaces": {
-            "file:///home/pondrejk/Documents/robottelo": "__default__profile__",
-            "file:///home/pondrejk/Documents/QE/unique-errors-dashboard": "__default__profile__"
+            "file:///home/pondrejk/Documents/QE/unique-errors-dashboard": "__default__profile__",
+            "file:///home/pondrejk/Documents/robottelo": "__default__profile__"
         },
         "emptyWindows": {}
     },
@@ -17,11 +17,7 @@
                 "folderUri": "file:///home/pondrejk/Documents/QE/unique-errors-dashboard"
             }
         ],
-        "emptyWindows": [
-            {
-                "backupFolder": "1724167738062"
-            }
-        ]
+        "emptyWindows": []
     },
     "lastKnownMenubarData": {
         "menus": {
@@ -105,6 +101,31 @@
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/pondrejk/Documents/ssg-rhel8-ds-modified.xml",
+                                        "path": "/home/pondrejk/Documents/ssg-rhel8-ds-modified.xml",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Documents/ssg-rhel8-ds-modified.xml"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/pondrejk/Documents/robottelo/tests/foreman/data/hammer_commands.json",
+                                        "path": "/home/pondrejk/Documents/robottelo/tests/foreman/data/hammer_commands.json",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Documents/robottelo/tests/foreman/data/hammer_commands.json"
+                                },
+                                {
+                                    "id": "vscode.menubar.separator"
+                                },
+                                {
                                     "id": "workbench.action.openRecent",
                                     "label": "&&More..."
                                 },
@@ -146,8 +167,7 @@
                     },
                     {
                         "id": "saveAll",
-                        "label": "Save A&&ll",
-                        "enabled": false
+                        "label": "Save A&&ll"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -160,10 +180,6 @@
                                 {
                                     "id": "workbench.profiles.actions.exportProfile",
                                     "label": "Export Profile (Default)..."
-                                },
-                                {
-                                    "id": "workbench.profiles.actions.importProfile",
-                                    "label": "Import Profile..."
                                 }
                             ]
                         }
@@ -181,47 +197,8 @@
                         "submenu": {
                             "items": [
                                 {
-                                    "id": "submenuitem.Profiles",
-                                    "label": "Profile (Default)",
-                                    "submenu": {
-                                        "items": [
-                                            {
-                                                "id": "workbench.profiles.actions.profileEntry.__default__profile__",
-                                                "label": "Default",
-                                                "checked": true
-                                            },
-                                            {
-                                                "id": "vscode.menubar.separator"
-                                            },
-                                            {
-                                                "id": "workbench.profiles.actions.showProfileContents",
-                                                "label": "Show Profile Contents"
-                                            },
-                                            {
-                                                "id": "vscode.menubar.separator"
-                                            },
-                                            {
-                                                "id": "workbench.profiles.actions.createProfile",
-                                                "label": "New Profile..."
-                                            },
-                                            {
-                                                "id": "workbench.profiles.actions.deleteProfile",
-                                                "label": "Delete Profile...",
-                                                "enabled": false
-                                            },
-                                            {
-                                                "id": "vscode.menubar.separator"
-                                            },
-                                            {
-                                                "id": "workbench.profiles.actions.exportProfile",
-                                                "label": "Export Profile..."
-                                            },
-                                            {
-                                                "id": "workbench.profiles.actions.importProfile",
-                                                "label": "Import Profile..."
-                                            }
-                                        ]
-                                    }
+                                    "id": "workbench.profiles.actions.manageProfiles",
+                                    "label": "&&Profiles"
                                 },
                                 {
                                     "id": "workbench.action.openSettings",
@@ -262,6 +239,13 @@
                                             }
                                         ]
                                     }
+                                },
+                                {
+                                    "id": "vscode.menubar.separator"
+                                },
+                                {
+                                    "id": "workbench.userDataSync.actions.turnOn",
+                                    "label": "Backup and Sync Settings..."
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -496,7 +480,8 @@
                                 },
                                 {
                                     "id": "workbench.action.togglePanel",
-                                    "label": "&&Panel"
+                                    "label": "&&Panel",
+                                    "checked": true
                                 },
                                 {
                                     "id": "toggle.toggleCustomTitleBar",
@@ -786,6 +771,17 @@
                         "id": "vscode.menubar.separator"
                     },
                     {
+                        "id": "workbench.panel.chat",
+                        "label": "&&Chat"
+                    },
+                    {
+                        "id": "workbench.panel.chatEditing",
+                        "label": "Copilot Ed&&its"
+                    },
+                    {
+                        "id": "vscode.menubar.separator"
+                    },
+                    {
                         "id": "workbench.actions.view.problems",
                         "label": "&&Problems"
                     },
@@ -823,8 +819,7 @@
                     },
                     {
                         "id": "workbench.action.navigateToLastEditLocation",
-                        "label": "&&Last Edit Location",
-                        "enabled": false
+                        "label": "&&Last Edit Location"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1211,6 +1206,10 @@
                         "label": "Show &&Release Notes"
                     },
                     {
+                        "id": "workbench.action.getStartedWithAccessibilityFeatures",
+                        "label": "Get Started with Accessibility Features"
+                    },
+                    {
                         "id": "vscode.menubar.separator"
                     },
                     {
@@ -1467,12 +1466,21 @@
                 "userSettingsLabel": "ctrl+shift+f"
             },
             "workbench.view.scm": {
-                "label": "Ctrl+Shift+G",
-                "userSettingsLabel": "ctrl+shift+g"
+                "label": "Ctrl+Shift+G G",
+                "isNative": false,
+                "userSettingsLabel": "ctrl+shift+g g"
             },
             "workbench.view.debug": {
                 "label": "Ctrl+Shift+D",
                 "userSettingsLabel": "ctrl+shift+d"
+            },
+            "workbench.panel.chat": {
+                "label": "Ctrl+Alt+I",
+                "userSettingsLabel": "ctrl+alt+i"
+            },
+            "workbench.panel.chatEditing": {
+                "label": "Ctrl+Shift+Alt+I",
+                "userSettingsLabel": "ctrl+shift+alt+i"
             },
             "workbench.actions.view.problems": {
                 "label": "Ctrl+Shift+M",
@@ -1639,15 +1647,18 @@
             "titleBarBackground": "#002b36",
             "activityBarBackground": "#003847",
             "sideBarBackground": "#00212b",
+            "sideBarBorder": "rgba(238, 232, 213, 0.17)",
             "statusBarBackground": "#00212b",
+            "statusBarBorder": "rgba(238, 232, 213, 0.04)",
             "statusBarNoFolderBackground": "#00212b"
         },
         "layoutInfo": {
             "sideBarSide": "left",
             "editorPartMinWidth": 220,
-            "titleBarHeight": 0,
+            "titleBarHeight": 35,
             "activityBarWidth": 48,
-            "sideBarWidth": 258,
+            "sideBarWidth": 261,
+            "auxiliarySideBarWidth": 0,
             "statusBarHeight": 22,
             "windowBorder": false
         }
@@ -1658,14 +1669,24 @@
             "backupPath": "/home/pondrejk/.config/Code/Backups/63f0e1c5c9d7ad6d05d2d9c772483c3a",
             "uiState": {
                 "mode": 0,
-                "x": 1295,
-                "y": 1856,
-                "width": 1024,
-                "height": 768,
+                "x": 0,
+                "y": 32,
+                "width": 2300,
+                "height": 1440,
                 "zoomLevel": 0
             }
         },
         "openedWindows": []
     },
-    "telemetry.devDeviceId": "0f4a2cd7-66a7-48b2-9db5-89ae3a929185"
+    "telemetry.devDeviceId": "0f4a2cd7-66a7-48b2-9db5-89ae3a929185",
+    "window.titleBarStyleOverride": "custom",
+    "windowSplashWorkspaceOverride": {
+        "layoutInfo": {
+            "auxiliarySideBarWidth": [
+                400,
+                []
+            ]
+        }
+    },
+    "windowControlHeight": 35
 }

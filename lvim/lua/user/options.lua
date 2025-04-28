@@ -1,5 +1,5 @@
 lvim.log.level = "warn"
-lvim.format_on_save = true
+lvim.format_on_save = false
 
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
@@ -63,7 +63,7 @@ lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(serve
 end, lvim.lsp.automatic_configuration.skipped_servers)
 
 -- ignore some linter errors in pylist
-require 'lspconfig'.pylsp.setup {
+require("lspconfig").pylsp.setup {
   filetypes = { 'python' },
   settings = {
     configurationSources = { "flake8" },

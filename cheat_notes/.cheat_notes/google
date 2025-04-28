@@ -1,0 +1,7 @@
+allintext: / intext: -- only results containing all the query terms in text
+allintitle: / intitle: -- in title
+allinurl: / inurl: -- in url
+filetype:<suffix> -- pages ending in suffix
+site: -- only results from site or domain
+minus sign (-<word>) -- exclude results that contain word 
+"<phrase>" -- search for the exact phrase in given order
