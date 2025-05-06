@@ -31,7 +31,7 @@
       parent = ""
       order = 0
       position = 0:32
-      maximised = False
+      maximised = True
       fullscreen = False
       size = 1920, 1048
       title = pondrejk@provo:~/Documents/robottelo
@@ -79,6 +79,7 @@
       profile = default
       uuid = d8a3cca6-a58b-4939-a76c-bcca70517441
       directory = /home/pondrejk/Documents/robottelo
+      command = ""
     [[[child7]]]
       type = VPaned
       parent = child1

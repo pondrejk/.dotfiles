@@ -173,6 +173,12 @@ brk () {
   workon broker
 }
 
+# quick uef server 
+uef () {
+  workon uef
+  uvicorn main:app --reload
+}
+
 # vimx allows copying to clipboard from cmdline
 # alias vim='vimx'
 alias vim='nvim'
