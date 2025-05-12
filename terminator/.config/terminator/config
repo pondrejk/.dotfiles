@@ -3,8 +3,8 @@
   always_on_top = True
   sticky = True
   inactive_color_offset = 1.0
-  enabled_plugins = APTURLHandler, LaunchpadCodeURLHandler, LaunchpadBugURLHandler
   ask_before_closing = never
+  link_single_click = True
 [keybindings]
   go_up = <Alt>k
   go_down = <Alt>j

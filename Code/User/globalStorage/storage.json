@@ -1669,11 +1669,11 @@
             "backupPath": "/home/pondrejk/.config/Code/Backups/63f0e1c5c9d7ad6d05d2d9c772483c3a",
             "uiState": {
                 "mode": 0,
-                "x": 0,
-                "y": 32,
-                "width": 2300,
-                "height": 1440,
-                "zoomLevel": 0
+                "x": 527,
+                "y": 1472,
+                "width": 1280,
+                "height": 1568,
+                "zoomLevel": 1
             }
         },
         "openedWindows": []
@@ -1688,5 +1688,5 @@
             ]
         }
     },
-    "windowControlHeight": 35
+    "windowControlHeight": 42
 }

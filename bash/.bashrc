@@ -76,6 +76,11 @@ alias ehr='cd $HOME/Documents/PROJECTS/early-heresy-map'
 # ssh
 alias sshr='ssh -AX -l root -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 
+# git
+alias g-="git checkout -"
+alias gpm="git pull --rebase upstream master"
+
+
 # foreman
 alias fm='cd $HOME/Documents/foreman'
 alias fk='cd $HOME/Documents/forklift'
