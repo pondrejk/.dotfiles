@@ -42,6 +42,7 @@ alias now='date +"%T"'
 alias nowtime=now
 alias nowdate='date +"%d-%m-%Y"'
 alias ports='netstat -tulanp'
+alias calc='bc -l -q'
 
 # two names for dotfiles dir :/
 ls ~/.dotfiles >/dev/null 2>&1 && alias dot='cd ~/.dotfiles'
@@ -50,11 +51,6 @@ ls ~/dotfiles >/dev/null 2>&1 && alias dot='cd ~/dotfiles'
 # planck
 alias planck='cd $HOME/Documents/qmk_firmware/'
 alias planck_build='sudo make planck/rev4:pondrejk:dfu'
-
-# beaker ansible
-alias bans='cd $HOME/Documents/beaker_ansible_devtools/beaker_ansible/'
-alias bans-refresh='./beaker_ansible_inventory.rb -r'
-alias bans-run='ansible-playbook ../../beaker_playbooks/basic-setup.yml -i beaker_ansible_inventory.rb'
 
 # robotello
 alias rob='cd $HOME/Documents/robottelo'
@@ -80,18 +76,10 @@ alias sshr='ssh -AX -l root -o StrictHostKeyChecking=no -o UserKnownHostsFile=/d
 alias g-="git checkout -"
 alias gpm="git pull --rebase upstream master"
 
-
 # foreman
 alias fm='cd $HOME/Documents/foreman'
 alias fk='cd $HOME/Documents/forklift'
 alias kat='cd $HOME/Documents/katello'
-
-# scool
-alias elwar='cd $HOME/Documents/PROJECTS/elwar-source'
-alias hex='cd $HOME/Documents/PROJECTS/hexbins-demo-brno'
-alias pondrejk='cd $HOME/Documents/PROJECTS/pondrejk.net'
-alias dizzer='cd $HOME/Dropbox/!!!DIZZER!!!'
-alias biblio='cd $HOME/Dropbox/Biblio'
 
 # docker
 alias dockerkill='docker kill $(docker ps -q)'
