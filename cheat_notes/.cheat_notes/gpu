@@ -1,0 +1,2 @@
+# which gpu is active?
+glxinfo | grep -E "OpenGL vendor|OpenGL renderer"

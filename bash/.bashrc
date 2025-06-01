@@ -167,6 +167,13 @@ brk () {
   workon broker
 }
 
+# quick label studio
+label () {
+  cd $HOME/Documents/QE/labeling-experiment
+  workon labelstudio
+  label-studio start
+}
+
 # quick uef server 
 uef () {
   workon uef

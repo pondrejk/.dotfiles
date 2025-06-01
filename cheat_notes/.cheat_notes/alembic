@@ -1,0 +1,19 @@
+alembic init
+- creates a file structure, edit mako script to change revision template, edit env.py to point alembic to the configured db
+
+alembic revision --autogenerate -m"initial"
+- creates a first revision, check alembic/versions
+- if you have existing db before this, move it aside (or point alembic to nonexistent sqlite) to generate inital revision from the model
+- re-run revision to see if your db matches the model
+
+alembic stamp head
+- stamp the current state of db as up to date without running transaction
+
+alembic check 
+- see if head is up to date
+
+alembic current
+- see current head
+
+- after making changes to the model, create revision and then apply it to the db:
+alembic upgrade head
