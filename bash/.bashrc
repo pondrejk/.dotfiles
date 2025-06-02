@@ -180,6 +180,9 @@ uef () {
   uvicorn main:app --reload
 }
 
+# which host is tested
+alias ho="yq e '.server.hostnames' settings.local.yaml"
+
 # vimx allows copying to clipboard from cmdline
 # alias vim='vimx'
 alias vim='nvim'
