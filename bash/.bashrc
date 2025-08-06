@@ -180,6 +180,11 @@ uef () {
   uvicorn main:app --reload
 }
 
+cobr () {
+  git fetch upstream $1
+  git branch --track $1 upstream/$1
+}
+
 # which host is tested
 alias ho="yq e '.server.hostnames' settings.local.yaml"
 
