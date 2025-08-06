@@ -1,0 +1,36 @@
+# UV
+https://realpython.com/python-uv/
+
+# start project
+uv init project-name
+- creates a dir, does git init, creates gitignore, initial file 
+- pass --lib to make it a python package 
+
+# add deps, -- in project, do:
+uv add <library>
+- pulled to .venv dir in the project
+- data added to uv.lock and pyproject.toml
+uv add --upgrade 
+- upgrade existing dep
+uv add --dev <library>
+- add dev depency, added under dependency group in pytoml
+
+uv tree 
+-- show dependency tree
+
+# run app
+uv run ... 
+-- uses the virtual env from .venv, or installs stuff if packages are not there
+uv sync
+-- install packages from from toml
+uv remove
+-- remove dependency
+
+uv tool instal <tool>
+-- tool is made available in the whole system (alt to pipx)
+
+uv build
+-- creates source and binary distributions under dist/folder
+
+uv publish
+-- get your package to a python index like PyPI

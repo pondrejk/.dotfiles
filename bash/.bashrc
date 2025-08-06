@@ -190,3 +190,7 @@ alias vim='nvim'
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 export EDITOR=/usr/bin/vim
+export CLAUDE_CODE_USE_VERTEX=1
+export CLOUD_ML_REGION=us-east5
+export ANTHROPIC_VERTEX_PROJECT_ID=itpc-gcp-core-pe-eng-claude
+export PATH=$PATH:$HOME/.npm-global/bin
