@@ -1,0 +1,14 @@
+# Design patterns with first-class functions
+
+- examples of some GoF design pattern implementations in python
+- pythons functions or callable objects often provide more natural way of implementing callbacks than strictly mimicking patterns like Strategy or Command
+- Strategy pattern definition: define a family of algorithms, encapsulate them and make them interchangeable
+- flyweight -- a shared object that can be used in multiple objects simultaneously (Strategy objects make good flyweights)
+
+globals() -- returns a dictionary with current global symbol table, always a dictionary of a current module
+
+inspect -- high level introspection functions, e.g.: 
+inspect.getmembers(<module>, inspect.isfunction) -- get all functions from a module
+
+- Command design pattern -- goal is to decouple an object thet invokes an operation from the provider that actually implements it (object oriented replacement for callbacks)
+
