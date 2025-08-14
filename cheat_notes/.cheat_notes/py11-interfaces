@@ -1,0 +1,22 @@
+# from dynamic protocols to abstract base classes (ABCs)
+-- basically tools for building frameworks -- not for majority of coders :)
+
+polymorphism -- some range of methods can be executed on many objects or classes (len(), repr()...), enabled by protocols in python
+
+-- every class has an interface -- a set of public attributes implemented or inherited by class
+-- monkey-patching -- changing a class or module at runtime without touching its source code, though the code that does it is tightly coupled with the modified class
+-- subclass an extisting ABC when possible, e.g. class MyClass(collections.MutableSeuqence) -- but we need to implement methods required by ABC, otherwise we get typeError when instantiating out class (python doesn't check ABC implementation at import time)
+
+some provided ABCs:
+collections.abc: Iterable,Container,Sized/Sequence,Mapping,Set/MappingView/Callable,Hashable
+numbers package: Number>Complex>Real>Rational>Integral
+
+Defining own ABC
+- abstract methods marked with @abc.abstractmethod -- often empty, subclasses are foced to override it, if it has some implmentation subclasses can use super() to invoke and modify it
+- its ok to define concrete methods in ABCs as long as they depend only on other methods in the interface
+- the best way to define it is to subclass abc.ABC or other ABC
+
+Virtual subclasses
+- doesnt inherit from ABC -- so overriding of abstract methods is not enforced, it is registered to ABC using @<parentAbc>.register, the issubclass and isinstance functions will treat virtual subclass as subclass
+
+
