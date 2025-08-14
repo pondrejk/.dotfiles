@@ -1,0 +1,18 @@
+# sequences 
+sequence constructor -- best practice is to take the data as an iterable argument in the constructor
+
+reprlib -- to create lentgh limited repr() to avoid console flooding -- reprlib.repr(), also repr should never raise an exception
+
+protocols -- in context of o-o programming means an informal interface that is defined only in documentation and not in code, not enforced
+
+duck typing -- dont check if it is a duck, check weather it quacks, walks... basically a type sytem used in dynamic languages, class of an object is less important than the methods it defines
+
+dir(object) -- reveals indices attributes of an object 
+
+__gettatr__ and __setattr__ often need to be defined together for an object to avoid inconsistent behavior of objects
+
+reduce -- reduce multiple values into one: functools.reduce(function, iterable, initializer) -- initializer is the value returned if the sequence is empty
+
+zip(a,b) -- takes two iterables, returns a generator of tuples made from items from those iterables
+all(a==b, for a,b in zip(iter,iter2)) -- returns true if all comparisons are true
+itertools.zip_longest -- uses a fillvalue if iterables are not the same size
