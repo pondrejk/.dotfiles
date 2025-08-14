@@ -1,0 +1,14 @@
+# A Pythonic Object
+object representations:
+- repr() string representation of object for developer, str() for user -- implement __repr__ and __str__ methods in your objects to support these
+
+@classmethod decorator -- to define a method that operates on the class and not on instances, changes the way the method is called, so it receives *cls* and not *self* as a first argument -- good for alternative constructors
+
+@staticmethod -- modifies method so that it doesn't receive special first arg -- like defining a plain function in class body -- not much used though
+
+__format__ can be used to create custom .format() on object 
+__hash__ (should return hash) and __eq__ need to be implemented to make object hashable
+@property decorator -- make method read-only
+- name mangling -- no private attributes in python, but you can do names like __method to hide them but its just about obscurity not security
+
+-- overriding class attributes -- best way is to create a subclass
