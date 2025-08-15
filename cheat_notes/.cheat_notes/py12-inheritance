@@ -1,0 +1,14 @@
+# Inheritance
+- subclassing from built-in types (like dict, list, str) is highly error prone as the built-in methods (written in C) mostly ignore user-defined overrides
+
+- MRO (method resolution order) -- how python traverses inheritance graph (classes have attribute __mro__ holding tuple of references to superclasses in mro order), e.g. bool.__mro__
+- recommendend way is to to delegate method calls to superclass using super()
+- but you can bypass MRO by invoking a method on superclass directly: <Class>.ping(self) instead of super().ping() -- self must be passed explicitly because you are accessing an unbound method 
+
+Dealing with multiple inheritance (diamond problem)
+- distinguish interface inhereitance (backbone of a framework) from implementation ineritance (done for code reuse) -- can often be replaced by composition or delegation
+- make interfaces explicit with ABCs
+- use mixins for code reuse -- when thers no *is a* relationship betw classes, use mixin to bundle some closely related methods for reuse (make them explicit by naming ...mixin suffix)
+- dont subclass from more than one concrete class (everything above should be ABCs or mixins)
+- provide aggregate classes if it makes sense -- class that brings together some useful combination of ABCs and mixins by inheriting from them but not adding its own structure
+- favor object composition over class inheritance -- dont create class hierarchies for fun, composition leads to more flexible designs
