@@ -1,0 +1,19 @@
+# Iterators, Iterables, and Generators
+- iterator -- retrieves items from a collection lazily -- one at a time and on demand (GoF pattern definition)
+- generator -- every generator is an iterator, but not the other way around. Generator does need to go over a sequence and can create items from thin air (e.g. fibonacci sequence), but terms are often treated as synonyms in community
+
+- when interpreter needs to iterate over something, it calls iter(x) which checks if x is iterable (has __iter__ method implemented (or alternatively __getitem__ -- but that might go away in future)
+- every iterable can obtian an iterator, e.g.: it = iter(<iterable>)
+- iterator has __next__ so you can run next(it) to return items until iterator is depleted, then StopIteration is returned, you need to invoke new iterator to itrate again
+- iterable should never act as an iterator over itself (implement __iter__ but not __next__) -- this wouldn't support multiple traversals!
+- generator function -- every function that has yield in its body, returns a generator object
+
+re.finditer -- a lazy (generator) version of re.findall
+
+- generator expressions -- can replace simple generator functions for convenience, oneliner without yield keyword:
+generator = (num ** 2 for num in range(10))
+next(generator)
+
+Lots of generator function in standard library:
+itertools: count, compress, filter, takewhile, accumulate, chain, product, combinations, cycle, permutations, repeat...
+bultin: zip, all, any, max, min...
