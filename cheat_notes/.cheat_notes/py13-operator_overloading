@@ -1,0 +1,15 @@
+# operator overloading
+- allows user-defined objects to interoperate with inflix operators such as + | or unary operators lie - and ~
+
+python rules:
+- you cannot overload operators for the built-in types
+- cannot create new operators, only overload existing ones
+- few operators cannot be overloaded: is, and, or, not
+
+Overloading unary operators (+ - ~):
+- implement special method with just one argument: self - special methods are __neg__, __pos__, __invert__ 
+- always return a new object!
+
+Inflix operators -- a larger list of special methods (see table on page 397)
+Rich comparison operators -- similar list of forward and reverse methods
+Augmented assignment -- e.g += __iadd__ -- should always return self
