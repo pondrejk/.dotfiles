@@ -1,0 +1,25 @@
+# text vs bytes
+unicode standard for strings 
+- sharp distinction betw identity of characters -- **code points** (U+hexadecimal code) and the **byte representations** ("human text") which depend on the encoding in use 
+- encoding -- from code points to bytes, decoding -- from bytest to code points 
+- byte literals start with b prefix when printed:
+str = "café", str.encode('utf8') --> b'caf\xc3\xa9'
+
+- bytes -- immutable, bytearray -- mutable
+- how bytes are displayed: characters within ASCII range displayes as themselves, tabs and special chars are \t, etc, others \<hexadecimal>
+- many methods known from str are applicable: endswith, strip, replace...
+- bytes and bytearray always copy the bytes from source, use memoryview as an alternative
+
+- struct module - conversion betw python bytes objects and packed binary data
+- encode accepts codec (over 100 available) and error behavior str.encode("cp437", errors=ignore|replace|xmlcharrefreplace) -- unencodable chars replaced or ignored
+
+- how to discover encoding from bytesequence -- can't really, but you can try Chardet
+- BOM - byte order mark - denotes little endian vs big endian ordering -- issue only on UTF-16+
+
+- unicode sandwitch -- best practice to do all text processing in program on strings and to decode and encode at the start and the end of the process
+- don't depend on encoding defaults, especially for cross-os code
+- locale.getpreferredencoding() -- default for file manipulation on given os
+
+- unicode normalization -- how to deal with equivalent items in unicode (short vs combined characters é vs e'), unicodedata.normalize(<form>, input), form is NFC (compose -- use short versions)/NFD (decompose -- use combined forms) -- and NFKC, NFKD -- stricter compatibility versions (good for search and indexing but can degrade text) 
+- case folding -- converting to lowercase string.casefold()
+- sorting nonASCII text -- locale.strxfrm or pyuca library
