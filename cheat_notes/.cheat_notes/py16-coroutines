@@ -1,0 +1,35 @@
+# Coroutines
+
+- a procedure that collaborates with a caller, yielding and receiving data from the caller
+(can be used to implement cooperative multitasking)
+- syntax -- contains yield keyword on a right side of expression (yield -- to produce and to give way) e.g. datum = yield, evolved from generators...
+- coroutuine receives data from the caller through .send(data)
+- coroutine can also use *return*
+- coroutine can use *yield from* to delegate to a subgenerator
+- coro can be in 4 states, use inspect.getgeneratorstate() to find out:
+  gen_created, gen_running, gen_suspended, gen_closed
+
+- the first call next(coro) is called "priming" (advancing it to the first yield to make it ready for use as a live coroutine)
+- coroutine is suspended exactly at the yield keyword, assignement happens on the send() call with the pushed value
+
+def simple_coro(a):
+  print(a)
+  b = yield a
+  print(b)
+  c = yield a + b
+  print c
+
+my_coro = simple_coro(1)
+next(my_coro) #priming
+-> 1
+my_coro.send(2)
+-> 2
+my_coro.send(3)
+-> 5
+then StopIteration is returned, no reset button exists, one needs to instantiate coroutine again
+
+Unhandled exceptions propagate from the coroutine to the caller, generator.throw() and generator.close() can be used to send exceptions to coroutines
+
+# Usint yield from (replaced by await keyword)
+- allows for generator nesting
+- creates a bidirectional channel between caller, delegating generator and subgenerator
