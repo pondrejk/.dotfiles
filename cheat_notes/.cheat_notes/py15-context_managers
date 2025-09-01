@@ -1,0 +1,13 @@
+# else blocks
+- can be use with *if* but also with:
+*for* -- the else block will run only if and when the loop runs to completion (not when aborted with break)
+*while* -- the else block runs when the condition becomes falsy (not when break) 
+*try* -- the else block runs when no exception is raised in the try block, used for EAFP approach (easier to ask for forgiveness than permission). finally block usually releases a critical resource even in case of exception
+
+# context managers and with blocks
+- setu up a termporary context and reliably tears it down
+- the protocol consists of the __enter__ and __exit__ methods
+- with blocks dont define a new scope like functions and modules
+- args passed to __exit__ are exc_type -- exception class, exc_value -- exception instance, traceback -- traceback object
+-- checkout contextlib utilities, includes @contextmanager decorator to build context manager from a simple generator (part after yield is the teardown)
+recipies beyond files -- closing network connections, timing code, making transactional changes to lists...

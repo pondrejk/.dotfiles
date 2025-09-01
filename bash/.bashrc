@@ -192,6 +192,9 @@ gitapply () {
 # which host is tested
 alias ho="yq e '.server.hostnames' settings.local.yaml"
 
+# robottelo logs
+alias rlogs="tail -f logs/*"
+
 # vimx allows copying to clipboard from cmdline
 # alias vim='vimx'
 alias vim='nvim'
