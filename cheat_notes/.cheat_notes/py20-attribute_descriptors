@@ -1,0 +1,27 @@
+# Descriptors
+-- a way of reusing the same access logic in multiple attributes (used in ORM field types e.g. in sqlalchemy)
+-- descriptor is a class that implements a protocol consisting of __get__, __set__ and __delete__ methods (or some of them)
+-- distinguishing python feature
+-- @property, @classmethod, @staticmethod decorators leverage descriptors
+
+-- terminology: 
+descriptor class
+managed class -- here the descriptor class instances are declared as managed attribute
+descriptor instance
+managed instance
+storage attribute -- holds value of a managed attribute in the managed instance
+managed attribute -- public attribute of a managed classed handled by a descriptor instance, with values stored in storage attribute
+-- essentially a Template Method design pattern
+
+Overriding vs Nonoverriding descriptors
+-- reading an attribute through an instance returns attr defined in the instance, if none defined there, class attribute retrieved
+-- assing attr in an instance creates attr there without affecting the class
+-- **overriding descriptor** (aka data or enforcing desc.) -- implemens __set__ method
+-- **nonoverriding** (aka nondata or shadowable desc.) -- no __set__ method, basically all Methods
+
+Tips:
+-- keep it simple -- property builtin is ok for many cases
+-- read-only descriptors require __set__ (don't want them to be shadowed in instances)
+-- validation descriptors can work with __set__ only
+-- caching can be done efficiently with __get__ only
+...

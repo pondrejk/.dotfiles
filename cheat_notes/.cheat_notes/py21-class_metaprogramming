@@ -1,0 +1,21 @@
+# Class metaprogramming
+-- the art of creating or customizing classes at runtime (most users don't need this, mainly for framework authors)
+-- common way to dynamically create class, call type with 2 args:
+
+  MyClass = type('Myclass', (Superclas, Mixin), {params})
+
+-- avoid exec or eval for metaprogramming
+-- you can use class decorators for customizing descriptors, but drawback: class decorators only act where they are directly applied
+
+import time vs runtime
+-- import time -- interpreter compiles function body, or class body to find syntax errors, lots of specifics (see page 689)
+-- effects of class decorator might not affect subclasses 
+
+Metaclasses
+- metaclass is a class factory written as a class
+- in python object model all classes are an instace of *type* (check Myclass.__class__)
+- metaclasses also inherit (are subclasses of) from type, regular classes inherit from object
+- when coding a metaclass, it is conventional to replace self with cls
+
+How metaclasses are used: attribute validation, mass decorators to many methods at once, object serilaization or data conversion, orm, dynamic translation of class structures from other languages
+

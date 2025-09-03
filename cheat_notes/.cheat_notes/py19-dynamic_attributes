@@ -1,0 +1,31 @@
+# Dynamic attributes and properties
+
+-- data attributes and methods are collectively called attributes
+-- __getattr__ and __setattr__ to evaluate attribute access through dot notation
+-- with __getattr__ you can implement virtual attributes -- what happens when someone calls explicitly undefined attr
+-- dynamic attributes -- metaprogramming technique, you build a class from data you don't know beforehand (like json) -- get data first, then return within __getattr__
+-- but data keys may not be suitable attribute names -- you can handle keywords with str.iskeyword(), invalid keys (e.g. starting with number) with str.isidentifier()
+
+-- shortcut to add custom attributes via extending __dict__
+
+class Record:
+  def __init__(self, **kwargs):
+    self.__dict__.update(
+
+Properties
+-- class attributes designed to manage instance attributes -- use @property decorator
+-- often used to change public attribute to one managed by getters and setters
+
+@property
+def weight(self):   
+  return self.__weight #private attr
+
+@weight.setter
+def weight(...
+
+-- property decorator accepts: fget, fset, fdel, doc (functions to get,set,delete property)
+-- properties override instance attributes if defined with the same name (properties are part of a larger category that does that **overriding descriptors**)
+-- property factory -- functions to be imported across classes do define common getters and setters for same types of imputs (like prices, etc.)
+
+built-in functions for attribute handling:
+- dir() -- lists most attrs, gettatr(), hasttr(), setattr(), vars() -- returns __dict__
