@@ -1,0 +1,12 @@
+# Futures
+- objects representing asynchronous execution of operation (deffered computation that may or may not complete)
+- futures encapsulate pending operations so that they can be put to queues, their state of completion queries and resutls retrieved when available
+- futures are not meant to be created by user, they should be instantiated by concurrency framework (futures or asyncio)
+- concurrent.futures library, main features:
+  ThreadPoolExecutor and ProcessPoolExecutor -- that allow to submit callables to different threads or processes
+
+GIL (Global interpreter lock) -- CPython is not thread safe internally so GIL ensures one thread at a time executes pyhton bytecodes -- standard library functions that perform blocking I/O release GIL when waiting for a result from OS (try PyPy as alternative to CPython)
+
+concurrent.futures can bypass GIL and distribute CPU-bound work to all available cores with ProcessPoolExecutor (it would make no difference for I/O-bound jobs, for that use ThreadPoolExecutor)
+
+

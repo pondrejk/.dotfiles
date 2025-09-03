@@ -1,0 +1,19 @@
+# Asyncio
+concurrency - dealing with many things at once (you jump between them as they need attention, like I/O-bound processes) / parallelism -- doing lots of things at once (they run truly in parallel - like heavy CPU-bound computations) 
+
+asyncio -- package that implements concurrency with couroutines driven by an event loop
+
+  loop = asyncio.get_event_loop()
+  result = loop.run_until_complete(<some_coroutine()>)
+  loop.close()
+
+- dont use sleep in coroutines, it blocks the event loop. instead use: yield from asycio.sleep(<delay>)
+- asyncio.Task is roughly an equivalent of threading.Thread -- don't instantiate tasks yours self, you get them by passing a coroutine to asyncio.async() or BaseEventLoop.create_task()
+- coroutines don't need locking mechanisms, only one is run at the time and yields control back to scheduler at yield point
+- asyncio.Futures -- often interchangable with coroutines, call it with yield from, no need for callback hell
+- asyncio.wait() -- a coroutine (non-blocking), accepts an iterable of coroutines
+
+- having a blocking I/0 operation -- what to do? Options: run in separate thread, make it nonblocking by making it an async call -- turn it to a coroutine
+- asyncio also has threadpool executor, use loop.run_in_executor() -- e.g. for local filesystem access that is blocking
+- ! tasks and coroutines only do something when "driven", you drive a coroutine buy using yield from or by passing it to function like asyncio.run_until_complete
+
