@@ -1,3 +1,6 @@
+# silence bash deprecation
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # custom prompt
 setopt PROMPT_SUBST
 PROMPT='%F{yellow}◠◡%f %F{cyan}%1d%f '
