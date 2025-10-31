@@ -1,0 +1,54 @@
+[user]
+	    name=Peter Ondrejka
+	    email=pondrejk@redhat.com
+[core]
+	editor = vim
+	excludesfile = /Users/pondrejk/.gitignore_global
+[color "sh"]
+	    branch = yellow reverse
+	    workdir = blue bold
+	    dirty = red
+[color]
+	    sh = auto
+	    branch = auto
+	    diff = auto
+	    status = auto
+[color "branch"]
+	    current = yellow reverse
+	    local = yellow 
+	    remote = green
+[color "diff"]
+	    meta = yellow bold
+	    frag = magenta bold
+	    old = red bold
+	    new = green bold
+[color "status"]
+	    added = yellow
+	    changed = green
+	    untracked = cyan	
+[diff]
+    	tool = meld
+[merge]
+   	tool = meld
+[mergetool "meld"]
+    	cmd = meld
+    	trustExitCode = true
+[format]
+    	    pretty = oneline
+[alias]
+	    p = !~/bin/fact && git pull
+	    co = checkout
+	    st = status
+	    ci = commit   
+	    dt = "difftool"
+	    cim = "commit -m"
+	    lo = "log --pretty=fuller"
+	    br = branch
+      lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative 
+      recent = "!git for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:iso8601) %(refname:short)' --count=10" 
+
+[init]
+        templateDir = /Users/pondrejk/.git-template
+[rh-pre-commit]
+	enableLocalConfig = false
+	checkSecrets = true
