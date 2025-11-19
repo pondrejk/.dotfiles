@@ -109,7 +109,7 @@ alias t='task'
 export VAGRANT_DEFAULT_PROVIDER=libvirt
 
 # changing the path to virtualenvwrapper.sh depending on where it was installed by pip
-source /usr/local/bin/virtualenvwrapper.sh
+source ~/.local/bin/virtualenvwrapper.sh
 WORKON_HOME=~/Envs
 
 # local server in current directory, accepts optional port argument
