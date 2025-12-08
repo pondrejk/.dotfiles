@@ -2,7 +2,7 @@
 	    name=Peter Ondrejka
 	    email=pondrejk@redhat.com
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = /home/pondrejk/.gitignore_global
 [color "sh"]
 	    branch = yellow reverse

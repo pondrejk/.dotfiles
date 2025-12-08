@@ -8,8 +8,7 @@ YELLOW='\[\033[0;33m\]'
 CYAN='\[\033[0;36m\]'
 RED='\[\033[0;31m\]'
 ENDCOLOR='\[\033[0;37m\]'
-export PS1="$YELLOW ◠◡ $STARTCOLOR$CYAN\W $YELLOW$ENDCOLOR"
-
+export PS1="$YELLOW ～$STARTCOLOR$CYAN\W $YELLOW$ENDCOLOR"
 
 # User specific aliases and functions
 

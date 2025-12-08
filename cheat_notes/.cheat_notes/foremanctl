@@ -1,0 +1,6 @@
+# deploy job
+broker checkout --workflow deploy-foreman-development
+
+# in machine do
+cd /home/root/foreman
+bundle exec foreman start
