@@ -1,0 +1,20 @@
+new_tab robottelo
+layout splits
+enabled_layouts splits
+set_layout_state {"pairs": {"one": {"horizontal": false, "one": 1, "two": 3}, "two": 2}, "opts": {"default_axis_is_horizontal": true}, "class": "Splits", "all_windows": {"active_group_idx": 1, "active_group_history": [2, 1], "window_groups": [{"id": 1, "window_ids": [1]}, {"id": 3, "window_ids": [3]}, {"id": 2, "window_ids": [2]}]}}
+cd $HOME/Documents/robottelo
+
+launch 'kitty-unserialize-data={"id": 1, "cmd_at_shell_startup": "git sh"}'
+focus
+launch 'kitty-unserialize-data={"id": 3, "cmd_at_shell_startup": "tail -f logs/*"}'
+launch 'kitty-unserialize-data={"id": 2, "cmd_at_shell_startup": "workon robottelo"}'
+
+new_tab broker
+layout splits
+enabled_layouts splits
+set_layout_state {"pairs": {"one": 4, "two": 5}, "opts": {"default_axis_is_horizontal": true}, "class": "Splits", "all_windows": {"active_group_idx": 0, "active_group_history": [4, 5], "window_groups": [{"id": 4, "window_ids": [4]}, {"id": 5, "window_ids": [5]}]}}
+cd $HOME/Documents/broker
+
+launch 'kitty-unserialize-data={"id": 4, "cmd_at_shell_startup": "workon broker && broker inventory --list"}'
+focus
+launch 'kitty-unserialize-data={"id": 5}'
