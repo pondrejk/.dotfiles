@@ -80,6 +80,7 @@ alias gpm="git pull --rebase upstream master"
 alias fm='cd $HOME/Documents/foreman'
 alias fk='cd $HOME/Documents/forklift'
 alias kat='cd $HOME/Documents/katello'
+alias fmct='cd $HOME/Documents/foremanctl'
 
 # docker
 alias dockerkill='docker kill $(docker ps -q)'
