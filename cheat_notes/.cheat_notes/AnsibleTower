@@ -1,7 +1,15 @@
 # AAT used for satlab-tower PRs
 
-get hosts synced from regular AT
-Inventories > osp-rhos01-satellite-users > sources > sync the one with OpenStack
+find hostname in the PR pipeline output, search fqdn
+Log in using: admin/name of your branch
 
+run this to sync:
+build-satlab-execution-environment-wf workflow without params
+
+# probably not needed anymore
+get hosts synced from regular AT
+Automation Execution > Infrastructure > Inventories > osp-rhos01-satellite-users > sources > sync the one with OpenStack
+
+# probably not needed anymore
 check sync of AAT to latest reconfigure commit
 Projects > satlab_tower_master > Details > Source control revision -- compare with latest commit hash, eventually sync
