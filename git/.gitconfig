@@ -36,16 +36,59 @@
 [format]
     	    pretty = oneline
 [alias]
-	    p = !~/bin/fact && git pull
-	    co = checkout
-	    st = status
-	    ci = commit   
-	    dt = "difftool"
-	    cim = "commit -m"
-	    lo = "log --pretty=fuller"
-	    br = branch
-      lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative 
-      recent = "!git for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:iso8601) %(refname:short)' --count=10" 
+	   p = !~/bin/fact && git pull
+	   co = checkout
+	   st = status
+	   ci = commit   
+	   dt = "difftool"
+	   cim = "commit -m"
+
+     l = log --pretty=oneline --abbrev-commit                                               
+	   lo = "log --pretty=fuller"
+     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative 
+
+     recent = "!git for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:iso8601) %(refname:short)' --count=10" 
+
+	   br = branch
+
+     a = add
+     f = fetch --prune
+     k = cherry-pick
+     n = commit --verbose --amend
+     r = remote
+     s = commit --dry-run --short
+     t = diff --cached
+
+     # git add and staging area                                                             
+     aa = add --update
+     stage = add
+     ap = add --patch
+     unstage = reset HEAD
+
+     # commits and history
+     ci = commit --verbose
+     ca = commit --verbose --all
+     amend = commit --verbose --amend
+     re = rebase --interactive
+     pop = reset --soft HEAD^
+     peek = log -p --max-count=1
+
+     # git fetch/pull                                                                       
+     pm = pull
+     pr = pull --rebase
+
+     # git diff
+     d = diff
+     ds = diff --stat 
+     dc = diff --cached
+                                                                                            
+     # git reset                                                                            
+     hard = reset --hard                                                                    
+     soft = reset --soft                                                                    
+     scrap = checkout HEAD                                                                  
+                                                                                            
+     # git worktree                                                                         
+     wt = worktree   
 
 [init]
 	templateDir = /home/pondrejk/.git-template
