@@ -1,0 +1,63 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+ 
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+. "$HOME/.local/bin/env"
+export PATH="/root/.cargo/bin:$PATH"
+
+# pondrejk custom stuff
+
+alias fm='cd /home/root/foreman'
+alias fmst='cd /home/root/foreman; bundle exec foreman start'
+
+alias fans='cd /home/root/foreman_ansible'
+alias fboot='cd /home/root/foreman_bootdisk'
+alias fdisc='cd /home/root/foreman_discovery'
+alias fleap='cd /home/root/foreman_leapp'
+alias fscap='cd /home/root/foreman_openscap'
+alias fpup='cd /home/root/foreman_puppet'
+alias frex='cd /home/root/foreman_remote_execution'
+alias frhc='cd /home/root/foreman_rh_cloud'
+alias ftask='cd /home/root/foreman-tasks'
+alias ftemp='cd /home/root/foreman_templates'
+alias fthm='cd /home/root/foreman_theme_satellite'
+alias fweb='cd /home/root/foreman_webhooks'
+alias kat='cd /home/root/katello'
+
+alias st='git status'
+alias status='git status'
+alias pull='git pull'
+alias ci='git commit'
+alias co='git checkout'
+alias commit='git commit'
+alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+alias br='git branch'
+alias remote='git remote'
+alias add='git add'
+alias amend='git commit --verbose --amend'
+alias reset='git reset'
+
+parse_git_branch() {
+ git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+PS1='$(parse_git_branch) \e[0;31m\W \e[m'
+
