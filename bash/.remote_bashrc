@@ -64,6 +64,8 @@ alias reset='git reset'
 alias stash='git stash'
 alias diff='git diff'
 
+alias h='hostname'
+
 
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
