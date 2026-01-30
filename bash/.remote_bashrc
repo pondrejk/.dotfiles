@@ -28,6 +28,11 @@ export PATH="/root/.cargo/bin:$PATH"
 
 alias fm='cd /home/root/foreman'
 alias fmst='cd /home/root/foreman; bundle exec foreman start'
+alias webpack='cd /home/root/foreman; bundle exec foreman start webpack'
+alias fserver='cd /home/root/foreman; bundle exec rails server'
+alias dbseed='cd /home/root/foreman; bundle exec rake db:seed'
+alias dbmig='cd /home/root/foreman; bundle exec rake db:migrate'
+alias pry='cd /home/root/foreman; bundle exec pry-remote'
 
 alias fans='cd /home/root/foreman_ansible'
 alias fboot='cd /home/root/foreman_bootdisk'
@@ -46,6 +51,7 @@ alias kat='cd /home/root/katello'
 alias st='git status'
 alias status='git status'
 alias pull='git pull'
+alias push='git push'
 alias ci='git commit'
 alias co='git checkout'
 alias commit='git commit'
@@ -55,6 +61,9 @@ alias remote='git remote'
 alias add='git add'
 alias amend='git commit --verbose --amend'
 alias reset='git reset'
+alias stash='git stash'
+alias diff='git diff'
+
 
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
