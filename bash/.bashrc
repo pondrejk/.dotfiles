@@ -195,6 +195,9 @@ alias ho="yq e '.server.hostnames' settings.local.yaml"
 # robottelo logs
 alias rlogs="tail -f logs/*"
 
+# hammer devel
+alias hammer='cd $HOME/Documents/hammer/hammer-cli; bundle exec ruby bin/hammer'
+
 # vimx allows copying to clipboard from cmdline
 # alias vim='vimx'
 alias vim='nvim'

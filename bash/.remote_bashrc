@@ -34,6 +34,14 @@ alias dbseed='cd /home/root/foreman; bundle exec rake db:seed'
 alias dbmig='cd /home/root/foreman; bundle exec rake db:migrate'
 alias pry='cd /home/root/foreman; bundle exec pry-remote'
 
+alias rubocop='cd /home/root/foreman; bundle exec rubocop'
+# testing
+# hammer
+# alias rubocop='cd /home/root/foreman; bundle exec rubocop'
+# smartproxy
+# alias rubocop='cd /home/root/smart-proxy; bundle exec bin/smart-proxy'
+
+
 alias fans='cd /home/root/foreman_ansible'
 alias fboot='cd /home/root/foreman_bootdisk'
 alias fdisc='cd /home/root/foreman_discovery'
