@@ -25,7 +25,7 @@ alias g='grep'
 alias l='less'
 alias doc='cd $HOME/Documents'
 alias dw='cd $HOME/Downloads'
-alias dot='cd $HOME/Documents/.dotfiles'
+alias dot='cd $HOME/.dotfiles'
 alias drp='cd $HOME/Dropbox'
 alias q='cd $HOME/Documents/QE'
 
@@ -178,3 +178,4 @@ export CLOUD_ML_REGION=us-east5
 export ANTHROPIC_VERTEX_PROJECT_ID=itpc-gcp-core-pe-eng-claude
 export PATH=$PATH:$HOME/.npm-global/bin
 
+eval "$(~/.local/bin/mise activate)"
