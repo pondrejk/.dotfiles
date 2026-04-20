@@ -25,7 +25,7 @@ alias g='grep'
 alias l='less'
 alias doc='cd $HOME/Documents'
 alias dw='cd $HOME/Downloads'
-alias dot='cd $HOME/Documents/.dotfiles'
+alias dot='cd $HOME/.dotfiles'
 alias drp='cd $HOME/Dropbox'
 alias q='cd $HOME/Documents/QE'
 
@@ -80,7 +80,7 @@ alias t='task'
 export VAGRANT_DEFAULT_PROVIDER=libvirt
 
 # changing the path to virtualenvwrapper.sh depending on where it was installed by pip
-source virtualenvwrapper.sh
+source ~/virtualenvwrapper.sh
 WORKON_HOME=~/Envs
 
 # local server in current directory, accepts optional port argument
@@ -98,7 +98,7 @@ fzip () {
 }
 
 # fuzzy finder setup
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 # cheat alias and vars
 alias ch='cheat'
@@ -178,3 +178,4 @@ export CLOUD_ML_REGION=us-east5
 export ANTHROPIC_VERTEX_PROJECT_ID=itpc-gcp-core-pe-eng-claude
 export PATH=$PATH:$HOME/.npm-global/bin
 
+eval "$(~/.local/bin/mise activate)"
