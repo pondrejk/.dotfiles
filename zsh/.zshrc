@@ -80,7 +80,7 @@ alias t='task'
 export VAGRANT_DEFAULT_PROVIDER=libvirt
 
 # changing the path to virtualenvwrapper.sh depending on where it was installed by pip
-source virtualenvwrapper.sh
+source ~/virtualenvwrapper.sh
 WORKON_HOME=~/Envs
 
 # local server in current directory, accepts optional port argument
@@ -98,7 +98,7 @@ fzip () {
 }
 
 # fuzzy finder setup
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 # cheat alias and vars
 alias ch='cheat'
