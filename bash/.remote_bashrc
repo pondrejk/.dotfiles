@@ -26,35 +26,37 @@ export PATH="/root/.cargo/bin:$PATH"
 
 # pondrejk custom stuff
 
-alias fm='cd /home/root/foreman'
-alias fmst='cd /home/root/foreman; bundle exec foreman start'
-alias webpack='cd /home/root/foreman; bundle exec foreman start webpack'
-alias fserver='cd /home/root/foreman; bundle exec rails server'
-alias dbseed='cd /home/root/foreman; bundle exec rake db:seed'
-alias dbmig='cd /home/root/foreman; bundle exec rake db:migrate'
-alias pry='cd /home/root/foreman; bundle exec pry-remote'
+alias fm='cd /home/pondrejk/foreman'
+alias fmst='cd /home/pondrejk/foreman; bundle exec foreman start'
+alias webpack='cd /home/pondrejk/foreman; bundle exec foreman start webpack'
+alias fserver='cd /home/pondrejk/foreman; bundle exec rails server'
+alias dbseed='cd /home/pondrejk/foreman; bundle exec rake db:seed'
+alias dbmig='cd /home/pondrejk/foreman; bundle exec rake db:migrate'
+alias pry='cd /home/pondrejk/foreman; bundle exec pry-remote'
 
-alias rubocop='cd /home/root/foreman; bundle exec rubocop'
-# testing
+# rubocop
+alias rubocop='cd /home/pondrejk/foreman; bundle exec rubocop'
 # hammer
-# alias rubocop='cd /home/root/foreman; bundle exec rubocop'
+alias hammer='cd /home/pondrejk/hammer-cli; bundle exec ruby bin/hammer'
 # smartproxy
-# alias rubocop='cd /home/root/smart-proxy; bundle exec bin/smart-proxy'
+alias proxy='cd /home/pondrejk/smart-proxy; bundle exec bin/smart-proxy'
+# lint
+alias lintfix='npm run lint -- --fix'
 
 
-alias fans='cd /home/root/foreman_ansible'
-alias fboot='cd /home/root/foreman_bootdisk'
-alias fdisc='cd /home/root/foreman_discovery'
-alias fleap='cd /home/root/foreman_leapp'
-alias fscap='cd /home/root/foreman_openscap'
-alias fpup='cd /home/root/foreman_puppet'
-alias frex='cd /home/root/foreman_remote_execution'
-alias frhc='cd /home/root/foreman_rh_cloud'
-alias ftask='cd /home/root/foreman-tasks'
-alias ftemp='cd /home/root/foreman_templates'
-alias fthm='cd /home/root/foreman_theme_satellite'
-alias fweb='cd /home/root/foreman_webhooks'
-alias kat='cd /home/root/katello'
+alias fans='cd /home/pondrejk/foreman_ansible'
+alias fboot='cd /home/pondrejk/foreman_bootdisk'
+alias fdisc='cd /home/pondrejk/foreman_discovery'
+alias fleap='cd /home/pondrejk/foreman_leapp'
+alias fscap='cd /home/pondrejk/foreman_openscap'
+alias fpup='cd /home/pondrejk/foreman_puppet'
+alias frex='cd /home/pondrejk/foreman_remote_execution'
+alias frhc='cd /home/pondrejk/foreman_rh_cloud'
+alias ftask='cd /home/pondrejk/foreman-tasks'
+alias ftemp='cd /home/pondrejk/foreman_templates'
+alias fthm='cd /home/pondrejk/foreman_theme_satellite'
+alias fweb='cd /home/pondrejk/foreman_webhooks'
+alias kat='cd /home/pondrejk/katello'
 
 alias st='git status'
 alias status='git status'
@@ -73,7 +75,6 @@ alias stash='git stash'
 alias diff='git diff'
 
 alias h='hostname'
-
 
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'

@@ -1,3 +1,41 @@
 [user]
 name = Peter Ondrejka
 email = pondrejk@redhat.com
+
+[safe]
+directory = /home/pondrejk/foreman
+directory = /home/pondrejk/foreman_ansible
+directory = /home/pondrejk/foreman_bootdisk
+directory = /home/pondrejk/foreman-certs
+directory = /home/pondrejk/foreman_discovery
+directory = /home/pondrejk/foreman_leapp
+directory = /home/pondrejk/foreman_openscap
+directory = /home/pondrejk/foreman_puppet
+directory = /home/pondrejk/foreman_remote_execution
+directory = /home/pondrejk/foreman_rh_cloud
+directory = /home/pondrejk/foreman-tasks
+directory = /home/pondrejk/foreman_templates
+directory = /home/pondrejk/foreman_theme_satellite
+directory = /home/pondrejk/foreman_webhooks
+directory = /home/pondrejk/hammer-cli
+directory = /home/pondrejk/hammer-cli-foreman
+directory = /home/pondrejk/hammer-cli-foreman-ansible
+directory = /home/pondrejk/hammer_cli_foreman_bootdisk
+directory = /home/pondrejk/hammer-cli-foreman-discovery
+directory = /home/pondrejk/hammer-cli-foreman-leapp
+directory = /home/pondrejk/hammer_cli_foreman_openscap
+directory = /home/pondrejk/hammer-cli-foreman-puppet
+directory = /home/pondrejk/hammer_cli_foreman_remote_execution
+directory = /home/pondrejk/hammer-cli-foreman-rh-cloud
+directory = /home/pondrejk/hammer-cli-foreman-tasks
+directory = /home/pondrejk/hammer-cli-foreman-templates
+directory = /home/pondrejk/hammer-cli-foreman-webhooks
+directory = /home/pondrejk/hammer-cli-katello
+directory = /home/pondrejk/katello
+directory = /home/pondrejk/smart-proxy
+directory = /home/pondrejk/smart_proxy_ansible
+directory = /home/pondrejk/smart_proxy_discovery
+directory = /home/pondrejk/smart_proxy_dynflow
+directory = /home/pondrejk/smart_proxy_openscap
+directory = /home/pondrejk/smart_proxy_remote_execution_ssh
+directory = /home/pondrejk/smart_proxy_shellhooks
