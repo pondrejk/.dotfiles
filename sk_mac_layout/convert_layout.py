@@ -219,20 +219,26 @@ def symbol_to_output(symbol):
     return None
 
 def escape_xml(text):
-    """Escape special XML characters"""
+    """Escape special XML characters for macOS keylayout files"""
     if not text:
         return ''
-    text = text.replace('&', '&amp;')
-    text = text.replace('<', '&lt;')
-    text = text.replace('>', '&gt;')
-    # Convert to XML entity for special chars
-    # Note: Use numeric codes for quotes/apostrophes for macOS compatibility
+    # For macOS keylayout files:
+    # - Use numeric codes ONLY for control characters (< 32)
+    # - Keep printable ASCII and Unicode as literal UTF-8 (including quotes!)
+    # - Only escape the essential XML syntax chars: < > &
     result = []
     for char in text:
         code = ord(char)
-        if code < 32 or code > 126 or char in ('"', "'"):
+        if code < 32:  # Control characters
             result.append(f'&#x{code:04X};')
+        elif char == '<':
+            result.append('&#x003C;')
+        elif char == '>':
+            result.append('&#x003E;')
+        elif char == '&':
+            result.append('&#x0026;')
         else:
+            # Keep everything else as literal UTF-8 (quotes, Unicode, etc.)
             result.append(char)
     return ''.join(result)
 
