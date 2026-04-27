@@ -49,25 +49,45 @@ const full = {
 
 // the actual applications
 quakeApp({
-  key: "n",
-  modifiers: ["alt"],
+  key: "f12",
+  modifiers: [""],
   appName: "kitty",
   position: full,
   followsMouse: true,
   hideOnBlur: true,
 });
+
 quakeApp({
-  key: "s",
-  modifiers: ["alt"],
+  key: "f1",
+  modifiers: [""],
+  appName: "Firefox",
+  position: full,
+  followsMouse: true,
+  hideOnBlur: false,
+});
+
+quakeApp({
+  key: "f2",
+  modifiers: [""],
   appName: "Slack",
   position: full,
   followsMouse: true,
   hideOnBlur: false,
 });
+
 quakeApp({
-  key: "f",
-  modifiers: ["alt"],
-  appName: "Firefox",
+  key: "f3",
+  modifiers: [""],
+  appName: "Cursor",
+  position: full,
+  followsMouse: true,
+  hideOnBlur: false,
+});
+
+quakeApp({
+  key: "f4",
+  modifiers: [""],
+  appName: "Visual Studio Code",
   position: full,
   followsMouse: true,
   hideOnBlur: false,
