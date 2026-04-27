@@ -175,7 +175,7 @@
             <key code="38" output="J"/>
             <key code="39" output="!"/>
             <key code="40" output="K"/>
-            <key code="41" output="&quot;"/>
+            <key code="41" output="&#x0022;"/>
             <key code="42" output=")"/>
             <key code="43" output="?"/>
             <key code="44" output="_"/>
@@ -284,7 +284,7 @@
             <key code="38" output="J"/>
             <key code="39" output="!"/>
             <key code="40" output="K"/>
-            <key code="41" output="&quot;"/>
+            <key code="41" output="&#x0022;"/>
             <key code="42" output=")"/>
             <key code="43" output="?"/>
             <key code="44" output="_"/>
@@ -382,8 +382,8 @@
             <key code="30" output="]"/>
             <key code="33" output="["/>
             <key code="37" output="&#x0141;"/>
-            <key code="38" output="&apos;"/>
-            <key code="39" output="&apos;"/>
+            <key code="38" output="&#x0027;"/>
+            <key code="39" output="&#x0027;"/>
             <key code="40" output="&#x0142;"/>
             <key code="41" output="$"/>
             <key code="42" output="\"/>

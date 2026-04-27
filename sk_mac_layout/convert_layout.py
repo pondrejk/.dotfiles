@@ -225,14 +225,13 @@ def escape_xml(text):
     text = text.replace('&', '&amp;')
     text = text.replace('<', '&lt;')
     text = text.replace('>', '&gt;')
-    text = text.replace('"', '&quot;')
-    text = text.replace("'", '&apos;')
     # Convert to XML entity for special chars
+    # Note: Use numeric codes for quotes/apostrophes for macOS compatibility
     result = []
     for char in text:
         code = ord(char)
-        if code < 32 or code > 126:
-            result.append(f'&#{code:04X};')
+        if code < 32 or code > 126 or char in ('"', "'"):
+            result.append(f'&#x{code:04X};')
         else:
             result.append(char)
     return ''.join(result)
