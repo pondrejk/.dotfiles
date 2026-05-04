@@ -429,7 +429,7 @@
             <key code="38" output="’"/>
             <key code="39" output="&#x0027;"/>
             <key code="40" output=""/>
-            <key code="41" output=";"/>
+            <key code="41" output="$"/>
             <key code="42" action="a34"/>
             <key code="43" output="&#x003C;"/>
             <key code="44" output="–"/>
