@@ -67,7 +67,7 @@ quakeApp({
 });
 
 quakeApp({
-  key: "f2",
+  key: "f3",
   modifiers: [""],
   appName: "Slack",
   position: full,
@@ -76,7 +76,7 @@ quakeApp({
 });
 
 quakeApp({
-  key: "f3",
+  key: "f4",
   modifiers: [""],
   appName: "Cursor",
   position: full,
@@ -85,7 +85,7 @@ quakeApp({
 });
 
 quakeApp({
-  key: "f4",
+  key: "f5",
   modifiers: [""],
   appName: "Visual Studio Code",
   position: full,
