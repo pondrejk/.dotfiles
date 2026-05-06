@@ -93,6 +93,15 @@ quakeApp({
   hideOnBlur: false,
 });
 
+quakeApp({
+  key: "f6",
+  modifiers: [""],
+  appName: "Finder",
+  position: full,
+  followsMouse: true,
+  hideOnBlur: false,
+});
+
 /**
  * Create a keyboard event listener which implements a quake app
  * @param {string} key the key which triggers the app
