@@ -179,3 +179,11 @@ export ANTHROPIC_VERTEX_PROJECT_ID=itpc-gcp-core-pe-eng-claude
 export PATH=$PATH:$HOME/.npm-global/bin
 
 eval "$(~/.local/bin/mise activate)"
+
+source ~/.zsh_env_files
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/pondrejk/Documents/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/pondrejk/Documents/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/pondrejk/Documents/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/pondrejk/Documents/google-cloud-sdk/completion.zsh.inc'; fi
