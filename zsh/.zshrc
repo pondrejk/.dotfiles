@@ -5,6 +5,10 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 setopt PROMPT_SUBST
 PROMPT='%F{yellow}◠◡%f %F{cyan}%1d%f '
 
+# Custom completions dir
+
+typeset -gaU fpath=($fpath /Users/pondrejk/.zsh_completions)
+
 # User specific aliases and functions
 
 # mkdir, cd into it
