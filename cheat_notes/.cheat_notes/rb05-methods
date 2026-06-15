@@ -1,0 +1,24 @@
+# Methods, Procs, Lambdas, Closures
+
+## Methods
+
+- named parametrized chunks of code:
+
+def name(param, default_param=1, *remaining_params)
+  ...
+end 
+
+- alias - define alternative name for an existing method: alias aka also_known_as
+
+## Procs
+
+- named representation of a block used in the iterator method:
+
+def iter(a, &b)  # &b represents the input block, must be the last param
+  ...
+  b.call(...) # calling proc istead of using yield
+
+- can be also created outside of iterator: a = Proc.new({block}) or a = lambda({block}) (then its called Lambda), or alternatively a = -> (x){x+1}
+- invoking: a.call(2)
+- proc behaves more like a block, lambda more like a method, both are closures
+- closure retains bindings to variables used by the block

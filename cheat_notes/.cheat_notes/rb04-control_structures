@@ -1,0 +1,57 @@
+# statements and control structures
+
+- if, else, elsif -- as usual, delimited with end, last expression of a structure is returned
+- if can be used as a modifier: puts "bla" if condition..., also elvis operator x==1 ? "true" : "false"
+- unless -- opposite of if
+- case -- like switch:
+
+case x
+  when condition
+    expression
+  when ...
+  else
+    ...
+  end
+end
+
+## Loops:
+
+- either by statements like while, until, of for x in collection, or by custom looping constructs called iterators (more common, e.g. .times, .map, .each, .upto, .collect .select, .reject, .inject...)
+- Objects have iterator methods that accept *blocks* that form the body of the loop
+- these are internal iterators (the iterator controls the loop, not external iterators where the client code controls the iteration) -- you can write custom iterator methods using yield keyword
+
+Iterating enumerables:
+(5..7).each {|x| print x}
+(5..7).each_with_index {|x,i| print x,i}
+
+Searching, reducing
+a.count {|x| x % 2 == 1}      # count odd elements 
+a.find_all {|x| x % 2 == 1}   # return odd elements 
+a.reject {|x| x % 2 == 1}     # return all but odd elements 
+a.partition {|x| x % 2 == 1}  # return odd and even elements in separate arrays 
+
+a.inject {|total, x| total+x} # general purpose reduce functions, synonym "reduce", 
+                              # block takes 2 args, accumulated value and iterated one
+a.reduce(:+)  # same as ^
+
+## Blocks
+
+- delimited either by {} (one line) or do/end (multiple lines)
+- have own variable scope but can access variables defined outside of block
+- you can pass params to a block the same as to any method, *param collects extra params to an array, unlike methods, blocks don't have names and can be only invoked trough iterators
+
+## Altering control flow:
+
+- return -- causes the method to exit and return to its caller, when used in block, the enclosing method of that block exits and returns, not just the block itself
+- break -- causes the loop or iterator to exit, when used in block it breaks out from the block to the next statement after the invoking iterator of the block
+- next -- causes the loop or iterator to skip the rest of the current iteration and move to the next one
+- redo -- restarts the current iteration of a loop or iterator
+- throw/catch -- multilevel break -- throw breaks out to whatever level catch is placed
+
+## Exception handling
+
+- begin -- like try in pyton
+- raise -- raising exception
+- rescue -- like catch in python
+- else -- executed if code in begin statement runs to completion without exception
+- ensure -- like finally in python

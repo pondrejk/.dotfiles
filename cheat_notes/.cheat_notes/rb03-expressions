@@ -1,0 +1,5 @@
+# expressions and operators
+
+- constants -- in UPPERCASE, globally availiable, scope can be defined like module::CONST
+- assignments -- shorthands (cca 12 pseudooperators) +=, -=, *=, ||= (result ||= [] -- assign empty array if results is nil)
+- parallel assignment is possible, splat operator expands array: x, y, z = 1, *[2,3]

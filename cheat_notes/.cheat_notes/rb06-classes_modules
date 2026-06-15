@@ -1,0 +1,43 @@
+# Classes and Modules
+
+## Classes
+
+class Point
+  attr_accessor :x,:y   # creates getter and setter methods for x,y, attr_reader: if read only
+  def initialize(x,y)   # constructor, instance method
+    @x, @y  = x, y      # creating instance variables
+  end
+end
+
+-- you can define operator modules like +,-,*,[]= or iterator like:
+def each
+  yield @x
+  yield @y
+end
+
+-- to create a mutable class quickly, create it with Struct class that generates classes with accessors for passed fields: 
+Struct.new("Point", :x, :y) # creates Struct::Point
+Point = Struct.new(:x, :y)  # creates new Point class, you can still use class Point to extend methods 
+
+-- class methods
+def self.sum(*points) # can be invoked trough the class itself like Point.sum(...)
+    ...
+-- class constants -- upper case, defined after initialize, invoked like Point::CONST
+-- class variables -- @@var, accessible to class definitions and all instance methods, but any subclass can alter the value for the whole inheritance tree 
+-- class instance variables -- @var defined in class body, can't be used from class instance nethods, just class methods, works better with inheritance
+-- method visibility: protected, private keywords in class body -- methods after them are protected/private, or can be named specifically like
+protected :method_name, :m2 (then it must come after method definition in class body)
+-- private can be invoked from other class methods and subclasses, protected also explicitely on the instance of the class
+
+-- subclassing:
+class Point3D << Point
+-- in subclass we can override parent methods by using the same name, whe can call super() to invoke the parent method to reuse + extend it in subclass
+
+## Modules
+
+-- named group of methods, constants and class variables (like class) but cannot be instantiated or subclassed
+-- used as namespaces -- grouping methods when hierarchy and OOP is not necessary, modules can also be nested for namespacing reasons
+-- used as mixins -- modules instance methods can be mixed into other classes using include(ModuleName) from within the reciever class body 
+-- load / require -- getting modules from different paths
+
+

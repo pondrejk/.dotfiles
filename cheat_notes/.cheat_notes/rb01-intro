@@ -1,0 +1,30 @@
+# RUBY
+
+Ruby is *completely* object oriented - even numeric literals and values like true, false, nil are objects with invokable methods:
+
+3.times {print "bla"}
+1.upto(5) {|x| print x}
+
+## might surprise you:
+
+- strings are mutable ([]= to alter, << to append), use .freeze to make them imutable, avoid using strings in loops: 10.times {puts "test".object_id} -- a different object each time
+- nil is false, everything else is true 
+- classes (even the core built-in ones) are open, so you can exend them freely with your own methods
+
+## exotic datatypes
+
+- Regexp: /[Rr]uby/, /\d{5}/ 
+- Range: 1..4 (includes last digit), 1...4 (excludes last digit)
+Both define == operator for testing equality and === operator for testing membersihp
+- symbols: :key, used as keys in hashes since strings are mutable
+
+## punctuation in identifiers
+
+$files      - global variable
+@data       - instance variable
+@@counter   - class variable
+empty?      - boolean valued method
+sort!       - in-place variant of sort method 
+timeout=    - method invoked by assignment
+
+

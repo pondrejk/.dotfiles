@@ -1,0 +1,36 @@
+# data types and objects
+
+## text
+
+- single-quoted strings - basic
+- double-quoted strings - may include arbitrary ruby experessions: "Text #{var}"
+- printf and sprintf functions also supported
+- alternate syntax to avoid escaping: %q(works like single quotes), %Q(works like double quotes)
+- backticks: `ls` gets execuded by special Kernel.` method
+
+operators: +, <<, .to_s (usually just better to use string interpolation), '.'*3  
+substrings:  s[0], s[-1], s[0,3] -- ! the second parameter is the length of substring starting at 0
+ranges: s[0..2] -- range, last char included
+!! mutability: s[-1] = "" #deletes the last char
+
+iteration: .each_char and .each_byte methods
+
+## arrays
+
+- subarrays, slicing and editing same as with strings
+- + concatenates arrays, << appends to array, - subtracts arrays, * multiplies, & array intersection, | concatenates without duplicates
+[1,2] + [2,3] # [1,2,2,3], [1,2] << [2,3] # [1,2[2,3]]
+- methods: .each, .each_index, .include?, .flatten!, .reverse, .reverse_each, .uniq! ...
+
+## hashes
+
+{key: "value", key2: "value2"} # keys are symbols, shorthand syntax for {:key => "val"}
+hash[:key] -- access by key
+
+## objects
+
+a.object_id, a.class, a.class.superclass, a.is_a? checks class, a.respond_to? checks for method
+- copying objects: clone -- shallow copy, copies both frozen and tainted state of object, dup -- shallow copy, only tainted state (dup of a frozen object retuns unfrozen copy)
+- Marshal.dump/Marshal.load - like pickle in python
+- .freeze -- make object immutable
+- .taint -- mark untrusted input (possible SQL injections, etc.), user input automatically tainted
