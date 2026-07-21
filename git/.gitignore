@@ -9,3 +9,5 @@ tmp/
 .cache/
 robottelo.log
 tags
+
+**/.claude/settings.local.json
