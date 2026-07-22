@@ -27,4 +27,4 @@ cd $HOME/Documents
 
 launch 'kitty-unserialize-data={"id": 6, "cmd_at_shell_startup": "ssh devel -t \"cd /home/pondrejk/foreman; bundle exec foreman start webpack; bash -l\""}'
 launch 'kitty-unserialize-data={"id": 7, "cmd_at_shell_startup": "ssh devel -t \"cd /home/pondrejk/foreman; bash -l\""}'
-launch 'kitty-unserialize-data={"id": 8, "cmd_at_shell_startup": "ssh devel -t \"cd /home/pondrejk/foreman; bundle exec rails server; bash -l\""}'
+launch 'kitty-unserialize-data={"id": 8, "cmd_at_shell_startup": "ssh devel -t \"cd /home/pondrejk/foreman; bundle exec puma -p 3000 --preload -b tcp://0.0.0.0; bash -l\""}'
