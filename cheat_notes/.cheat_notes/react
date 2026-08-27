@@ -6,6 +6,15 @@ npx create-react-app my-app
 cd my-app
 npm start
 
+# starters
+create-react-app
+vite
+
+# frameworks
+next.js
+tanstack
+redwoodSDK
+
 # tests are seached for:
     Files with .js suffix in __tests__ folders.
     Files with .test.js suffix.

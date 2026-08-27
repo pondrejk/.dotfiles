@@ -191,3 +191,4 @@ if [ -f '/Users/pondrejk/Documents/google-cloud-sdk/path.zsh.inc' ]; then . '/Us
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/pondrejk/Documents/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/pondrejk/Documents/google-cloud-sdk/completion.zsh.inc'; fi
+[ -f "/Users/pondrejk/.config/claude-code-vertex/env.sh" ] && . "/Users/pondrejk/.config/claude-code-vertex/env.sh"

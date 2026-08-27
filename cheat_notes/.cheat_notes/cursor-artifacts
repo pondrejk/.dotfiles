@@ -1,0 +1,43 @@
+┌──────────┬───────────────────────────────────┬───────────────────────┬──────────────────────────────────────────────┐
+│   Type   │              Purpose              │      Invocation       │                 When to Use                  │
+├──────────┼───────────────────────────────────┼───────────────────────┼──────────────────────────────────────────────┤
+│ Rules    │ Persistent context and guardrails │ Automatic or @mention │ Conventions, constraints, policies           │
+├──────────┼───────────────────────────────────┼───────────────────────┼──────────────────────────────────────────────┤
+│ Commands │ User-triggered workflows          │ /command              │ Repeatable procedures, multi-step tasks      │
+├──────────┼───────────────────────────────────┼───────────────────────┼──────────────────────────────────────────────┤
+│ Agents   │ Specialized AI personas           │ Spawned by main agent │ Deep expertise, isolated context             │
+├──────────┼───────────────────────────────────┼───────────────────────┼──────────────────────────────────────────────┤
+│ Skills   │ Portable knowledge modules        │ Agent decides         │ Cross-project knowledge, shared capabilities │
+└──────────┴───────────────────────────────────┴───────────────────────┴──────────────────────────────────────────────┘
+
+# Quick reference
+
+┌────────────────────────────────────────┬─────────┬──────────────────────────────────────────┐
+│               You want…                │   Use   │                   Why                    │
+├────────────────────────────────────────┼─────────┼──────────────────────────────────────────┤
+│ "Always use camelCase"                 │ Rule    │ Passive constraint, always in effect     │
+├────────────────────────────────────────┼─────────┼──────────────────────────────────────────┤
+│ "Don't commit .env files"              │ Rule    │ Guardrail, always enforced               │
+├────────────────────────────────────────┼─────────┼──────────────────────────────────────────┤
+│ "Review code, then commit"             │ Command │ Explicit, on-demand workflow you trigger │
+├────────────────────────────────────────┼─────────┼──────────────────────────────────────────┤
+│ "Generate changelog from commits"      │ Command │ One-shot invoked action                  │
+├────────────────────────────────────────┼─────────┼──────────────────────────────────────────┤
+│ "Deep security analysis"               │ Agent   │ Delegated, multi-step reasoning task     │
+├────────────────────────────────────────┼─────────┼──────────────────────────────────────────┤
+│ "Debug this systematically"            │ Agent   │ Autonomous investigation                 │
+├────────────────────────────────────────┼─────────┼──────────────────────────────────────────┤
+│ "Kubernetes best practices everywhere" │ Skill   │ Reusable expertise loaded when relevant  │
+├────────────────────────────────────────┼─────────┼──────────────────────────────────────────┤
+│ "API design standards for all repos"   │ Skill   │ Portable knowledge across projects       │
+└────────────────────────────────────────┴─────────┴──────────────────────────────────────────┘
+
+# Key Takeaways
+
+ -  Rules for context, commands for action. Rules tell the AI how to behave. Commands tell it what to do.
+ -  Commands have no frontmatter. This is the most common mistake. Commands are plain markdown with a specific structure.
+ -  Agents are isolated experts. Spawn them for deep work that needs focus or different constraints.
+ -  Skills are an open standard. Agent Skills work across Cursor, Claude Code, VS Code, and many other tools. Skills you create are portable.
+ -  Skills can execute code. Unlike rules (guidance) or commands (procedures), skills can include scripts that agents run.
+ -  Match the artifact to the need. Using rules for everything creates bloated, confusing guidance.
+
