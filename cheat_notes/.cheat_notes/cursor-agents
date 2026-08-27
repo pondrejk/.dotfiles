@@ -1,0 +1,68 @@
+# Effective agent definition includes 5 elements:
+
+┌────────────────┬──────────────────────┬─────────────────────────────────────────────────────────┐
+│    Element     │       Question       │                         Defines                         │
+├────────────────┼──────────────────────┼─────────────────────────────────────────────────────────┤
+│ 1. Role        │ Who are you?         │ Specific title, domain expertise, perspective/stance    │
+├────────────────┼──────────────────────┼─────────────────────────────────────────────────────────┤
+│ 2. Expertise   │ What do you know?    │ Knowledge areas, tools mastered, boundaries             │
+├────────────────┼──────────────────────┼─────────────────────────────────────────────────────────┤
+│ 3. Process     │ How do you work?     │ Step-by-step methodology, decision criteria, escalation │
+├────────────────┼──────────────────────┼─────────────────────────────────────────────────────────┤
+│ 4. Output      │ What do you produce? │ Exact format, required sections, examples               │
+├────────────────┼──────────────────────┼─────────────────────────────────────────────────────────┤
+│ 5. Constraints │ What won't you do?   │ Explicit boundaries, anti-patterns, when to refuse      │
+└────────────────┴──────────────────────┴─────────────────────────────────────────────────────────┘
+
+# Role
+
+┌──────────────┬──────────────────────────────────────────────────────┬───────────────┐
+│   Pattern    │                    Role Statement                    │  Perspective  │
+├──────────────┼──────────────────────────────────────────────────────┼───────────────┤
+│ Expert       │ "Senior X engineer with 10+ years experience"        │ Authoritative │
+├──────────────┼──────────────────────────────────────────────────────┼───────────────┤
+│ Critic       │ "Devil's advocate who challenges assumptions"        │ Contrarian    │
+├──────────────┼──────────────────────────────────────────────────────┼───────────────┤
+│ Teacher      │ "Patient instructor who explains concepts clearly"   │ Educational   │
+├──────────────┼──────────────────────────────────────────────────────┼───────────────┤
+│ Investigator │ "Detective who gathers evidence before conclusions"  │ Methodical    │
+├──────────────┼──────────────────────────────────────────────────────┼───────────────┤
+│ Advocate     │ "Champion for clean code who won't accept shortcuts" │ Principled    │
+└──────────────┴──────────────────────────────────────────────────────┴───────────────┘
+
+# Expertise
+
+Be specific — "OWASP Top 10" not "web security"
+Set boundaries — What it knows, implicitly what it doesn't
+Include techniques — Not just topics, but methods
+Match the role — Expertise should align with identity
+
+# Process
+
+Number the steps — Creates checkpoints
+Make steps actionable — Verbs, not nouns
+Include decision points — When to go deeper, when to stop
+Define order — Sequential when order matters
+
+# Output 
+
+Show the exact structure — Markdown template
+Label required sections — What must appear
+Provide field descriptions — What goes in each
+Include examples — Especially for complex fields
+
+# Constraints
+
+┌───────────────────────┬───────────────────────────────────────────┐
+│       Category        │                 Examples                  │
+├───────────────────────┼───────────────────────────────────────────┤
+│ Evidence requirements │ "Never guess—gather evidence first"       │
+├───────────────────────┼───────────────────────────────────────────┤
+│ Scope limits          │ "Only analyze specified files"            │
+├───────────────────────┼───────────────────────────────────────────┤
+│ Escalation triggers   │ "If unsure, flag for human review"        │
+├───────────────────────┼───────────────────────────────────────────┤
+│ Anti-patterns         │ "Don't suggest disabling validation"      │
+├───────────────────────┼───────────────────────────────────────────┤
+│ Output guards         │ "Never include actual secrets in reports" │
+└───────────────────────┴───────────────────────────────────────────┘

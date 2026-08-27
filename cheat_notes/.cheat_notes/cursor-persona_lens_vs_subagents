@@ -1,0 +1,46 @@
+# when you get which
+
+┌────────────────────────────────────────────────┬───────────────┬──────────┐
+│                    Trigger                     │  Model Used   │ Context  │
+├────────────────────────────────────────────────┼───────────────┼──────────┤
+│ Mention agent in chat ("ask security auditor") │ Persona Lens  │ Shared   │
+├────────────────────────────────────────────────┼───────────────┼──────────┤
+│ Agent auto-selected by routing                 │ Persona Lens  │ Shared   │
+├────────────────────────────────────────────────┼───────────────┼──────────┤
+│ Explicit Task delegation                       │ True Subagent │ Isolated │
+├────────────────────────────────────────────────┼───────────────┼──────────┤
+│ Built-in explore, bash, browser                │ True Subagent │ Isolated │
+├────────────────────────────────────────────────┼───────────────┼──────────┤
+│ Background research tasks                      │ True Subagent │ Isolated │
+└────────────────────────────────────────────────┴───────────────┴──────────┘
+
+# Cursor built-in subagents 
+
+┌──────────┬─────────────────┬─────────────────────────────────────┐
+│ Subagent │     Purpose     │            Why Isolated             │
+├──────────┼─────────────────┼─────────────────────────────────────┤
+│ Explore  │ Codebase search │ Generates noisy intermediate output │
+├──────────┼─────────────────┼─────────────────────────────────────┤
+│ Bash     │ Shell commands  │ Command output is verbose           │
+├──────────┼─────────────────┼─────────────────────────────────────┤
+│ Browser  │ Web automation  │ DOM snapshots are large             │
+└──────────┴─────────────────┴─────────────────────────────────────┘
+
+# differences
+
+┌──────────────────────────────┬──────────────────────────────────────┐
+│         Persona Lens         │            True Subagent             │
+├──────────────────────────────┼──────────────────────────────────────┤
+│ Same context window          │ Fresh context window                 │
+├──────────────────────────────┼──────────────────────────────────────┤
+│ Sees conversation history    │ Starts clean                         │
+├──────────────────────────────┼──────────────────────────────────────┤
+│ Fast (no startup overhead)   │ Higher latency (new context)         │
+├──────────────────────────────┼──────────────────────────────────────┤
+│ Sequential only              │ Parallel capable                     │
+├──────────────────────────────┼──────────────────────────────────────┤
+│ Anchored on prior discussion │ Fresh perspective                    │
+├──────────────────────────────┼──────────────────────────────────────┤
+│ Good for quick consultations │ Good for verification, deep research │
+└──────────────────────────────┴──────────────────────────────────────┘
+
