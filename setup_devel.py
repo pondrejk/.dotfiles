@@ -63,6 +63,17 @@ def copy_dotfiles():
         run(["scp", src, dst])
 
 
+def copy_skills():
+    src = os.path.join(HOME, "Documents", "foreman-ui-harness", "skills")
+    dst = "devel:~/.agents/skills/"
+    if not os.path.isdir(src):
+        print(f"    WARNING: {src} not found, skipping")
+        return
+    run(["ssh", "devel", "mkdir -p ~/.agents/skills"])
+    print(f">>> Copying skills from {src} to {dst}")
+    run(["scp", "-r", os.path.join(src, "."), dst])
+
+
 def kitten_ssh(hostname):
     print(f">>> Running kitten ssh root@{hostname} (login/logout)...")
     run(["kitten", "ssh", f"root@{hostname}", "exit"])
@@ -95,6 +106,7 @@ def main():
     ssh_copy_id(hostname)
     update_ssh_config(hostname)
     copy_dotfiles()
+    copy_skills()
     kitten_ssh(hostname)
     print_remote_pubkey(hostname)
 
