@@ -1,0 +1,41 @@
+[user]
+name = Maria Svirikova
+email = marisvirik@redhat.com
+
+[safe]
+directory = /home/marisvirik/foreman
+directory = /home/marisvirik/foreman_ansible
+directory = /home/marisvirik/foreman_bootdisk
+directory = /home/marisvirik/foreman-certs
+directory = /home/marisvirik/foreman_discovery
+directory = /home/marisvirik/foreman_leapp
+directory = /home/marisvirik/foreman_openscap
+directory = /home/marisvirik/foreman_puppet
+directory = /home/marisvirik/foreman_remote_execution
+directory = /home/marisvirik/foreman_rh_cloud
+directory = /home/marisvirik/foreman-tasks
+directory = /home/marisvirik/foreman_templates
+directory = /home/marisvirik/foreman_theme_satellite
+directory = /home/marisvirik/foreman_webhooks
+directory = /home/marisvirik/hammer-cli
+directory = /home/marisvirik/hammer-cli-foreman
+directory = /home/marisvirik/hammer-cli-foreman-ansible
+directory = /home/marisvirik/hammer_cli_foreman_bootdisk
+directory = /home/marisvirik/hammer-cli-foreman-discovery
+directory = /home/marisvirik/hammer-cli-foreman-leapp
+directory = /home/marisvirik/hammer_cli_foreman_openscap
+directory = /home/marisvirik/hammer-cli-foreman-puppet
+directory = /home/marisvirik/hammer_cli_foreman_remote_execution
+directory = /home/marisvirik/hammer-cli-foreman-rh-cloud
+directory = /home/marisvirik/hammer-cli-foreman-tasks
+directory = /home/marisvirik/hammer-cli-foreman-templates
+directory = /home/marisvirik/hammer-cli-foreman-webhooks
+directory = /home/marisvirik/hammer-cli-katello
+directory = /home/marisvirik/katello
+directory = /home/marisvirik/smart-proxy
+directory = /home/marisvirik/smart_proxy_ansible
+directory = /home/marisvirik/smart_proxy_discovery
+directory = /home/marisvirik/smart_proxy_dynflow
+directory = /home/marisvirik/smart_proxy_openscap
+directory = /home/marisvirik/smart_proxy_remote_execution_ssh
+directory = /home/marisvirik/smart_proxy_shellhooks
